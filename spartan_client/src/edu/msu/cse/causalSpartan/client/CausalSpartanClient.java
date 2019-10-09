@@ -44,21 +44,26 @@ public class CausalSpartanClient extends DKVFClient {
 
 	public boolean put(String key, byte[] value) {
 		try {
+            System.out.println("PUT CALLED CLIENT");
 			PutMessage pm = PutMessage.newBuilder().setKey(key).setValue(ByteString.copyFrom(value)).addAllDsItem(getDcTimeItems()).build();
 			ClientMessage cm = ClientMessage.newBuilder().setPutMessage(pm).build();
 			int partition = findPartition(key);
 			String serverId = dcId + "_" + partition;
-			if (sendToServer(serverId, cm) == NetworkStatus.FAILURE)
-				return false;
+			if (sendToServer(serverId, cm) == NetworkStatus.FAILURE) {
+                System.out.println("FAILED DUE TO NETWORK STATUS");
+                return false;
+            }
 			ClientReply cr = readFromServer(serverId);
 			if (cr != null && cr.getStatus()) {
 				updateDS(dcId, cr.getPutReply().getUt());
 				return true;
 			} else {
+                System.out.println("Server could not put the key= " + key);
 				protocolLOGGER.severe("Server could not put the key= " + key);
 				return false;
 			}
 		} catch (Exception e) {
+            System.out.println("Failed to put due to exception");
 			protocolLOGGER.severe(Utils.exceptionLogMessge("Failed to put due to exception", e));
 			return false;
 		}
@@ -74,11 +79,11 @@ public class CausalSpartanClient extends DKVFClient {
 				return null;
 			ClientReply cr = readFromServer(serverId);
 			if (cr != null && cr.getStatus()) {
-				updateDsv(cr.getGetReply().getDsvItemList());
-				for (DcTimeItem dti : cr.getGetReply().getDsItemList()) {
+				updateDsv(cr.getMultipleVersions().getGetReply(0).getDsvItemList());
+				for (DcTimeItem dti : cr.getMultipleVersions().getGetReply(0).getDsItemList()) {
 					updateDS(dti.getDcId(), dti.getTime());
 				}
-				return cr.getGetReply().getValue().toByteArray();
+				return cr.getMultipleVersions().getGetReply(0).getValue().toByteArray();
 			} else {
 				protocolLOGGER.severe("Server could not get the key= " + key);
 				return null;

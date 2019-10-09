@@ -51,7 +51,8 @@ public class ServerConnector implements Runnable {
 		this.serversOut = serversOut;
 		this.serversIn = serversIn;
 		this.sockets = sockets;
-		
+
+        System.out.println("Server connector ctor " + serversInfoToConnect.size());
 		this.pendingServers = new ArrayList<>();
 		for (ServerInfo si : serversInfoToConnect){
 			if (!serversIn.containsKey(si.id))
@@ -65,6 +66,7 @@ public class ServerConnector implements Runnable {
 	 */
 	public void run() {
 		LOGGER.info("Server connector started.");
+        System.out.println("Server connector started " + pendingServers.size());
 		// Periodically tries to connect to pending servers. Once successfully
 		// connected,
 		// add them to servers and remove them from pending servers.

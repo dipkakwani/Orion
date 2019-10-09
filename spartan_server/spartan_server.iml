@@ -7,8 +7,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="protobuf-java-3.4.0" level="project" />
+    <orderEntry type="library" name="YCSB" level="project" />
     <orderEntry type="library" name="je-6.4.25" level="project" />
+    <orderEntry type="library" name="spartan_server" level="project" />
     <orderEntry type="library" name="Bundled Protobuf Distribution" level="application" />
-    <orderEntry type="library" name="je-6.4.251" level="project" />
+    <orderEntry type="library" name="protobuf-java-3.4.01" level="project" />
   </component>
 </module>

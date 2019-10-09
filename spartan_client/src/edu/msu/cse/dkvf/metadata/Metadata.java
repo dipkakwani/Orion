@@ -19,16 +19,28 @@ public final class Metadata {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *datacenter id
+     * </pre>
+     *
      * <code>int32 dc_id = 1;</code>
      */
     int getDcId();
 
     /**
+     * <pre>
+     *timestamp
+     * </pre>
+     *
      * <code>int64 time = 2;</code>
      */
     long getTime();
   }
   /**
+   * <pre>
+   * A pari of datacenter ID and timestamp
+   * </pre>
+   *
    * Protobuf type {@code Metadata.DcTimeItem}
    */
   public  static final class DcTimeItem extends
@@ -45,7 +57,7 @@ public final class Metadata {
       time_ = 0L;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -97,19 +109,23 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_DcTimeItem_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DcTimeItem_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_DcTimeItem_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DcTimeItem_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              DcTimeItem.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.class, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder.class);
     }
 
     public static final int DC_ID_FIELD_NUMBER = 1;
     private int dcId_;
     /**
+     * <pre>
+     *datacenter id
+     * </pre>
+     *
      * <code>int32 dc_id = 1;</code>
      */
     public int getDcId() {
@@ -119,6 +135,10 @@ public final class Metadata {
     public static final int TIME_FIELD_NUMBER = 2;
     private long time_;
     /**
+     * <pre>
+     *timestamp
+     * </pre>
+     *
      * <code>int64 time = 2;</code>
      */
     public long getTime() {
@@ -164,15 +184,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof DcTimeItem)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem)) {
         return super.equals(obj);
       }
-      DcTimeItem other = (DcTimeItem) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem other = (edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem) obj;
 
       boolean result = true;
       result = result && (getDcId()
@@ -183,7 +203,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -200,69 +220,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static DcTimeItem parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static DcTimeItem parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static DcTimeItem parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static DcTimeItem parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static DcTimeItem parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static DcTimeItem parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static DcTimeItem parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static DcTimeItem parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static DcTimeItem parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static DcTimeItem parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static DcTimeItem parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static DcTimeItem parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -274,7 +294,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(DcTimeItem prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -282,29 +302,33 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
+     * <pre>
+     * A pari of datacenter ID and timestamp
+     * </pre>
+     *
      * Protobuf type {@code Metadata.DcTimeItem}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.DcTimeItem)
-        DcTimeItemOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_DcTimeItem_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DcTimeItem_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_DcTimeItem_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DcTimeItem_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                DcTimeItem.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.class, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.newBuilder()
@@ -333,23 +357,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_DcTimeItem_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DcTimeItem_descriptor;
       }
 
-      public DcTimeItem getDefaultInstanceForType() {
-        return DcTimeItem.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance();
       }
 
-      public DcTimeItem build() {
-        DcTimeItem result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem build() {
+        edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public DcTimeItem buildPartial() {
-        DcTimeItem result = new DcTimeItem(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem result = new edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem(this);
         result.dcId_ = dcId_;
         result.time_ = time_;
         onBuilt();
@@ -361,7 +385,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -374,25 +398,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof DcTimeItem) {
-          return mergeFrom((DcTimeItem)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(DcTimeItem other) {
-        if (other == DcTimeItem.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance()) return this;
         if (other.getDcId() != 0) {
           setDcId(other.getDcId());
         }
@@ -412,11 +436,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        DcTimeItem parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (DcTimeItem) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -428,12 +452,20 @@ public final class Metadata {
 
       private int dcId_ ;
       /**
+       * <pre>
+       *datacenter id
+       * </pre>
+       *
        * <code>int32 dc_id = 1;</code>
        */
       public int getDcId() {
         return dcId_;
       }
       /**
+       * <pre>
+       *datacenter id
+       * </pre>
+       *
        * <code>int32 dc_id = 1;</code>
        */
       public Builder setDcId(int value) {
@@ -443,6 +475,10 @@ public final class Metadata {
         return this;
       }
       /**
+       * <pre>
+       *datacenter id
+       * </pre>
+       *
        * <code>int32 dc_id = 1;</code>
        */
       public Builder clearDcId() {
@@ -454,12 +490,20 @@ public final class Metadata {
 
       private long time_ ;
       /**
+       * <pre>
+       *timestamp
+       * </pre>
+       *
        * <code>int64 time = 2;</code>
        */
       public long getTime() {
         return time_;
       }
       /**
+       * <pre>
+       *timestamp
+       * </pre>
+       *
        * <code>int64 time = 2;</code>
        */
       public Builder setTime(long value) {
@@ -469,6 +513,10 @@ public final class Metadata {
         return this;
       }
       /**
+       * <pre>
+       *timestamp
+       * </pre>
+       *
        * <code>int64 time = 2;</code>
        */
       public Builder clearTime() {
@@ -492,12 +540,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.DcTimeItem)
-    private static final DcTimeItem DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new DcTimeItem();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem();
     }
 
-    public static DcTimeItem getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -515,12 +563,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<DcTimeItem> getParserForType() {
       return PARSER;
     }
 
-    public DcTimeItem getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -531,40 +579,52 @@ public final class Metadata {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *value
+     * </pre>
+     *
      * <code>bytes value = 2;</code>
      */
     com.google.protobuf.ByteString getValue();
 
     /**
+     * <pre>
+     *update time
+     * </pre>
+     *
      * <code>int64 ut = 3;</code>
      */
     long getUt();
 
     /**
+     * <pre>
+     *source replica ID
+     * </pre>
+     *
      * <code>int32 sr = 4;</code>
      */
     int getSr();
 
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
      */
-    java.util.List<DcTimeItem>
+    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> 
         getDsItemList();
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
      */
-    DcTimeItem getDsItem(int index);
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index);
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
@@ -572,24 +632,28 @@ public final class Metadata {
     int getDsItemCount();
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
      */
-    java.util.List<? extends DcTimeItemOrBuilder>
+    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
         getDsItemOrBuilderList();
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
      */
-    DcTimeItemOrBuilder getDsItemOrBuilder(
-            int index);
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
+        int index);
   }
   /**
+   * <pre>
+   * A record item
+   * </pre>
+   *
    * Protobuf type {@code Metadata.Record}
    */
   public  static final class Record extends
@@ -608,7 +672,7 @@ public final class Metadata {
       dsItem_ = java.util.Collections.emptyList();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -653,11 +717,11 @@ public final class Metadata {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                dsItem_ = new java.util.ArrayList<DcTimeItem>();
+                dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>();
                 mutable_bitField0_ |= 0x00000008;
               }
               dsItem_.add(
-                  input.readMessage(DcTimeItem.parser(), extensionRegistry));
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.parser(), extensionRegistry));
               break;
             }
           }
@@ -677,20 +741,24 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_Record_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_Record_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_Record_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_Record_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Record.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.Record.class, edu.msu.cse.dkvf.metadata.Metadata.Record.Builder.class);
     }
 
     private int bitField0_;
     public static final int VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString value_;
     /**
+     * <pre>
+     *value
+     * </pre>
+     *
      * <code>bytes value = 2;</code>
      */
     public com.google.protobuf.ByteString getValue() {
@@ -700,6 +768,10 @@ public final class Metadata {
     public static final int UT_FIELD_NUMBER = 3;
     private long ut_;
     /**
+     * <pre>
+     *update time
+     * </pre>
+     *
      * <code>int64 ut = 3;</code>
      */
     public long getUt() {
@@ -709,6 +781,10 @@ public final class Metadata {
     public static final int SR_FIELD_NUMBER = 4;
     private int sr_;
     /**
+     * <pre>
+     *source replica ID
+     * </pre>
+     *
      * <code>int32 sr = 4;</code>
      */
     public int getSr() {
@@ -716,31 +792,31 @@ public final class Metadata {
     }
 
     public static final int DS_ITEM_FIELD_NUMBER = 5;
-    private java.util.List<DcTimeItem> dsItem_;
+    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_;
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
      */
-    public java.util.List<DcTimeItem> getDsItemList() {
+    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
       return dsItem_;
     }
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
      */
-    public java.util.List<? extends DcTimeItemOrBuilder>
+    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
         getDsItemOrBuilderList() {
       return dsItem_;
     }
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
@@ -750,22 +826,22 @@ public final class Metadata {
     }
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
      */
-    public DcTimeItem getDsItem(int index) {
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
       return dsItem_.get(index);
     }
     /**
      * <pre>
-     *DS
+     *Dependency Set (DS)
      * </pre>
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
      */
-    public DcTimeItemOrBuilder getDsItemOrBuilder(
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
         int index) {
       return dsItem_.get(index);
     }
@@ -823,15 +899,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Record)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.Record)) {
         return super.equals(obj);
       }
-      Record other = (Record) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.Record other = (edu.msu.cse.dkvf.metadata.Metadata.Record) obj;
 
       boolean result = true;
       result = result && getValue()
@@ -846,7 +922,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -869,69 +945,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static Record parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Record parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Record parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Record parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Record parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Record parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Record parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Record parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Record parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Record parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Record parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Record parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -943,7 +1019,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Record prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.Record prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -951,29 +1027,33 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
+     * <pre>
+     * A record item
+     * </pre>
+     *
      * Protobuf type {@code Metadata.Record}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.Record)
-        RecordOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.RecordOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_Record_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_Record_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_Record_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_Record_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Record.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.Record.class, edu.msu.cse.dkvf.metadata.Metadata.Record.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.Record.newBuilder()
@@ -1011,23 +1091,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_Record_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_Record_descriptor;
       }
 
-      public Record getDefaultInstanceForType() {
-        return Record.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.Record getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.Record.getDefaultInstance();
       }
 
-      public Record build() {
-        Record result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.Record build() {
+        edu.msu.cse.dkvf.metadata.Metadata.Record result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public Record buildPartial() {
-        Record result = new Record(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.Record buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.Record result = new edu.msu.cse.dkvf.metadata.Metadata.Record(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.value_ = value_;
@@ -1052,7 +1132,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1065,25 +1145,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Record) {
-          return mergeFrom((Record)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.Record) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.Record)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Record other) {
-        if (other == Record.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.Record other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.Record.getDefaultInstance()) return this;
         if (other.getValue() != com.google.protobuf.ByteString.EMPTY) {
           setValue(other.getValue());
         }
@@ -1132,11 +1212,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Record parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.Record parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Record) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.Record) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1149,12 +1229,20 @@ public final class Metadata {
 
       private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
       /**
+       * <pre>
+       *value
+       * </pre>
+       *
        * <code>bytes value = 2;</code>
        */
       public com.google.protobuf.ByteString getValue() {
         return value_;
       }
       /**
+       * <pre>
+       *value
+       * </pre>
+       *
        * <code>bytes value = 2;</code>
        */
       public Builder setValue(com.google.protobuf.ByteString value) {
@@ -1167,6 +1255,10 @@ public final class Metadata {
         return this;
       }
       /**
+       * <pre>
+       *value
+       * </pre>
+       *
        * <code>bytes value = 2;</code>
        */
       public Builder clearValue() {
@@ -1178,12 +1270,20 @@ public final class Metadata {
 
       private long ut_ ;
       /**
+       * <pre>
+       *update time
+       * </pre>
+       *
        * <code>int64 ut = 3;</code>
        */
       public long getUt() {
         return ut_;
       }
       /**
+       * <pre>
+       *update time
+       * </pre>
+       *
        * <code>int64 ut = 3;</code>
        */
       public Builder setUt(long value) {
@@ -1193,6 +1293,10 @@ public final class Metadata {
         return this;
       }
       /**
+       * <pre>
+       *update time
+       * </pre>
+       *
        * <code>int64 ut = 3;</code>
        */
       public Builder clearUt() {
@@ -1204,12 +1308,20 @@ public final class Metadata {
 
       private int sr_ ;
       /**
+       * <pre>
+       *source replica ID
+       * </pre>
+       *
        * <code>int32 sr = 4;</code>
        */
       public int getSr() {
         return sr_;
       }
       /**
+       * <pre>
+       *source replica ID
+       * </pre>
+       *
        * <code>int32 sr = 4;</code>
        */
       public Builder setSr(int value) {
@@ -1219,6 +1331,10 @@ public final class Metadata {
         return this;
       }
       /**
+       * <pre>
+       *source replica ID
+       * </pre>
+       *
        * <code>int32 sr = 4;</code>
        */
       public Builder clearSr() {
@@ -1228,26 +1344,26 @@ public final class Metadata {
         return this;
       }
 
-      private java.util.List<DcTimeItem> dsItem_ =
+      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_ =
         java.util.Collections.emptyList();
       private void ensureDsItemIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          dsItem_ = new java.util.ArrayList<DcTimeItem>(dsItem_);
+          dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>(dsItem_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder> dsItemBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> dsItemBuilder_;
 
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public java.util.List<DcTimeItem> getDsItemList() {
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
         if (dsItemBuilder_ == null) {
           return java.util.Collections.unmodifiableList(dsItem_);
         } else {
@@ -1256,7 +1372,7 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
@@ -1270,12 +1386,12 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public DcTimeItem getDsItem(int index) {
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
         if (dsItemBuilder_ == null) {
           return dsItem_.get(index);
         } else {
@@ -1284,13 +1400,13 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
       public Builder setDsItem(
-          int index, DcTimeItem value) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1305,13 +1421,13 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
       public Builder setDsItem(
-          int index, DcTimeItem.Builder builderForValue) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.set(index, builderForValue.build());
@@ -1323,12 +1439,12 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public Builder addDsItem(DcTimeItem value) {
+      public Builder addDsItem(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1343,13 +1459,13 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
       public Builder addDsItem(
-          int index, DcTimeItem value) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1364,13 +1480,13 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
       public Builder addDsItem(
-          DcTimeItem.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.add(builderForValue.build());
@@ -1382,13 +1498,13 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
       public Builder addDsItem(
-          int index, DcTimeItem.Builder builderForValue) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.add(index, builderForValue.build());
@@ -1400,13 +1516,13 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
       public Builder addAllDsItem(
-          Iterable<? extends DcTimeItem> values) {
+          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> values) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1419,7 +1535,7 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
@@ -1436,7 +1552,7 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
@@ -1453,23 +1569,23 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public DcTimeItem.Builder getDsItemBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder getDsItemBuilder(
           int index) {
         return getDsItemFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public DcTimeItemOrBuilder getDsItemOrBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
           int index) {
         if (dsItemBuilder_ == null) {
           return dsItem_.get(index);  } else {
@@ -1478,12 +1594,12 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public java.util.List<? extends DcTimeItemOrBuilder>
+      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
            getDsItemOrBuilderList() {
         if (dsItemBuilder_ != null) {
           return dsItemBuilder_.getMessageOrBuilderList();
@@ -1493,44 +1609,44 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public DcTimeItem.Builder addDsItemBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder() {
         return getDsItemFieldBuilder().addBuilder(
-            DcTimeItem.getDefaultInstance());
+            edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public DcTimeItem.Builder addDsItemBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder(
           int index) {
         return getDsItemFieldBuilder().addBuilder(
-            index, DcTimeItem.getDefaultInstance());
+            index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
        * <pre>
-       *DS
+       *Dependency Set (DS)
        * </pre>
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 5;</code>
        */
-      public java.util.List<DcTimeItem.Builder>
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder> 
            getDsItemBuilderList() {
         return getDsItemFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
           getDsItemFieldBuilder() {
         if (dsItemBuilder_ == null) {
           dsItemBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder>(
+              edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder>(
                   dsItem_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -1554,12 +1670,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.Record)
-    private static final Record DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.Record DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Record();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.Record();
     }
 
-    public static Record getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.Record getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1577,12 +1693,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<Record> getParserForType() {
       return PARSER;
     }
 
-    public Record getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.Record getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1595,7 +1711,7 @@ public final class Metadata {
     /**
      * <code>string key = 1;</code>
      */
-    String getKey();
+    java.lang.String getKey();
     /**
      * <code>string key = 1;</code>
      */
@@ -1604,15 +1720,15 @@ public final class Metadata {
 
     /**
      * <pre>
-     *DSV
+     *Dependecy Stable Vector (DSV) at the client 
      * </pre>
      *
      * <code>repeated int64 dsv_item = 2;</code>
      */
-    java.util.List<Long> getDsvItemList();
+    java.util.List<java.lang.Long> getDsvItemList();
     /**
      * <pre>
-     *DSV
+     *Dependecy Stable Vector (DSV) at the client 
      * </pre>
      *
      * <code>repeated int64 dsv_item = 2;</code>
@@ -1620,7 +1736,7 @@ public final class Metadata {
     int getDsvItemCount();
     /**
      * <pre>
-     *DSV
+     *Dependecy Stable Vector (DSV) at the client 
      * </pre>
      *
      * <code>repeated int64 dsv_item = 2;</code>
@@ -1648,7 +1764,7 @@ public final class Metadata {
       dsvItem_ = java.util.Collections.emptyList();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1677,14 +1793,14 @@ public final class Metadata {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               key_ = s;
               break;
             }
             case 16: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                dsvItem_ = new java.util.ArrayList<Long>();
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000002;
               }
               dsvItem_.add(input.readInt64());
@@ -1694,7 +1810,7 @@ public final class Metadata {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                dsvItem_ = new java.util.ArrayList<Long>();
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -1720,30 +1836,30 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_GetMessage_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_GetMessage_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              GetMessage.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.GetMessage.class, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile Object key_;
+    private volatile java.lang.Object key_;
     /**
      * <code>string key = 1;</code>
      */
-    public String getKey() {
-      Object ref = key_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
@@ -1753,11 +1869,11 @@ public final class Metadata {
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
-      Object ref = key_;
-      if (ref instanceof String) {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         key_ = b;
         return b;
       } else {
@@ -1766,21 +1882,21 @@ public final class Metadata {
     }
 
     public static final int DSV_ITEM_FIELD_NUMBER = 2;
-    private java.util.List<Long> dsvItem_;
+    private java.util.List<java.lang.Long> dsvItem_;
     /**
      * <pre>
-     *DSV
+     *Dependecy Stable Vector (DSV) at the client 
      * </pre>
      *
      * <code>repeated int64 dsv_item = 2;</code>
      */
-    public java.util.List<Long>
+    public java.util.List<java.lang.Long>
         getDsvItemList() {
       return dsvItem_;
     }
     /**
      * <pre>
-     *DSV
+     *Dependecy Stable Vector (DSV) at the client 
      * </pre>
      *
      * <code>repeated int64 dsv_item = 2;</code>
@@ -1790,7 +1906,7 @@ public final class Metadata {
     }
     /**
      * <pre>
-     *DSV
+     *Dependecy Stable Vector (DSV) at the client 
      * </pre>
      *
      * <code>repeated int64 dsv_item = 2;</code>
@@ -1853,15 +1969,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof GetMessage)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.GetMessage)) {
         return super.equals(obj);
       }
-      GetMessage other = (GetMessage) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.GetMessage other = (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) obj;
 
       boolean result = true;
       result = result && getKey()
@@ -1872,7 +1988,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1890,69 +2006,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static GetMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetMessage parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetMessage parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GetMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GetMessage parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static GetMessage parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GetMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GetMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1964,7 +2080,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(GetMessage prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.GetMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1972,7 +2088,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -1988,17 +2104,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.GetMessage)
-        GetMessageOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_GetMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_GetMessage_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                GetMessage.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.GetMessage.class, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.GetMessage.newBuilder()
@@ -2027,23 +2143,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_GetMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetMessage_descriptor;
       }
 
-      public GetMessage getDefaultInstanceForType() {
-        return GetMessage.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance();
       }
 
-      public GetMessage build() {
-        GetMessage result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage build() {
+        edu.msu.cse.dkvf.metadata.Metadata.GetMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public GetMessage buildPartial() {
-        GetMessage result = new GetMessage(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.GetMessage result = new edu.msu.cse.dkvf.metadata.Metadata.GetMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.key_ = key_;
@@ -2062,7 +2178,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2075,25 +2191,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof GetMessage) {
-          return mergeFrom((GetMessage)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.GetMessage) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.GetMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(GetMessage other) {
-        if (other == GetMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.GetMessage other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance()) return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
@@ -2121,11 +2237,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        GetMessage parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.GetMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (GetMessage) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2136,20 +2252,20 @@ public final class Metadata {
       }
       private int bitField0_;
 
-      private Object key_ = "";
+      private java.lang.Object key_ = "";
       /**
        * <code>string key = 1;</code>
        */
-      public String getKey() {
-        Object ref = key_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2157,11 +2273,11 @@ public final class Metadata {
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
-        Object ref = key_;
+        java.lang.Object ref = key_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           key_ = b;
           return b;
         } else {
@@ -2172,7 +2288,7 @@ public final class Metadata {
        * <code>string key = 1;</code>
        */
       public Builder setKey(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2205,27 +2321,27 @@ public final class Metadata {
         return this;
       }
 
-      private java.util.List<Long> dsvItem_ = java.util.Collections.emptyList();
+      private java.util.List<java.lang.Long> dsvItem_ = java.util.Collections.emptyList();
       private void ensureDsvItemIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          dsvItem_ = new java.util.ArrayList<Long>(dsvItem_);
+          dsvItem_ = new java.util.ArrayList<java.lang.Long>(dsvItem_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
        * <pre>
-       *DSV
+       *Dependecy Stable Vector (DSV) at the client 
        * </pre>
        *
        * <code>repeated int64 dsv_item = 2;</code>
        */
-      public java.util.List<Long>
+      public java.util.List<java.lang.Long>
           getDsvItemList() {
         return java.util.Collections.unmodifiableList(dsvItem_);
       }
       /**
        * <pre>
-       *DSV
+       *Dependecy Stable Vector (DSV) at the client 
        * </pre>
        *
        * <code>repeated int64 dsv_item = 2;</code>
@@ -2235,7 +2351,7 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DSV
+       *Dependecy Stable Vector (DSV) at the client 
        * </pre>
        *
        * <code>repeated int64 dsv_item = 2;</code>
@@ -2245,7 +2361,7 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DSV
+       *Dependecy Stable Vector (DSV) at the client 
        * </pre>
        *
        * <code>repeated int64 dsv_item = 2;</code>
@@ -2259,7 +2375,7 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DSV
+       *Dependecy Stable Vector (DSV) at the client 
        * </pre>
        *
        * <code>repeated int64 dsv_item = 2;</code>
@@ -2272,13 +2388,13 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DSV
+       *Dependecy Stable Vector (DSV) at the client 
        * </pre>
        *
        * <code>repeated int64 dsv_item = 2;</code>
        */
       public Builder addAllDsvItem(
-          Iterable<? extends Long> values) {
+          java.lang.Iterable<? extends java.lang.Long> values) {
         ensureDsvItemIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, dsvItem_);
@@ -2287,7 +2403,7 @@ public final class Metadata {
       }
       /**
        * <pre>
-       *DSV
+       *Dependecy Stable Vector (DSV) at the client 
        * </pre>
        *
        * <code>repeated int64 dsv_item = 2;</code>
@@ -2313,12 +2429,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.GetMessage)
-    private static final GetMessage DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.GetMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GetMessage();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.GetMessage();
     }
 
-    public static GetMessage getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2336,12 +2452,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<GetMessage> getParserForType() {
       return PARSER;
     }
 
-    public GetMessage getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2354,7 +2470,7 @@ public final class Metadata {
     /**
      * <code>string key = 1;</code>
      */
-    String getKey();
+    java.lang.String getKey();
     /**
      * <code>string key = 1;</code>
      */
@@ -2373,7 +2489,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    java.util.List<DcTimeItem>
+    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> 
         getDsItemList();
     /**
      * <pre>
@@ -2382,7 +2498,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    DcTimeItem getDsItem(int index);
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index);
     /**
      * <pre>
      *DS
@@ -2398,7 +2514,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    java.util.List<? extends DcTimeItemOrBuilder>
+    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
         getDsItemOrBuilderList();
     /**
      * <pre>
@@ -2407,8 +2523,8 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    DcTimeItemOrBuilder getDsItemOrBuilder(
-            int index);
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code Metadata.PutMessage}
@@ -2428,7 +2544,7 @@ public final class Metadata {
       dsItem_ = java.util.Collections.emptyList();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2457,7 +2573,7 @@ public final class Metadata {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               key_ = s;
               break;
@@ -2469,11 +2585,11 @@ public final class Metadata {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                dsItem_ = new java.util.ArrayList<DcTimeItem>();
+                dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>();
                 mutable_bitField0_ |= 0x00000004;
               }
               dsItem_.add(
-                  input.readMessage(DcTimeItem.parser(), extensionRegistry));
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.parser(), extensionRegistry));
               break;
             }
           }
@@ -2493,30 +2609,30 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_PutMessage_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_PutMessage_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              PutMessage.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.PutMessage.class, edu.msu.cse.dkvf.metadata.Metadata.PutMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile Object key_;
+    private volatile java.lang.Object key_;
     /**
      * <code>string key = 1;</code>
      */
-    public String getKey() {
-      Object ref = key_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
@@ -2526,11 +2642,11 @@ public final class Metadata {
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
-      Object ref = key_;
-      if (ref instanceof String) {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         key_ = b;
         return b;
       } else {
@@ -2548,7 +2664,7 @@ public final class Metadata {
     }
 
     public static final int DS_ITEM_FIELD_NUMBER = 3;
-    private java.util.List<DcTimeItem> dsItem_;
+    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_;
     /**
      * <pre>
      *DS
@@ -2556,7 +2672,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    public java.util.List<DcTimeItem> getDsItemList() {
+    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
       return dsItem_;
     }
     /**
@@ -2566,7 +2682,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    public java.util.List<? extends DcTimeItemOrBuilder>
+    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
         getDsItemOrBuilderList() {
       return dsItem_;
     }
@@ -2587,7 +2703,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    public DcTimeItem getDsItem(int index) {
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
       return dsItem_.get(index);
     }
     /**
@@ -2597,7 +2713,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    public DcTimeItemOrBuilder getDsItemOrBuilder(
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
         int index) {
       return dsItem_.get(index);
     }
@@ -2647,15 +2763,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof PutMessage)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.PutMessage)) {
         return super.equals(obj);
       }
-      PutMessage other = (PutMessage) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.PutMessage other = (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) obj;
 
       boolean result = true;
       result = result && getKey()
@@ -2668,7 +2784,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2688,69 +2804,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static PutMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PutMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PutMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PutMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PutMessage parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PutMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PutMessage parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PutMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PutMessage parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static PutMessage parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PutMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PutMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2762,7 +2878,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(PutMessage prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.PutMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2770,7 +2886,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -2782,17 +2898,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.PutMessage)
-        PutMessageOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.PutMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_PutMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_PutMessage_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                PutMessage.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.PutMessage.class, edu.msu.cse.dkvf.metadata.Metadata.PutMessage.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.PutMessage.newBuilder()
@@ -2828,23 +2944,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_PutMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutMessage_descriptor;
       }
 
-      public PutMessage getDefaultInstanceForType() {
-        return PutMessage.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.PutMessage getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance();
       }
 
-      public PutMessage build() {
-        PutMessage result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.PutMessage build() {
+        edu.msu.cse.dkvf.metadata.Metadata.PutMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public PutMessage buildPartial() {
-        PutMessage result = new PutMessage(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.PutMessage buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.PutMessage result = new edu.msu.cse.dkvf.metadata.Metadata.PutMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.key_ = key_;
@@ -2868,7 +2984,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2881,25 +2997,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof PutMessage) {
-          return mergeFrom((PutMessage)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.PutMessage) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.PutMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(PutMessage other) {
-        if (other == PutMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.PutMessage other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance()) return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
@@ -2946,11 +3062,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        PutMessage parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.PutMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (PutMessage) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2961,20 +3077,20 @@ public final class Metadata {
       }
       private int bitField0_;
 
-      private Object key_ = "";
+      private java.lang.Object key_ = "";
       /**
        * <code>string key = 1;</code>
        */
-      public String getKey() {
-        Object ref = key_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2982,11 +3098,11 @@ public final class Metadata {
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
-        Object ref = key_;
+        java.lang.Object ref = key_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           key_ = b;
           return b;
         } else {
@@ -2997,7 +3113,7 @@ public final class Metadata {
        * <code>string key = 1;</code>
        */
       public Builder setKey(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3059,17 +3175,17 @@ public final class Metadata {
         return this;
       }
 
-      private java.util.List<DcTimeItem> dsItem_ =
+      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_ =
         java.util.Collections.emptyList();
       private void ensureDsItemIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          dsItem_ = new java.util.ArrayList<DcTimeItem>(dsItem_);
+          dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>(dsItem_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder> dsItemBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> dsItemBuilder_;
 
       /**
        * <pre>
@@ -3078,7 +3194,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<DcTimeItem> getDsItemList() {
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
         if (dsItemBuilder_ == null) {
           return java.util.Collections.unmodifiableList(dsItem_);
         } else {
@@ -3106,7 +3222,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItem getDsItem(int index) {
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
         if (dsItemBuilder_ == null) {
           return dsItem_.get(index);
         } else {
@@ -3121,7 +3237,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder setDsItem(
-          int index, DcTimeItem value) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3142,7 +3258,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder setDsItem(
-          int index, DcTimeItem.Builder builderForValue) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.set(index, builderForValue.build());
@@ -3159,7 +3275,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addDsItem(DcTimeItem value) {
+      public Builder addDsItem(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3180,7 +3296,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder addDsItem(
-          int index, DcTimeItem value) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3201,7 +3317,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder addDsItem(
-          DcTimeItem.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.add(builderForValue.build());
@@ -3219,7 +3335,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder addDsItem(
-          int index, DcTimeItem.Builder builderForValue) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.add(index, builderForValue.build());
@@ -3237,7 +3353,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder addAllDsItem(
-          Iterable<? extends DcTimeItem> values) {
+          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> values) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3289,7 +3405,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItem.Builder getDsItemBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder getDsItemBuilder(
           int index) {
         return getDsItemFieldBuilder().getBuilder(index);
       }
@@ -3300,7 +3416,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItemOrBuilder getDsItemOrBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
           int index) {
         if (dsItemBuilder_ == null) {
           return dsItem_.get(index);  } else {
@@ -3314,7 +3430,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<? extends DcTimeItemOrBuilder>
+      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
            getDsItemOrBuilderList() {
         if (dsItemBuilder_ != null) {
           return dsItemBuilder_.getMessageOrBuilderList();
@@ -3329,9 +3445,9 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItem.Builder addDsItemBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder() {
         return getDsItemFieldBuilder().addBuilder(
-            DcTimeItem.getDefaultInstance());
+            edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
        * <pre>
@@ -3340,10 +3456,10 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItem.Builder addDsItemBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder(
           int index) {
         return getDsItemFieldBuilder().addBuilder(
-            index, DcTimeItem.getDefaultInstance());
+            index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
        * <pre>
@@ -3352,16 +3468,16 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<DcTimeItem.Builder>
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder> 
            getDsItemBuilderList() {
         return getDsItemFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
           getDsItemFieldBuilder() {
         if (dsItemBuilder_ == null) {
           dsItemBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder>(
+              edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder>(
                   dsItem_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -3385,12 +3501,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.PutMessage)
-    private static final PutMessage DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.PutMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new PutMessage();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.PutMessage();
     }
 
-    public static PutMessage getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3408,12 +3524,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<PutMessage> getParserForType() {
       return PARSER;
     }
 
-    public PutMessage getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.PutMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3430,11 +3546,11 @@ public final class Metadata {
     /**
      * <code>.Metadata.GetMessage get_message = 1;</code>
      */
-    GetMessage getGetMessage();
+    edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMessage();
     /**
      * <code>.Metadata.GetMessage get_message = 1;</code>
      */
-    GetMessageOrBuilder getGetMessageOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMessageOrBuilder();
 
     /**
      * <code>.Metadata.PutMessage put_message = 2;</code>
@@ -3443,13 +3559,13 @@ public final class Metadata {
     /**
      * <code>.Metadata.PutMessage put_message = 2;</code>
      */
-    PutMessage getPutMessage();
+    edu.msu.cse.dkvf.metadata.Metadata.PutMessage getPutMessage();
     /**
      * <code>.Metadata.PutMessage put_message = 2;</code>
      */
-    PutMessageOrBuilder getPutMessageOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.PutMessageOrBuilder getPutMessageOrBuilder();
 
-    public ClientMessage.MessageTypeCase getMessageTypeCase();
+    public edu.msu.cse.dkvf.metadata.Metadata.ClientMessage.MessageTypeCase getMessageTypeCase();
   }
   /**
    * Protobuf type {@code Metadata.ClientMessage}
@@ -3466,7 +3582,7 @@ public final class Metadata {
     private ClientMessage() {
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3495,28 +3611,28 @@ public final class Metadata {
               break;
             }
             case 10: {
-              GetMessage.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder subBuilder = null;
               if (messageTypeCase_ == 1) {
-                subBuilder = ((GetMessage) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(GetMessage.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.GetMessage.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((GetMessage) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 1;
               break;
             }
             case 18: {
-              PutMessage.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.PutMessage.Builder subBuilder = null;
               if (messageTypeCase_ == 2) {
-                subBuilder = ((PutMessage) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(PutMessage.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.PutMessage.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((PutMessage) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 2;
@@ -3536,18 +3652,18 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_ClientMessage_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_ClientMessage_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ClientMessage.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.ClientMessage.class, edu.msu.cse.dkvf.metadata.Metadata.ClientMessage.Builder.class);
     }
 
     private int messageTypeCase_ = 0;
-    private Object messageType_;
+    private java.lang.Object messageType_;
     public enum MessageTypeCase
         implements com.google.protobuf.Internal.EnumLite {
       GET_MESSAGE(1),
@@ -3560,7 +3676,7 @@ public final class Metadata {
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @Deprecated
+      @java.lang.Deprecated
       public static MessageTypeCase valueOf(int value) {
         return forNumber(value);
       }
@@ -3594,20 +3710,20 @@ public final class Metadata {
     /**
      * <code>.Metadata.GetMessage get_message = 1;</code>
      */
-    public GetMessage getGetMessage() {
+    public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMessage() {
       if (messageTypeCase_ == 1) {
-         return (GetMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_;
       }
-      return GetMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance();
     }
     /**
      * <code>.Metadata.GetMessage get_message = 1;</code>
      */
-    public GetMessageOrBuilder getGetMessageOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMessageOrBuilder() {
       if (messageTypeCase_ == 1) {
-         return (GetMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_;
       }
-      return GetMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance();
     }
 
     public static final int PUT_MESSAGE_FIELD_NUMBER = 2;
@@ -3620,20 +3736,20 @@ public final class Metadata {
     /**
      * <code>.Metadata.PutMessage put_message = 2;</code>
      */
-    public PutMessage getPutMessage() {
+    public edu.msu.cse.dkvf.metadata.Metadata.PutMessage getPutMessage() {
       if (messageTypeCase_ == 2) {
-         return (PutMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_;
       }
-      return PutMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance();
     }
     /**
      * <code>.Metadata.PutMessage put_message = 2;</code>
      */
-    public PutMessageOrBuilder getPutMessageOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.PutMessageOrBuilder getPutMessageOrBuilder() {
       if (messageTypeCase_ == 2) {
-         return (PutMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_;
       }
-      return PutMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3649,10 +3765,10 @@ public final class Metadata {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (messageTypeCase_ == 1) {
-        output.writeMessage(1, (GetMessage) messageType_);
+        output.writeMessage(1, (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_);
       }
       if (messageTypeCase_ == 2) {
-        output.writeMessage(2, (PutMessage) messageType_);
+        output.writeMessage(2, (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_);
       }
       unknownFields.writeTo(output);
     }
@@ -3664,26 +3780,26 @@ public final class Metadata {
       size = 0;
       if (messageTypeCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (GetMessage) messageType_);
+          .computeMessageSize(1, (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_);
       }
       if (messageTypeCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (PutMessage) messageType_);
+          .computeMessageSize(2, (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ClientMessage)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.ClientMessage)) {
         return super.equals(obj);
       }
-      ClientMessage other = (ClientMessage) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.ClientMessage other = (edu.msu.cse.dkvf.metadata.Metadata.ClientMessage) obj;
 
       boolean result = true;
       result = result && getMessageTypeCase().equals(
@@ -3705,7 +3821,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -3729,69 +3845,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static ClientMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientMessage parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientMessage parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ClientMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ClientMessage parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ClientMessage parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ClientMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ClientMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3803,7 +3919,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ClientMessage prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.ClientMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3811,7 +3927,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -3823,17 +3939,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.ClientMessage)
-        ClientMessageOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.ClientMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_ClientMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_ClientMessage_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ClientMessage.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.ClientMessage.class, edu.msu.cse.dkvf.metadata.Metadata.ClientMessage.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.ClientMessage.newBuilder()
@@ -3860,23 +3976,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_ClientMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientMessage_descriptor;
       }
 
-      public ClientMessage getDefaultInstanceForType() {
-        return ClientMessage.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.ClientMessage getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.ClientMessage.getDefaultInstance();
       }
 
-      public ClientMessage build() {
-        ClientMessage result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.ClientMessage build() {
+        edu.msu.cse.dkvf.metadata.Metadata.ClientMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public ClientMessage buildPartial() {
-        ClientMessage result = new ClientMessage(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.ClientMessage buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.ClientMessage result = new edu.msu.cse.dkvf.metadata.Metadata.ClientMessage(this);
         if (messageTypeCase_ == 1) {
           if (getMessageBuilder_ == null) {
             result.messageType_ = messageType_;
@@ -3901,7 +4017,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -3914,25 +4030,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ClientMessage) {
-          return mergeFrom((ClientMessage)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.ClientMessage) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.ClientMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ClientMessage other) {
-        if (other == ClientMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.ClientMessage other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.ClientMessage.getDefaultInstance()) return this;
         switch (other.getMessageTypeCase()) {
           case GET_MESSAGE: {
             mergeGetMessage(other.getGetMessage());
@@ -3959,11 +4075,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ClientMessage parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.ClientMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ClientMessage) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.ClientMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3973,7 +4089,7 @@ public final class Metadata {
         return this;
       }
       private int messageTypeCase_ = 0;
-      private Object messageType_;
+      private java.lang.Object messageType_;
       public MessageTypeCase
           getMessageTypeCase() {
         return MessageTypeCase.forNumber(
@@ -3989,7 +4105,7 @@ public final class Metadata {
 
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          GetMessage, GetMessage.Builder, GetMessageOrBuilder> getMessageBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> getMessageBuilder_;
       /**
        * <code>.Metadata.GetMessage get_message = 1;</code>
        */
@@ -3999,23 +4115,23 @@ public final class Metadata {
       /**
        * <code>.Metadata.GetMessage get_message = 1;</code>
        */
-      public GetMessage getGetMessage() {
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMessage() {
         if (getMessageBuilder_ == null) {
           if (messageTypeCase_ == 1) {
-            return (GetMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_;
           }
-          return GetMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 1) {
             return getMessageBuilder_.getMessage();
           }
-          return GetMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.GetMessage get_message = 1;</code>
        */
-      public Builder setGetMessage(GetMessage value) {
+      public Builder setGetMessage(edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
         if (getMessageBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4032,7 +4148,7 @@ public final class Metadata {
        * <code>.Metadata.GetMessage get_message = 1;</code>
        */
       public Builder setGetMessage(
-          GetMessage.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder builderForValue) {
         if (getMessageBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
@@ -4045,11 +4161,11 @@ public final class Metadata {
       /**
        * <code>.Metadata.GetMessage get_message = 1;</code>
        */
-      public Builder mergeGetMessage(GetMessage value) {
+      public Builder mergeGetMessage(edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
         if (getMessageBuilder_ == null) {
           if (messageTypeCase_ == 1 &&
-              messageType_ != GetMessage.getDefaultInstance()) {
-            messageType_ = GetMessage.newBuilder((GetMessage) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.GetMessage.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -4086,35 +4202,35 @@ public final class Metadata {
       /**
        * <code>.Metadata.GetMessage get_message = 1;</code>
        */
-      public GetMessage.Builder getGetMessageBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder getGetMessageBuilder() {
         return getGetMessageFieldBuilder().getBuilder();
       }
       /**
        * <code>.Metadata.GetMessage get_message = 1;</code>
        */
-      public GetMessageOrBuilder getGetMessageOrBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMessageOrBuilder() {
         if ((messageTypeCase_ == 1) && (getMessageBuilder_ != null)) {
           return getMessageBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 1) {
-            return (GetMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_;
           }
-          return GetMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.GetMessage get_message = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          GetMessage, GetMessage.Builder, GetMessageOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
           getGetMessageFieldBuilder() {
         if (getMessageBuilder_ == null) {
           if (!(messageTypeCase_ == 1)) {
-            messageType_ = GetMessage.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance();
           }
           getMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              GetMessage, GetMessage.Builder, GetMessageOrBuilder>(
-                  (GetMessage) messageType_,
+              edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.GetMessage) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
@@ -4125,7 +4241,7 @@ public final class Metadata {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          PutMessage, PutMessage.Builder, PutMessageOrBuilder> putMessageBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.PutMessage, edu.msu.cse.dkvf.metadata.Metadata.PutMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.PutMessageOrBuilder> putMessageBuilder_;
       /**
        * <code>.Metadata.PutMessage put_message = 2;</code>
        */
@@ -4135,23 +4251,23 @@ public final class Metadata {
       /**
        * <code>.Metadata.PutMessage put_message = 2;</code>
        */
-      public PutMessage getPutMessage() {
+      public edu.msu.cse.dkvf.metadata.Metadata.PutMessage getPutMessage() {
         if (putMessageBuilder_ == null) {
           if (messageTypeCase_ == 2) {
-            return (PutMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_;
           }
-          return PutMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 2) {
             return putMessageBuilder_.getMessage();
           }
-          return PutMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.PutMessage put_message = 2;</code>
        */
-      public Builder setPutMessage(PutMessage value) {
+      public Builder setPutMessage(edu.msu.cse.dkvf.metadata.Metadata.PutMessage value) {
         if (putMessageBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4168,7 +4284,7 @@ public final class Metadata {
        * <code>.Metadata.PutMessage put_message = 2;</code>
        */
       public Builder setPutMessage(
-          PutMessage.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.PutMessage.Builder builderForValue) {
         if (putMessageBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
@@ -4181,11 +4297,11 @@ public final class Metadata {
       /**
        * <code>.Metadata.PutMessage put_message = 2;</code>
        */
-      public Builder mergePutMessage(PutMessage value) {
+      public Builder mergePutMessage(edu.msu.cse.dkvf.metadata.Metadata.PutMessage value) {
         if (putMessageBuilder_ == null) {
           if (messageTypeCase_ == 2 &&
-              messageType_ != PutMessage.getDefaultInstance()) {
-            messageType_ = PutMessage.newBuilder((PutMessage) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.PutMessage.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -4222,35 +4338,35 @@ public final class Metadata {
       /**
        * <code>.Metadata.PutMessage put_message = 2;</code>
        */
-      public PutMessage.Builder getPutMessageBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.PutMessage.Builder getPutMessageBuilder() {
         return getPutMessageFieldBuilder().getBuilder();
       }
       /**
        * <code>.Metadata.PutMessage put_message = 2;</code>
        */
-      public PutMessageOrBuilder getPutMessageOrBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.PutMessageOrBuilder getPutMessageOrBuilder() {
         if ((messageTypeCase_ == 2) && (putMessageBuilder_ != null)) {
           return putMessageBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 2) {
-            return (PutMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_;
           }
-          return PutMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.PutMessage put_message = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          PutMessage, PutMessage.Builder, PutMessageOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.PutMessage, edu.msu.cse.dkvf.metadata.Metadata.PutMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.PutMessageOrBuilder> 
           getPutMessageFieldBuilder() {
         if (putMessageBuilder_ == null) {
           if (!(messageTypeCase_ == 2)) {
-            messageType_ = PutMessage.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.PutMessage.getDefaultInstance();
           }
           putMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              PutMessage, PutMessage.Builder, PutMessageOrBuilder>(
-                  (PutMessage) messageType_,
+              edu.msu.cse.dkvf.metadata.Metadata.PutMessage, edu.msu.cse.dkvf.metadata.Metadata.PutMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.PutMessageOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.PutMessage) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
@@ -4274,12 +4390,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.ClientMessage)
-    private static final ClientMessage DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.ClientMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientMessage();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.ClientMessage();
     }
 
-    public static ClientMessage getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4297,12 +4413,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ClientMessage> getParserForType() {
       return PARSER;
     }
 
-    public ClientMessage getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.ClientMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4324,7 +4440,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    java.util.List<DcTimeItem>
+    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> 
         getDsItemList();
     /**
      * <pre>
@@ -4333,7 +4449,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    DcTimeItem getDsItem(int index);
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index);
     /**
      * <pre>
      *DS
@@ -4349,7 +4465,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    java.util.List<? extends DcTimeItemOrBuilder>
+    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
         getDsItemOrBuilderList();
     /**
      * <pre>
@@ -4358,8 +4474,8 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    DcTimeItemOrBuilder getDsItemOrBuilder(
-            int index);
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -4368,7 +4484,7 @@ public final class Metadata {
      *
      * <code>repeated int64 dsv_item = 2;</code>
      */
-    java.util.List<Long> getDsvItemList();
+    java.util.List<java.lang.Long> getDsvItemList();
     /**
      * <pre>
      *DSV
@@ -4408,7 +4524,7 @@ public final class Metadata {
       dsvItem_ = java.util.Collections.emptyList();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -4443,7 +4559,7 @@ public final class Metadata {
             }
             case 16: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                dsvItem_ = new java.util.ArrayList<Long>();
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000004;
               }
               dsvItem_.add(input.readInt64());
@@ -4453,7 +4569,7 @@ public final class Metadata {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
-                dsvItem_ = new java.util.ArrayList<Long>();
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -4464,11 +4580,11 @@ public final class Metadata {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                dsItem_ = new java.util.ArrayList<DcTimeItem>();
+                dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>();
                 mutable_bitField0_ |= 0x00000002;
               }
               dsItem_.add(
-                  input.readMessage(DcTimeItem.parser(), extensionRegistry));
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.parser(), extensionRegistry));
               break;
             }
           }
@@ -4491,14 +4607,14 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_GetReply_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetReply_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_GetReply_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              GetReply.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.GetReply.class, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder.class);
     }
 
     private int bitField0_;
@@ -4512,7 +4628,7 @@ public final class Metadata {
     }
 
     public static final int DS_ITEM_FIELD_NUMBER = 3;
-    private java.util.List<DcTimeItem> dsItem_;
+    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_;
     /**
      * <pre>
      *DS
@@ -4520,7 +4636,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    public java.util.List<DcTimeItem> getDsItemList() {
+    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
       return dsItem_;
     }
     /**
@@ -4530,7 +4646,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    public java.util.List<? extends DcTimeItemOrBuilder>
+    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
         getDsItemOrBuilderList() {
       return dsItem_;
     }
@@ -4551,7 +4667,7 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    public DcTimeItem getDsItem(int index) {
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
       return dsItem_.get(index);
     }
     /**
@@ -4561,13 +4677,13 @@ public final class Metadata {
      *
      * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
      */
-    public DcTimeItemOrBuilder getDsItemOrBuilder(
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
         int index) {
       return dsItem_.get(index);
     }
 
     public static final int DSV_ITEM_FIELD_NUMBER = 2;
-    private java.util.List<Long> dsvItem_;
+    private java.util.List<java.lang.Long> dsvItem_;
     /**
      * <pre>
      *DSV
@@ -4575,7 +4691,7 @@ public final class Metadata {
      *
      * <code>repeated int64 dsv_item = 2;</code>
      */
-    public java.util.List<Long>
+    public java.util.List<java.lang.Long>
         getDsvItemList() {
       return dsvItem_;
     }
@@ -4662,15 +4778,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof GetReply)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.GetReply)) {
         return super.equals(obj);
       }
-      GetReply other = (GetReply) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.GetReply other = (edu.msu.cse.dkvf.metadata.Metadata.GetReply) obj;
 
       boolean result = true;
       result = result && getValue()
@@ -4683,7 +4799,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -4705,69 +4821,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static GetReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetReply parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetReply parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GetReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GetReply parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static GetReply parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GetReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GetReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4779,7 +4895,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(GetReply prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.GetReply prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4787,7 +4903,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -4803,17 +4919,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.GetReply)
-        GetReplyOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_GetReply_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetReply_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_GetReply_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetReply_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                GetReply.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.GetReply.class, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.GetReply.newBuilder()
@@ -4849,23 +4965,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_GetReply_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_GetReply_descriptor;
       }
 
-      public GetReply getDefaultInstanceForType() {
-        return GetReply.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance();
       }
 
-      public GetReply build() {
-        GetReply result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply build() {
+        edu.msu.cse.dkvf.metadata.Metadata.GetReply result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public GetReply buildPartial() {
-        GetReply result = new GetReply(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.GetReply result = new edu.msu.cse.dkvf.metadata.Metadata.GetReply(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.value_ = value_;
@@ -4893,7 +5009,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -4906,25 +5022,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof GetReply) {
-          return mergeFrom((GetReply)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.GetReply) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.GetReply)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(GetReply other) {
-        if (other == GetReply.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.GetReply other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance()) return this;
         if (other.getValue() != com.google.protobuf.ByteString.EMPTY) {
           setValue(other.getValue());
         }
@@ -4977,11 +5093,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        GetReply parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.GetReply parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (GetReply) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.GetReply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5021,17 +5137,17 @@ public final class Metadata {
         return this;
       }
 
-      private java.util.List<DcTimeItem> dsItem_ =
+      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_ =
         java.util.Collections.emptyList();
       private void ensureDsItemIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          dsItem_ = new java.util.ArrayList<DcTimeItem>(dsItem_);
+          dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>(dsItem_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder> dsItemBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> dsItemBuilder_;
 
       /**
        * <pre>
@@ -5040,7 +5156,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<DcTimeItem> getDsItemList() {
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
         if (dsItemBuilder_ == null) {
           return java.util.Collections.unmodifiableList(dsItem_);
         } else {
@@ -5068,7 +5184,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItem getDsItem(int index) {
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
         if (dsItemBuilder_ == null) {
           return dsItem_.get(index);
         } else {
@@ -5083,7 +5199,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder setDsItem(
-          int index, DcTimeItem value) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5104,7 +5220,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder setDsItem(
-          int index, DcTimeItem.Builder builderForValue) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.set(index, builderForValue.build());
@@ -5121,7 +5237,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addDsItem(DcTimeItem value) {
+      public Builder addDsItem(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5142,7 +5258,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder addDsItem(
-          int index, DcTimeItem value) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
         if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5163,7 +5279,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder addDsItem(
-          DcTimeItem.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.add(builderForValue.build());
@@ -5181,7 +5297,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder addDsItem(
-          int index, DcTimeItem.Builder builderForValue) {
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           dsItem_.add(index, builderForValue.build());
@@ -5199,7 +5315,7 @@ public final class Metadata {
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
       public Builder addAllDsItem(
-          Iterable<? extends DcTimeItem> values) {
+          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> values) {
         if (dsItemBuilder_ == null) {
           ensureDsItemIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5251,7 +5367,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItem.Builder getDsItemBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder getDsItemBuilder(
           int index) {
         return getDsItemFieldBuilder().getBuilder(index);
       }
@@ -5262,7 +5378,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItemOrBuilder getDsItemOrBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
           int index) {
         if (dsItemBuilder_ == null) {
           return dsItem_.get(index);  } else {
@@ -5276,7 +5392,7 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<? extends DcTimeItemOrBuilder>
+      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
            getDsItemOrBuilderList() {
         if (dsItemBuilder_ != null) {
           return dsItemBuilder_.getMessageOrBuilderList();
@@ -5291,9 +5407,9 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItem.Builder addDsItemBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder() {
         return getDsItemFieldBuilder().addBuilder(
-            DcTimeItem.getDefaultInstance());
+            edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
        * <pre>
@@ -5302,10 +5418,10 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public DcTimeItem.Builder addDsItemBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder(
           int index) {
         return getDsItemFieldBuilder().addBuilder(
-            index, DcTimeItem.getDefaultInstance());
+            index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
        * <pre>
@@ -5314,16 +5430,16 @@ public final class Metadata {
        *
        * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<DcTimeItem.Builder>
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder> 
            getDsItemBuilderList() {
         return getDsItemFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
           getDsItemFieldBuilder() {
         if (dsItemBuilder_ == null) {
           dsItemBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              DcTimeItem, DcTimeItem.Builder, DcTimeItemOrBuilder>(
+              edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder>(
                   dsItem_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -5333,10 +5449,10 @@ public final class Metadata {
         return dsItemBuilder_;
       }
 
-      private java.util.List<Long> dsvItem_ = java.util.Collections.emptyList();
+      private java.util.List<java.lang.Long> dsvItem_ = java.util.Collections.emptyList();
       private void ensureDsvItemIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          dsvItem_ = new java.util.ArrayList<Long>(dsvItem_);
+          dsvItem_ = new java.util.ArrayList<java.lang.Long>(dsvItem_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -5347,7 +5463,7 @@ public final class Metadata {
        *
        * <code>repeated int64 dsv_item = 2;</code>
        */
-      public java.util.List<Long>
+      public java.util.List<java.lang.Long>
           getDsvItemList() {
         return java.util.Collections.unmodifiableList(dsvItem_);
       }
@@ -5406,7 +5522,7 @@ public final class Metadata {
        * <code>repeated int64 dsv_item = 2;</code>
        */
       public Builder addAllDsvItem(
-          Iterable<? extends Long> values) {
+          java.lang.Iterable<? extends java.lang.Long> values) {
         ensureDsvItemIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, dsvItem_);
@@ -5441,12 +5557,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.GetReply)
-    private static final GetReply DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.GetReply DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GetReply();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.GetReply();
     }
 
-    public static GetReply getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.GetReply getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5464,12 +5580,766 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<GetReply> getParserForType() {
       return PARSER;
     }
 
-    public GetReply getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.GetReply getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MultipleVersionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Metadata.MultipleVersions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> 
+        getGetReplyList();
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply(int index);
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    int getGetReplyCount();
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
+        getGetReplyOrBuilderList();
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code Metadata.MultipleVersions}
+   */
+  public  static final class MultipleVersions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Metadata.MultipleVersions)
+      MultipleVersionsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MultipleVersions.newBuilder() to construct.
+    private MultipleVersions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MultipleVersions() {
+      getReply_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MultipleVersions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                getReply_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetReply>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              getReply_.add(
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.GetReply.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          getReply_ = java.util.Collections.unmodifiableList(getReply_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.class, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder.class);
+    }
+
+    public static final int GET_REPLY_FIELD_NUMBER = 1;
+    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getReply_;
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getGetReplyList() {
+      return getReply_;
+    }
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
+        getGetReplyOrBuilderList() {
+      return getReply_;
+    }
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public int getGetReplyCount() {
+      return getReply_.size();
+    }
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply(int index) {
+      return getReply_.get(index);
+    }
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder(
+        int index) {
+      return getReply_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < getReply_.size(); i++) {
+        output.writeMessage(1, getReply_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < getReply_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getReply_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions)) {
+        return super.equals(obj);
+      }
+      edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions other = (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) obj;
+
+      boolean result = true;
+      result = result && getGetReplyList()
+          .equals(other.getGetReplyList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getGetReplyCount() > 0) {
+        hash = (37 * hash) + GET_REPLY_FIELD_NUMBER;
+        hash = (53 * hash) + getGetReplyList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Metadata.MultipleVersions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Metadata.MultipleVersions)
+        edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.class, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder.class);
+      }
+
+      // Construct using edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getGetReplyFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (getReplyBuilder_ == null) {
+          getReply_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          getReplyBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_descriptor;
+      }
+
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
+      }
+
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions build() {
+        edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions result = new edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions(this);
+        int from_bitField0_ = bitField0_;
+        if (getReplyBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            getReply_ = java.util.Collections.unmodifiableList(getReply_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.getReply_ = getReply_;
+        } else {
+          result.getReply_ = getReplyBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance()) return this;
+        if (getReplyBuilder_ == null) {
+          if (!other.getReply_.isEmpty()) {
+            if (getReply_.isEmpty()) {
+              getReply_ = other.getReply_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureGetReplyIsMutable();
+              getReply_.addAll(other.getReply_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.getReply_.isEmpty()) {
+            if (getReplyBuilder_.isEmpty()) {
+              getReplyBuilder_.dispose();
+              getReplyBuilder_ = null;
+              getReply_ = other.getReply_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              getReplyBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getGetReplyFieldBuilder() : null;
+            } else {
+              getReplyBuilder_.addAllMessages(other.getReply_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getReply_ =
+        java.util.Collections.emptyList();
+      private void ensureGetReplyIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          getReply_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetReply>(getReply_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> getReplyBuilder_;
+
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getGetReplyList() {
+        if (getReplyBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(getReply_);
+        } else {
+          return getReplyBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public int getGetReplyCount() {
+        if (getReplyBuilder_ == null) {
+          return getReply_.size();
+        } else {
+          return getReplyBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply(int index) {
+        if (getReplyBuilder_ == null) {
+          return getReply_.get(index);
+        } else {
+          return getReplyBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder setGetReply(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
+        if (getReplyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGetReplyIsMutable();
+          getReply_.set(index, value);
+          onChanged();
+        } else {
+          getReplyBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder setGetReply(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          getReply_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          getReplyBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addGetReply(edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
+        if (getReplyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGetReplyIsMutable();
+          getReply_.add(value);
+          onChanged();
+        } else {
+          getReplyBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addGetReply(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
+        if (getReplyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGetReplyIsMutable();
+          getReply_.add(index, value);
+          onChanged();
+        } else {
+          getReplyBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addGetReply(
+          edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          getReply_.add(builderForValue.build());
+          onChanged();
+        } else {
+          getReplyBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addGetReply(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          getReply_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          getReplyBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addAllGetReply(
+          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReply> values) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, getReply_);
+          onChanged();
+        } else {
+          getReplyBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder clearGetReply() {
+        if (getReplyBuilder_ == null) {
+          getReply_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          getReplyBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder removeGetReply(int index) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          getReply_.remove(index);
+          onChanged();
+        } else {
+          getReplyBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder getGetReplyBuilder(
+          int index) {
+        return getGetReplyFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder(
+          int index) {
+        if (getReplyBuilder_ == null) {
+          return getReply_.get(index);  } else {
+          return getReplyBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
+           getGetReplyOrBuilderList() {
+        if (getReplyBuilder_ != null) {
+          return getReplyBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(getReply_);
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder addGetReplyBuilder() {
+        return getGetReplyFieldBuilder().addBuilder(
+            edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder addGetReplyBuilder(
+          int index) {
+        return getGetReplyFieldBuilder().addBuilder(
+            index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder> 
+           getGetReplyBuilderList() {
+        return getGetReplyFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
+          getGetReplyFieldBuilder() {
+        if (getReplyBuilder_ == null) {
+          getReplyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder>(
+                  getReply_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          getReply_ = null;
+        }
+        return getReplyBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Metadata.MultipleVersions)
+    }
+
+    // @@protoc_insertion_point(class_scope:Metadata.MultipleVersions)
+    private static final edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions();
+    }
+
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MultipleVersions>
+        PARSER = new com.google.protobuf.AbstractParser<MultipleVersions>() {
+      public MultipleVersions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MultipleVersions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MultipleVersions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MultipleVersions> getParserForType() {
+      return PARSER;
+    }
+
+    public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5506,7 +6376,7 @@ public final class Metadata {
       sr_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -5558,14 +6428,14 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_PutReply_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutReply_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_PutReply_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              PutReply.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.PutReply.class, edu.msu.cse.dkvf.metadata.Metadata.PutReply.Builder.class);
     }
 
     public static final int UT_FIELD_NUMBER = 1;
@@ -5625,15 +6495,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof PutReply)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.PutReply)) {
         return super.equals(obj);
       }
-      PutReply other = (PutReply) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.PutReply other = (edu.msu.cse.dkvf.metadata.Metadata.PutReply) obj;
 
       boolean result = true;
       result = result && (getUt()
@@ -5644,7 +6514,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -5661,69 +6531,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static PutReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PutReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PutReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PutReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PutReply parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PutReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PutReply parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PutReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PutReply parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static PutReply parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PutReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PutReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5735,7 +6605,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(PutReply prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.PutReply prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -5743,7 +6613,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -5755,17 +6625,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.PutReply)
-        PutReplyOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.PutReplyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_PutReply_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutReply_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_PutReply_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutReply_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                PutReply.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.PutReply.class, edu.msu.cse.dkvf.metadata.Metadata.PutReply.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.PutReply.newBuilder()
@@ -5794,23 +6664,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_PutReply_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_PutReply_descriptor;
       }
 
-      public PutReply getDefaultInstanceForType() {
-        return PutReply.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.PutReply getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance();
       }
 
-      public PutReply build() {
-        PutReply result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.PutReply build() {
+        edu.msu.cse.dkvf.metadata.Metadata.PutReply result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public PutReply buildPartial() {
-        PutReply result = new PutReply(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.PutReply buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.PutReply result = new edu.msu.cse.dkvf.metadata.Metadata.PutReply(this);
         result.ut_ = ut_;
         result.sr_ = sr_;
         onBuilt();
@@ -5822,7 +6692,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -5835,25 +6705,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof PutReply) {
-          return mergeFrom((PutReply)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.PutReply) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.PutReply)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(PutReply other) {
-        if (other == PutReply.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.PutReply other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance()) return this;
         if (other.getUt() != 0L) {
           setUt(other.getUt());
         }
@@ -5873,11 +6743,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        PutReply parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.PutReply parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (PutReply) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.PutReply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5953,12 +6823,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.PutReply)
-    private static final PutReply DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.PutReply DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new PutReply();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.PutReply();
     }
 
-    public static PutReply getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.PutReply getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5976,12 +6846,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<PutReply> getParserForType() {
       return PARSER;
     }
 
-    public PutReply getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.PutReply getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5997,17 +6867,17 @@ public final class Metadata {
     boolean getStatus();
 
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    boolean hasGetReply();
+    boolean hasMultipleVersions();
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    GetReply getGetReply();
+    edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getMultipleVersions();
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    GetReplyOrBuilder getGetReplyOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder getMultipleVersionsOrBuilder();
 
     /**
      * <code>.Metadata.PutReply put_reply = 3;</code>
@@ -6016,13 +6886,13 @@ public final class Metadata {
     /**
      * <code>.Metadata.PutReply put_reply = 3;</code>
      */
-    PutReply getPutReply();
+    edu.msu.cse.dkvf.metadata.Metadata.PutReply getPutReply();
     /**
      * <code>.Metadata.PutReply put_reply = 3;</code>
      */
-    PutReplyOrBuilder getPutReplyOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.PutReplyOrBuilder getPutReplyOrBuilder();
 
-    public ClientReply.MessageTypeCase getMessageTypeCase();
+    public edu.msu.cse.dkvf.metadata.Metadata.ClientReply.MessageTypeCase getMessageTypeCase();
   }
   /**
    * Protobuf type {@code Metadata.ClientReply}
@@ -6040,7 +6910,7 @@ public final class Metadata {
       status_ = false;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -6074,28 +6944,28 @@ public final class Metadata {
               break;
             }
             case 18: {
-              GetReply.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder subBuilder = null;
               if (messageTypeCase_ == 2) {
-                subBuilder = ((GetReply) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(GetReply.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((GetReply) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 2;
               break;
             }
             case 26: {
-              PutReply.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.PutReply.Builder subBuilder = null;
               if (messageTypeCase_ == 3) {
-                subBuilder = ((PutReply) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(PutReply.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.PutReply.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((PutReply) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 3;
@@ -6115,21 +6985,21 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_ClientReply_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientReply_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_ClientReply_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ClientReply.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.ClientReply.class, edu.msu.cse.dkvf.metadata.Metadata.ClientReply.Builder.class);
     }
 
     private int messageTypeCase_ = 0;
-    private Object messageType_;
+    private java.lang.Object messageType_;
     public enum MessageTypeCase
         implements com.google.protobuf.Internal.EnumLite {
-      GET_REPLY(2),
+      MULTIPLE_VERSIONS(2),
       PUT_REPLY(3),
       MESSAGETYPE_NOT_SET(0);
       private final int value;
@@ -6139,14 +7009,14 @@ public final class Metadata {
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @Deprecated
+      @java.lang.Deprecated
       public static MessageTypeCase valueOf(int value) {
         return forNumber(value);
       }
 
       public static MessageTypeCase forNumber(int value) {
         switch (value) {
-          case 2: return GET_REPLY;
+          case 2: return MULTIPLE_VERSIONS;
           case 3: return PUT_REPLY;
           case 0: return MESSAGETYPE_NOT_SET;
           default: return null;
@@ -6172,30 +7042,30 @@ public final class Metadata {
       return status_;
     }
 
-    public static final int GET_REPLY_FIELD_NUMBER = 2;
+    public static final int MULTIPLE_VERSIONS_FIELD_NUMBER = 2;
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    public boolean hasGetReply() {
+    public boolean hasMultipleVersions() {
       return messageTypeCase_ == 2;
     }
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    public GetReply getGetReply() {
+    public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getMultipleVersions() {
       if (messageTypeCase_ == 2) {
-         return (GetReply) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_;
       }
-      return GetReply.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
     }
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    public GetReplyOrBuilder getGetReplyOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder getMultipleVersionsOrBuilder() {
       if (messageTypeCase_ == 2) {
-         return (GetReply) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_;
       }
-      return GetReply.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
     }
 
     public static final int PUT_REPLY_FIELD_NUMBER = 3;
@@ -6208,20 +7078,20 @@ public final class Metadata {
     /**
      * <code>.Metadata.PutReply put_reply = 3;</code>
      */
-    public PutReply getPutReply() {
+    public edu.msu.cse.dkvf.metadata.Metadata.PutReply getPutReply() {
       if (messageTypeCase_ == 3) {
-         return (PutReply) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_;
       }
-      return PutReply.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance();
     }
     /**
      * <code>.Metadata.PutReply put_reply = 3;</code>
      */
-    public PutReplyOrBuilder getPutReplyOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.PutReplyOrBuilder getPutReplyOrBuilder() {
       if (messageTypeCase_ == 3) {
-         return (PutReply) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_;
       }
-      return PutReply.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6240,10 +7110,10 @@ public final class Metadata {
         output.writeBool(1, status_);
       }
       if (messageTypeCase_ == 2) {
-        output.writeMessage(2, (GetReply) messageType_);
+        output.writeMessage(2, (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_);
       }
       if (messageTypeCase_ == 3) {
-        output.writeMessage(3, (PutReply) messageType_);
+        output.writeMessage(3, (edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_);
       }
       unknownFields.writeTo(output);
     }
@@ -6259,26 +7129,26 @@ public final class Metadata {
       }
       if (messageTypeCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (GetReply) messageType_);
+          .computeMessageSize(2, (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_);
       }
       if (messageTypeCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (PutReply) messageType_);
+          .computeMessageSize(3, (edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ClientReply)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.ClientReply)) {
         return super.equals(obj);
       }
-      ClientReply other = (ClientReply) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.ClientReply other = (edu.msu.cse.dkvf.metadata.Metadata.ClientReply) obj;
 
       boolean result = true;
       result = result && (getStatus()
@@ -6288,8 +7158,8 @@ public final class Metadata {
       if (!result) return false;
       switch (messageTypeCase_) {
         case 2:
-          result = result && getGetReply()
-              .equals(other.getGetReply());
+          result = result && getMultipleVersions()
+              .equals(other.getMultipleVersions());
           break;
         case 3:
           result = result && getPutReply()
@@ -6302,7 +7172,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -6314,8 +7184,8 @@ public final class Metadata {
           getStatus());
       switch (messageTypeCase_) {
         case 2:
-          hash = (37 * hash) + GET_REPLY_FIELD_NUMBER;
-          hash = (53 * hash) + getGetReply().hashCode();
+          hash = (37 * hash) + MULTIPLE_VERSIONS_FIELD_NUMBER;
+          hash = (53 * hash) + getMultipleVersions().hashCode();
           break;
         case 3:
           hash = (37 * hash) + PUT_REPLY_FIELD_NUMBER;
@@ -6329,69 +7199,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static ClientReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientReply parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientReply parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ClientReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ClientReply parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ClientReply parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ClientReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ClientReply parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6403,7 +7273,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ClientReply prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.ClientReply prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -6411,7 +7281,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -6423,17 +7293,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.ClientReply)
-        ClientReplyOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.ClientReplyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_ClientReply_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientReply_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_ClientReply_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientReply_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ClientReply.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.ClientReply.class, edu.msu.cse.dkvf.metadata.Metadata.ClientReply.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.ClientReply.newBuilder()
@@ -6462,29 +7332,29 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_ClientReply_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ClientReply_descriptor;
       }
 
-      public ClientReply getDefaultInstanceForType() {
-        return ClientReply.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.ClientReply getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.ClientReply.getDefaultInstance();
       }
 
-      public ClientReply build() {
-        ClientReply result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.ClientReply build() {
+        edu.msu.cse.dkvf.metadata.Metadata.ClientReply result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public ClientReply buildPartial() {
-        ClientReply result = new ClientReply(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.ClientReply buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.ClientReply result = new edu.msu.cse.dkvf.metadata.Metadata.ClientReply(this);
         result.status_ = status_;
         if (messageTypeCase_ == 2) {
-          if (getReplyBuilder_ == null) {
+          if (multipleVersionsBuilder_ == null) {
             result.messageType_ = messageType_;
           } else {
-            result.messageType_ = getReplyBuilder_.build();
+            result.messageType_ = multipleVersionsBuilder_.build();
           }
         }
         if (messageTypeCase_ == 3) {
@@ -6504,7 +7374,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -6517,31 +7387,31 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ClientReply) {
-          return mergeFrom((ClientReply)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.ClientReply) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.ClientReply)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ClientReply other) {
-        if (other == ClientReply.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.ClientReply other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.ClientReply.getDefaultInstance()) return this;
         if (other.getStatus() != false) {
           setStatus(other.getStatus());
         }
         switch (other.getMessageTypeCase()) {
-          case GET_REPLY: {
-            mergeGetReply(other.getGetReply());
+          case MULTIPLE_VERSIONS: {
+            mergeMultipleVersions(other.getMultipleVersions());
             break;
           }
           case PUT_REPLY: {
@@ -6565,11 +7435,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ClientReply parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.ClientReply parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ClientReply) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.ClientReply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6579,7 +7449,7 @@ public final class Metadata {
         return this;
       }
       private int messageTypeCase_ = 0;
-      private Object messageType_;
+      private java.lang.Object messageType_;
       public MessageTypeCase
           getMessageTypeCase() {
         return MessageTypeCase.forNumber(
@@ -6621,67 +7491,67 @@ public final class Metadata {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          GetReply, GetReply.Builder, GetReplyOrBuilder> getReplyBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder> multipleVersionsBuilder_;
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public boolean hasGetReply() {
+      public boolean hasMultipleVersions() {
         return messageTypeCase_ == 2;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public GetReply getGetReply() {
-        if (getReplyBuilder_ == null) {
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getMultipleVersions() {
+        if (multipleVersionsBuilder_ == null) {
           if (messageTypeCase_ == 2) {
-            return (GetReply) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_;
           }
-          return GetReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 2) {
-            return getReplyBuilder_.getMessage();
+            return multipleVersionsBuilder_.getMessage();
           }
-          return GetReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
         }
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public Builder setGetReply(GetReply value) {
-        if (getReplyBuilder_ == null) {
+      public Builder setMultipleVersions(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions value) {
+        if (multipleVersionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           messageType_ = value;
           onChanged();
         } else {
-          getReplyBuilder_.setMessage(value);
+          multipleVersionsBuilder_.setMessage(value);
         }
         messageTypeCase_ = 2;
         return this;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public Builder setGetReply(
-          GetReply.Builder builderForValue) {
-        if (getReplyBuilder_ == null) {
+      public Builder setMultipleVersions(
+          edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder builderForValue) {
+        if (multipleVersionsBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
         } else {
-          getReplyBuilder_.setMessage(builderForValue.build());
+          multipleVersionsBuilder_.setMessage(builderForValue.build());
         }
         messageTypeCase_ = 2;
         return this;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public Builder mergeGetReply(GetReply value) {
-        if (getReplyBuilder_ == null) {
+      public Builder mergeMultipleVersions(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions value) {
+        if (multipleVersionsBuilder_ == null) {
           if (messageTypeCase_ == 2 &&
-              messageType_ != GetReply.getDefaultInstance()) {
-            messageType_ = GetReply.newBuilder((GetReply) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -6689,18 +7559,18 @@ public final class Metadata {
           onChanged();
         } else {
           if (messageTypeCase_ == 2) {
-            getReplyBuilder_.mergeFrom(value);
+            multipleVersionsBuilder_.mergeFrom(value);
           }
-          getReplyBuilder_.setMessage(value);
+          multipleVersionsBuilder_.setMessage(value);
         }
         messageTypeCase_ = 2;
         return this;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public Builder clearGetReply() {
-        if (getReplyBuilder_ == null) {
+      public Builder clearMultipleVersions() {
+        if (multipleVersionsBuilder_ == null) {
           if (messageTypeCase_ == 2) {
             messageTypeCase_ = 0;
             messageType_ = null;
@@ -6711,53 +7581,53 @@ public final class Metadata {
             messageTypeCase_ = 0;
             messageType_ = null;
           }
-          getReplyBuilder_.clear();
+          multipleVersionsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public GetReply.Builder getGetReplyBuilder() {
-        return getGetReplyFieldBuilder().getBuilder();
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder getMultipleVersionsBuilder() {
+        return getMultipleVersionsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public GetReplyOrBuilder getGetReplyOrBuilder() {
-        if ((messageTypeCase_ == 2) && (getReplyBuilder_ != null)) {
-          return getReplyBuilder_.getMessageOrBuilder();
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder getMultipleVersionsOrBuilder() {
+        if ((messageTypeCase_ == 2) && (multipleVersionsBuilder_ != null)) {
+          return multipleVersionsBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 2) {
-            return (GetReply) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_;
           }
-          return GetReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
         }
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          GetReply, GetReply.Builder, GetReplyOrBuilder>
-          getGetReplyFieldBuilder() {
-        if (getReplyBuilder_ == null) {
+          edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder> 
+          getMultipleVersionsFieldBuilder() {
+        if (multipleVersionsBuilder_ == null) {
           if (!(messageTypeCase_ == 2)) {
-            messageType_ = GetReply.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
           }
-          getReplyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              GetReply, GetReply.Builder, GetReplyOrBuilder>(
-                  (GetReply) messageType_,
+          multipleVersionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
         }
         messageTypeCase_ = 2;
         onChanged();;
-        return getReplyBuilder_;
+        return multipleVersionsBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          PutReply, PutReply.Builder, PutReplyOrBuilder> putReplyBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.PutReply, edu.msu.cse.dkvf.metadata.Metadata.PutReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.PutReplyOrBuilder> putReplyBuilder_;
       /**
        * <code>.Metadata.PutReply put_reply = 3;</code>
        */
@@ -6767,23 +7637,23 @@ public final class Metadata {
       /**
        * <code>.Metadata.PutReply put_reply = 3;</code>
        */
-      public PutReply getPutReply() {
+      public edu.msu.cse.dkvf.metadata.Metadata.PutReply getPutReply() {
         if (putReplyBuilder_ == null) {
           if (messageTypeCase_ == 3) {
-            return (PutReply) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_;
           }
-          return PutReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 3) {
             return putReplyBuilder_.getMessage();
           }
-          return PutReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.PutReply put_reply = 3;</code>
        */
-      public Builder setPutReply(PutReply value) {
+      public Builder setPutReply(edu.msu.cse.dkvf.metadata.Metadata.PutReply value) {
         if (putReplyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6800,7 +7670,7 @@ public final class Metadata {
        * <code>.Metadata.PutReply put_reply = 3;</code>
        */
       public Builder setPutReply(
-          PutReply.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.PutReply.Builder builderForValue) {
         if (putReplyBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
@@ -6813,11 +7683,11 @@ public final class Metadata {
       /**
        * <code>.Metadata.PutReply put_reply = 3;</code>
        */
-      public Builder mergePutReply(PutReply value) {
+      public Builder mergePutReply(edu.msu.cse.dkvf.metadata.Metadata.PutReply value) {
         if (putReplyBuilder_ == null) {
           if (messageTypeCase_ == 3 &&
-              messageType_ != PutReply.getDefaultInstance()) {
-            messageType_ = PutReply.newBuilder((PutReply) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.PutReply.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -6854,35 +7724,35 @@ public final class Metadata {
       /**
        * <code>.Metadata.PutReply put_reply = 3;</code>
        */
-      public PutReply.Builder getPutReplyBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.PutReply.Builder getPutReplyBuilder() {
         return getPutReplyFieldBuilder().getBuilder();
       }
       /**
        * <code>.Metadata.PutReply put_reply = 3;</code>
        */
-      public PutReplyOrBuilder getPutReplyOrBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.PutReplyOrBuilder getPutReplyOrBuilder() {
         if ((messageTypeCase_ == 3) && (putReplyBuilder_ != null)) {
           return putReplyBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 3) {
-            return (PutReply) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_;
           }
-          return PutReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.PutReply put_reply = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          PutReply, PutReply.Builder, PutReplyOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.PutReply, edu.msu.cse.dkvf.metadata.Metadata.PutReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.PutReplyOrBuilder> 
           getPutReplyFieldBuilder() {
         if (putReplyBuilder_ == null) {
           if (!(messageTypeCase_ == 3)) {
-            messageType_ = PutReply.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.PutReply.getDefaultInstance();
           }
           putReplyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              PutReply, PutReply.Builder, PutReplyOrBuilder>(
-                  (PutReply) messageType_,
+              edu.msu.cse.dkvf.metadata.Metadata.PutReply, edu.msu.cse.dkvf.metadata.Metadata.PutReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.PutReplyOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
@@ -6906,12 +7776,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.ClientReply)
-    private static final ClientReply DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.ClientReply DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientReply();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.ClientReply();
     }
 
-    public static ClientReply getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.ClientReply getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6929,12 +7799,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ClientReply> getParserForType() {
       return PARSER;
     }
 
-    public ClientReply getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.ClientReply getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6947,7 +7817,7 @@ public final class Metadata {
     /**
      * <code>string key = 1;</code>
      */
-    String getKey();
+    java.lang.String getKey();
     /**
      * <code>string key = 1;</code>
      */
@@ -6961,11 +7831,11 @@ public final class Metadata {
     /**
      * <code>.Metadata.Record rec = 2;</code>
      */
-    Record getRec();
+    edu.msu.cse.dkvf.metadata.Metadata.Record getRec();
     /**
      * <code>.Metadata.Record rec = 2;</code>
      */
-    RecordOrBuilder getRecOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.RecordOrBuilder getRecOrBuilder();
 
     /**
      * <code>int32 dc_id = 3;</code>
@@ -6994,7 +7864,7 @@ public final class Metadata {
       dcId_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -7023,17 +7893,17 @@ public final class Metadata {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               key_ = s;
               break;
             }
             case 18: {
-              Record.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.Record.Builder subBuilder = null;
               if (rec_ != null) {
                 subBuilder = rec_.toBuilder();
               }
-              rec_ = input.readMessage(Record.parser(), extensionRegistry);
+              rec_ = input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.Record.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(rec_);
                 rec_ = subBuilder.buildPartial();
@@ -7060,29 +7930,29 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_ReplicateMessage_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ReplicateMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_ReplicateMessage_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ReplicateMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ReplicateMessage.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.class, edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.Builder.class);
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile Object key_;
+    private volatile java.lang.Object key_;
     /**
      * <code>string key = 1;</code>
      */
-    public String getKey() {
-      Object ref = key_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
@@ -7092,11 +7962,11 @@ public final class Metadata {
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
-      Object ref = key_;
-      if (ref instanceof String) {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         key_ = b;
         return b;
       } else {
@@ -7105,7 +7975,7 @@ public final class Metadata {
     }
 
     public static final int REC_FIELD_NUMBER = 2;
-    private Record rec_;
+    private edu.msu.cse.dkvf.metadata.Metadata.Record rec_;
     /**
      * <code>.Metadata.Record rec = 2;</code>
      */
@@ -7115,13 +7985,13 @@ public final class Metadata {
     /**
      * <code>.Metadata.Record rec = 2;</code>
      */
-    public Record getRec() {
-      return rec_ == null ? Record.getDefaultInstance() : rec_;
+    public edu.msu.cse.dkvf.metadata.Metadata.Record getRec() {
+      return rec_ == null ? edu.msu.cse.dkvf.metadata.Metadata.Record.getDefaultInstance() : rec_;
     }
     /**
      * <code>.Metadata.Record rec = 2;</code>
      */
-    public RecordOrBuilder getRecOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.RecordOrBuilder getRecOrBuilder() {
       return getRec();
     }
 
@@ -7179,15 +8049,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ReplicateMessage)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage)) {
         return super.equals(obj);
       }
-      ReplicateMessage other = (ReplicateMessage) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage other = (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) obj;
 
       boolean result = true;
       result = result && getKey()
@@ -7203,7 +8073,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -7223,69 +8093,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static ReplicateMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReplicateMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReplicateMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReplicateMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReplicateMessage parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReplicateMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReplicateMessage parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ReplicateMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ReplicateMessage parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ReplicateMessage parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ReplicateMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ReplicateMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7297,7 +8167,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ReplicateMessage prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -7305,7 +8175,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -7322,17 +8192,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.ReplicateMessage)
-        ReplicateMessageOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_ReplicateMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ReplicateMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_ReplicateMessage_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ReplicateMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ReplicateMessage.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.class, edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.newBuilder()
@@ -7367,23 +8237,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_ReplicateMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ReplicateMessage_descriptor;
       }
 
-      public ReplicateMessage getDefaultInstanceForType() {
-        return ReplicateMessage.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance();
       }
 
-      public ReplicateMessage build() {
-        ReplicateMessage result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage build() {
+        edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public ReplicateMessage buildPartial() {
-        ReplicateMessage result = new ReplicateMessage(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage result = new edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage(this);
         result.key_ = key_;
         if (recBuilder_ == null) {
           result.rec_ = rec_;
@@ -7400,7 +8270,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -7413,25 +8283,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ReplicateMessage) {
-          return mergeFrom((ReplicateMessage)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ReplicateMessage other) {
-        if (other == ReplicateMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance()) return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
@@ -7455,11 +8325,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ReplicateMessage parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ReplicateMessage) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7469,20 +8339,20 @@ public final class Metadata {
         return this;
       }
 
-      private Object key_ = "";
+      private java.lang.Object key_ = "";
       /**
        * <code>string key = 1;</code>
        */
-      public String getKey() {
-        Object ref = key_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -7490,11 +8360,11 @@ public final class Metadata {
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
-        Object ref = key_;
+        java.lang.Object ref = key_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           key_ = b;
           return b;
         } else {
@@ -7505,7 +8375,7 @@ public final class Metadata {
        * <code>string key = 1;</code>
        */
       public Builder setKey(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7538,9 +8408,9 @@ public final class Metadata {
         return this;
       }
 
-      private Record rec_ = null;
+      private edu.msu.cse.dkvf.metadata.Metadata.Record rec_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          Record, Record.Builder, RecordOrBuilder> recBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.Record, edu.msu.cse.dkvf.metadata.Metadata.Record.Builder, edu.msu.cse.dkvf.metadata.Metadata.RecordOrBuilder> recBuilder_;
       /**
        * <code>.Metadata.Record rec = 2;</code>
        */
@@ -7550,9 +8420,9 @@ public final class Metadata {
       /**
        * <code>.Metadata.Record rec = 2;</code>
        */
-      public Record getRec() {
+      public edu.msu.cse.dkvf.metadata.Metadata.Record getRec() {
         if (recBuilder_ == null) {
-          return rec_ == null ? Record.getDefaultInstance() : rec_;
+          return rec_ == null ? edu.msu.cse.dkvf.metadata.Metadata.Record.getDefaultInstance() : rec_;
         } else {
           return recBuilder_.getMessage();
         }
@@ -7560,7 +8430,7 @@ public final class Metadata {
       /**
        * <code>.Metadata.Record rec = 2;</code>
        */
-      public Builder setRec(Record value) {
+      public Builder setRec(edu.msu.cse.dkvf.metadata.Metadata.Record value) {
         if (recBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7577,7 +8447,7 @@ public final class Metadata {
        * <code>.Metadata.Record rec = 2;</code>
        */
       public Builder setRec(
-          Record.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.Record.Builder builderForValue) {
         if (recBuilder_ == null) {
           rec_ = builderForValue.build();
           onChanged();
@@ -7590,11 +8460,11 @@ public final class Metadata {
       /**
        * <code>.Metadata.Record rec = 2;</code>
        */
-      public Builder mergeRec(Record value) {
+      public Builder mergeRec(edu.msu.cse.dkvf.metadata.Metadata.Record value) {
         if (recBuilder_ == null) {
           if (rec_ != null) {
             rec_ =
-              Record.newBuilder(rec_).mergeFrom(value).buildPartial();
+              edu.msu.cse.dkvf.metadata.Metadata.Record.newBuilder(rec_).mergeFrom(value).buildPartial();
           } else {
             rec_ = value;
           }
@@ -7622,7 +8492,7 @@ public final class Metadata {
       /**
        * <code>.Metadata.Record rec = 2;</code>
        */
-      public Record.Builder getRecBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.Record.Builder getRecBuilder() {
         
         onChanged();
         return getRecFieldBuilder().getBuilder();
@@ -7630,23 +8500,23 @@ public final class Metadata {
       /**
        * <code>.Metadata.Record rec = 2;</code>
        */
-      public RecordOrBuilder getRecOrBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.RecordOrBuilder getRecOrBuilder() {
         if (recBuilder_ != null) {
           return recBuilder_.getMessageOrBuilder();
         } else {
           return rec_ == null ?
-              Record.getDefaultInstance() : rec_;
+              edu.msu.cse.dkvf.metadata.Metadata.Record.getDefaultInstance() : rec_;
         }
       }
       /**
        * <code>.Metadata.Record rec = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          Record, Record.Builder, RecordOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.Record, edu.msu.cse.dkvf.metadata.Metadata.Record.Builder, edu.msu.cse.dkvf.metadata.Metadata.RecordOrBuilder> 
           getRecFieldBuilder() {
         if (recBuilder_ == null) {
           recBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              Record, Record.Builder, RecordOrBuilder>(
+              edu.msu.cse.dkvf.metadata.Metadata.Record, edu.msu.cse.dkvf.metadata.Metadata.Record.Builder, edu.msu.cse.dkvf.metadata.Metadata.RecordOrBuilder>(
                   getRec(),
                   getParentForChildren(),
                   isClean());
@@ -7695,12 +8565,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.ReplicateMessage)
-    private static final ReplicateMessage DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ReplicateMessage();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage();
     }
 
-    public static ReplicateMessage getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7718,12 +8588,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ReplicateMessage> getParserForType() {
       return PARSER;
     }
 
-    public ReplicateMessage getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7760,7 +8630,7 @@ public final class Metadata {
       dcId_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -7812,14 +8682,14 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_HeartbeatMessage_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_HeartbeatMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_HeartbeatMessage_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_HeartbeatMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              HeartbeatMessage.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.class, edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.Builder.class);
     }
 
     public static final int TIME_FIELD_NUMBER = 1;
@@ -7879,15 +8749,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof HeartbeatMessage)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage)) {
         return super.equals(obj);
       }
-      HeartbeatMessage other = (HeartbeatMessage) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage other = (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) obj;
 
       boolean result = true;
       result = result && (getTime()
@@ -7898,7 +8768,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -7915,69 +8785,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static HeartbeatMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static HeartbeatMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static HeartbeatMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static HeartbeatMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static HeartbeatMessage parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static HeartbeatMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static HeartbeatMessage parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static HeartbeatMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static HeartbeatMessage parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static HeartbeatMessage parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static HeartbeatMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static HeartbeatMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7989,7 +8859,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(HeartbeatMessage prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -7997,7 +8867,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -8009,17 +8879,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.HeartbeatMessage)
-        HeartbeatMessageOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_HeartbeatMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_HeartbeatMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_HeartbeatMessage_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_HeartbeatMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                HeartbeatMessage.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.class, edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.newBuilder()
@@ -8048,23 +8918,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_HeartbeatMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_HeartbeatMessage_descriptor;
       }
 
-      public HeartbeatMessage getDefaultInstanceForType() {
-        return HeartbeatMessage.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance();
       }
 
-      public HeartbeatMessage build() {
-        HeartbeatMessage result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage build() {
+        edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public HeartbeatMessage buildPartial() {
-        HeartbeatMessage result = new HeartbeatMessage(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage result = new edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage(this);
         result.time_ = time_;
         result.dcId_ = dcId_;
         onBuilt();
@@ -8076,7 +8946,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -8089,25 +8959,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof HeartbeatMessage) {
-          return mergeFrom((HeartbeatMessage)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(HeartbeatMessage other) {
-        if (other == HeartbeatMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance()) return this;
         if (other.getTime() != 0L) {
           setTime(other.getTime());
         }
@@ -8127,11 +8997,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        HeartbeatMessage parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (HeartbeatMessage) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8207,12 +9077,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.HeartbeatMessage)
-    private static final HeartbeatMessage DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new HeartbeatMessage();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage();
     }
 
-    public static HeartbeatMessage getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8230,12 +9100,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<HeartbeatMessage> getParserForType() {
       return PARSER;
     }
 
-    public HeartbeatMessage getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8248,7 +9118,7 @@ public final class Metadata {
     /**
      * <code>repeated int64 vvItem = 1;</code>
      */
-    java.util.List<Long> getVvItemList();
+    java.util.List<java.lang.Long> getVvItemList();
     /**
      * <code>repeated int64 vvItem = 1;</code>
      */
@@ -8280,7 +9150,7 @@ public final class Metadata {
       pId_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -8310,7 +9180,7 @@ public final class Metadata {
             }
             case 8: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                vvItem_ = new java.util.ArrayList<Long>();
+                vvItem_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000001;
               }
               vvItem_.add(input.readInt64());
@@ -8320,7 +9190,7 @@ public final class Metadata {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                vvItem_ = new java.util.ArrayList<Long>();
+                vvItem_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -8351,23 +9221,23 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_VVMessage_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_VVMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_VVMessage_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_VVMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              VVMessage.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.VVMessage.class, edu.msu.cse.dkvf.metadata.Metadata.VVMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int VVITEM_FIELD_NUMBER = 1;
-    private java.util.List<Long> vvItem_;
+    private java.util.List<java.lang.Long> vvItem_;
     /**
      * <code>repeated int64 vvItem = 1;</code>
      */
-    public java.util.List<Long>
+    public java.util.List<java.lang.Long>
         getVvItemList() {
       return vvItem_;
     }
@@ -8448,15 +9318,15 @@ public final class Metadata {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof VVMessage)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.VVMessage)) {
         return super.equals(obj);
       }
-      VVMessage other = (VVMessage) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.VVMessage other = (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) obj;
 
       boolean result = true;
       result = result && getVvItemList()
@@ -8467,7 +9337,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -8485,69 +9355,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static VVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static VVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static VVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static VVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static VVMessage parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static VVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static VVMessage parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static VVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static VVMessage parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static VVMessage parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static VVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static VVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8559,7 +9429,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(VVMessage prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.VVMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -8567,7 +9437,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -8579,17 +9449,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.VVMessage)
-        VVMessageOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.VVMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_VVMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_VVMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_VVMessage_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_VVMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                VVMessage.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.VVMessage.class, edu.msu.cse.dkvf.metadata.Metadata.VVMessage.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.VVMessage.newBuilder()
@@ -8618,23 +9488,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_VVMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_VVMessage_descriptor;
       }
 
-      public VVMessage getDefaultInstanceForType() {
-        return VVMessage.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.VVMessage getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance();
       }
 
-      public VVMessage build() {
-        VVMessage result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.VVMessage build() {
+        edu.msu.cse.dkvf.metadata.Metadata.VVMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public VVMessage buildPartial() {
-        VVMessage result = new VVMessage(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.VVMessage buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.VVMessage result = new edu.msu.cse.dkvf.metadata.Metadata.VVMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8653,7 +9523,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -8666,25 +9536,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof VVMessage) {
-          return mergeFrom((VVMessage)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.VVMessage) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.VVMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(VVMessage other) {
-        if (other == VVMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.VVMessage other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance()) return this;
         if (!other.vvItem_.isEmpty()) {
           if (vvItem_.isEmpty()) {
             vvItem_ = other.vvItem_;
@@ -8711,11 +9581,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        VVMessage parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.VVMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (VVMessage) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8726,17 +9596,17 @@ public final class Metadata {
       }
       private int bitField0_;
 
-      private java.util.List<Long> vvItem_ = java.util.Collections.emptyList();
+      private java.util.List<java.lang.Long> vvItem_ = java.util.Collections.emptyList();
       private void ensureVvItemIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          vvItem_ = new java.util.ArrayList<Long>(vvItem_);
+          vvItem_ = new java.util.ArrayList<java.lang.Long>(vvItem_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated int64 vvItem = 1;</code>
        */
-      public java.util.List<Long>
+      public java.util.List<java.lang.Long>
           getVvItemList() {
         return java.util.Collections.unmodifiableList(vvItem_);
       }
@@ -8775,7 +9645,7 @@ public final class Metadata {
        * <code>repeated int64 vvItem = 1;</code>
        */
       public Builder addAllVvItem(
-          Iterable<? extends Long> values) {
+          java.lang.Iterable<? extends java.lang.Long> values) {
         ensureVvItemIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, vvItem_);
@@ -8832,12 +9702,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.VVMessage)
-    private static final VVMessage DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.VVMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new VVMessage();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.VVMessage();
     }
 
-    public static VVMessage getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.VVMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8855,12 +9725,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<VVMessage> getParserForType() {
       return PARSER;
     }
 
-    public VVMessage getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.VVMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8873,7 +9743,7 @@ public final class Metadata {
     /**
      * <code>repeated int64 dsvItem = 1;</code>
      */
-    java.util.List<Long> getDsvItemList();
+    java.util.List<java.lang.Long> getDsvItemList();
     /**
      * <code>repeated int64 dsvItem = 1;</code>
      */
@@ -8882,11 +9752,6 @@ public final class Metadata {
      * <code>repeated int64 dsvItem = 1;</code>
      */
     long getDsvItem(int index);
-
-    /**
-     * <code>int32 p_id = 2;</code>
-     */
-    int getPId();
   }
   /**
    * Protobuf type {@code Metadata.DSVMessage}
@@ -8902,10 +9767,9 @@ public final class Metadata {
     }
     private DSVMessage() {
       dsvItem_ = java.util.Collections.emptyList();
-      pId_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -8935,7 +9799,7 @@ public final class Metadata {
             }
             case 8: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                dsvItem_ = new java.util.ArrayList<Long>();
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000001;
               }
               dsvItem_.add(input.readInt64());
@@ -8945,18 +9809,13 @@ public final class Metadata {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                dsvItem_ = new java.util.ArrayList<Long>();
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 dsvItem_.add(input.readInt64());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 16: {
-
-              pId_ = input.readInt32();
               break;
             }
           }
@@ -8976,23 +9835,22 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_DSVMessage_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DSVMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_DSVMessage_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DSVMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              DSVMessage.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.class, edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DSVITEM_FIELD_NUMBER = 1;
-    private java.util.List<Long> dsvItem_;
+    private java.util.List<java.lang.Long> dsvItem_;
     /**
      * <code>repeated int64 dsvItem = 1;</code>
      */
-    public java.util.List<Long>
+    public java.util.List<java.lang.Long>
         getDsvItemList() {
       return dsvItem_;
     }
@@ -9009,15 +9867,6 @@ public final class Metadata {
       return dsvItem_.get(index);
     }
     private int dsvItemMemoizedSerializedSize = -1;
-
-    public static final int P_ID_FIELD_NUMBER = 2;
-    private int pId_;
-    /**
-     * <code>int32 p_id = 2;</code>
-     */
-    public int getPId() {
-      return pId_;
-    }
 
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9038,9 +9887,6 @@ public final class Metadata {
       }
       for (int i = 0; i < dsvItem_.size(); i++) {
         output.writeInt64NoTag(dsvItem_.get(i));
-      }
-      if (pId_ != 0) {
-        output.writeInt32(2, pId_);
       }
       unknownFields.writeTo(output);
     }
@@ -9064,35 +9910,29 @@ public final class Metadata {
         }
         dsvItemMemoizedSerializedSize = dataSize;
       }
-      if (pId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, pId_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof DSVMessage)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.DSVMessage)) {
         return super.equals(obj);
       }
-      DSVMessage other = (DSVMessage) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.DSVMessage other = (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) obj;
 
       boolean result = true;
       result = result && getDsvItemList()
           .equals(other.getDsvItemList());
-      result = result && (getPId()
-          == other.getPId());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -9103,76 +9943,74 @@ public final class Metadata {
         hash = (37 * hash) + DSVITEM_FIELD_NUMBER;
         hash = (53 * hash) + getDsvItemList().hashCode();
       }
-      hash = (37 * hash) + P_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static DSVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static DSVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static DSVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static DSVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static DSVMessage parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static DSVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static DSVMessage parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static DSVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static DSVMessage parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static DSVMessage parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static DSVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static DSVMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9184,7 +10022,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(DSVMessage prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.DSVMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -9192,7 +10030,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -9204,17 +10042,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.DSVMessage)
-        DSVMessageOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.DSVMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_DSVMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DSVMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_DSVMessage_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DSVMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                DSVMessage.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.class, edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.newBuilder()
@@ -9236,39 +10074,34 @@ public final class Metadata {
         super.clear();
         dsvItem_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        pId_ = 0;
-
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_DSVMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_DSVMessage_descriptor;
       }
 
-      public DSVMessage getDefaultInstanceForType() {
-        return DSVMessage.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.DSVMessage getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance();
       }
 
-      public DSVMessage build() {
-        DSVMessage result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.DSVMessage build() {
+        edu.msu.cse.dkvf.metadata.Metadata.DSVMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public DSVMessage buildPartial() {
-        DSVMessage result = new DSVMessage(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.DSVMessage buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.DSVMessage result = new edu.msu.cse.dkvf.metadata.Metadata.DSVMessage(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.dsvItem_ = dsvItem_;
-        result.pId_ = pId_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -9278,7 +10111,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -9291,25 +10124,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof DSVMessage) {
-          return mergeFrom((DSVMessage)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.DSVMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(DSVMessage other) {
-        if (other == DSVMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.DSVMessage other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance()) return this;
         if (!other.dsvItem_.isEmpty()) {
           if (dsvItem_.isEmpty()) {
             dsvItem_ = other.dsvItem_;
@@ -9319,9 +10152,6 @@ public final class Metadata {
             dsvItem_.addAll(other.dsvItem_);
           }
           onChanged();
-        }
-        if (other.getPId() != 0) {
-          setPId(other.getPId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9336,11 +10166,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        DSVMessage parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.DSVMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (DSVMessage) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9351,17 +10181,17 @@ public final class Metadata {
       }
       private int bitField0_;
 
-      private java.util.List<Long> dsvItem_ = java.util.Collections.emptyList();
+      private java.util.List<java.lang.Long> dsvItem_ = java.util.Collections.emptyList();
       private void ensureDsvItemIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          dsvItem_ = new java.util.ArrayList<Long>(dsvItem_);
+          dsvItem_ = new java.util.ArrayList<java.lang.Long>(dsvItem_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated int64 dsvItem = 1;</code>
        */
-      public java.util.List<Long>
+      public java.util.List<java.lang.Long>
           getDsvItemList() {
         return java.util.Collections.unmodifiableList(dsvItem_);
       }
@@ -9400,7 +10230,7 @@ public final class Metadata {
        * <code>repeated int64 dsvItem = 1;</code>
        */
       public Builder addAllDsvItem(
-          Iterable<? extends Long> values) {
+          java.lang.Iterable<? extends java.lang.Long> values) {
         ensureDsvItemIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, dsvItem_);
@@ -9413,32 +10243,6 @@ public final class Metadata {
       public Builder clearDsvItem() {
         dsvItem_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int pId_ ;
-      /**
-       * <code>int32 p_id = 2;</code>
-       */
-      public int getPId() {
-        return pId_;
-      }
-      /**
-       * <code>int32 p_id = 2;</code>
-       */
-      public Builder setPId(int value) {
-        
-        pId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 p_id = 2;</code>
-       */
-      public Builder clearPId() {
-        
-        pId_ = 0;
         onChanged();
         return this;
       }
@@ -9457,12 +10261,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.DSVMessage)
-    private static final DSVMessage DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.DSVMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new DSVMessage();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.DSVMessage();
     }
 
-    public static DSVMessage getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.DSVMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9480,12 +10284,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<DSVMessage> getParserForType() {
       return PARSER;
     }
 
-    public DSVMessage getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.DSVMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9502,11 +10306,11 @@ public final class Metadata {
     /**
      * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
      */
-    ReplicateMessage getReplicateMessage();
+    edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage getReplicateMessage();
     /**
      * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
      */
-    ReplicateMessageOrBuilder getReplicateMessageOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessageOrBuilder getReplicateMessageOrBuilder();
 
     /**
      * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
@@ -9515,11 +10319,11 @@ public final class Metadata {
     /**
      * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
      */
-    HeartbeatMessage getHeartbeatMessage();
+    edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage getHeartbeatMessage();
     /**
      * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
      */
-    HeartbeatMessageOrBuilder getHeartbeatMessageOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessageOrBuilder getHeartbeatMessageOrBuilder();
 
     /**
      * <code>.Metadata.VVMessage vv_message = 3;</code>
@@ -9528,11 +10332,11 @@ public final class Metadata {
     /**
      * <code>.Metadata.VVMessage vv_message = 3;</code>
      */
-    VVMessage getVvMessage();
+    edu.msu.cse.dkvf.metadata.Metadata.VVMessage getVvMessage();
     /**
      * <code>.Metadata.VVMessage vv_message = 3;</code>
      */
-    VVMessageOrBuilder getVvMessageOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.VVMessageOrBuilder getVvMessageOrBuilder();
 
     /**
      * <code>.Metadata.DSVMessage dsv_message = 4;</code>
@@ -9541,13 +10345,13 @@ public final class Metadata {
     /**
      * <code>.Metadata.DSVMessage dsv_message = 4;</code>
      */
-    DSVMessage getDsvMessage();
+    edu.msu.cse.dkvf.metadata.Metadata.DSVMessage getDsvMessage();
     /**
      * <code>.Metadata.DSVMessage dsv_message = 4;</code>
      */
-    DSVMessageOrBuilder getDsvMessageOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.DSVMessageOrBuilder getDsvMessageOrBuilder();
 
-    public ServerMessage.MessageTypeCase getMessageTypeCase();
+    public edu.msu.cse.dkvf.metadata.Metadata.ServerMessage.MessageTypeCase getMessageTypeCase();
   }
   /**
    * Protobuf type {@code Metadata.ServerMessage}
@@ -9564,7 +10368,7 @@ public final class Metadata {
     private ServerMessage() {
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -9593,56 +10397,56 @@ public final class Metadata {
               break;
             }
             case 10: {
-              ReplicateMessage.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.Builder subBuilder = null;
               if (messageTypeCase_ == 1) {
-                subBuilder = ((ReplicateMessage) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(ReplicateMessage.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((ReplicateMessage) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 1;
               break;
             }
             case 18: {
-              HeartbeatMessage.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.Builder subBuilder = null;
               if (messageTypeCase_ == 2) {
-                subBuilder = ((HeartbeatMessage) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(HeartbeatMessage.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((HeartbeatMessage) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 2;
               break;
             }
             case 26: {
-              VVMessage.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.VVMessage.Builder subBuilder = null;
               if (messageTypeCase_ == 3) {
-                subBuilder = ((VVMessage) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(VVMessage.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.VVMessage.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((VVMessage) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 3;
               break;
             }
             case 34: {
-              DSVMessage.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.Builder subBuilder = null;
               if (messageTypeCase_ == 4) {
-                subBuilder = ((DSVMessage) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(DSVMessage.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((DSVMessage) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 4;
@@ -9662,18 +10466,18 @@ public final class Metadata {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Metadata.internal_static_Metadata_ServerMessage_descriptor;
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ServerMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Metadata.internal_static_Metadata_ServerMessage_fieldAccessorTable
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ServerMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ServerMessage.class, Builder.class);
+              edu.msu.cse.dkvf.metadata.Metadata.ServerMessage.class, edu.msu.cse.dkvf.metadata.Metadata.ServerMessage.Builder.class);
     }
 
     private int messageTypeCase_ = 0;
-    private Object messageType_;
+    private java.lang.Object messageType_;
     public enum MessageTypeCase
         implements com.google.protobuf.Internal.EnumLite {
       REPLICATE_MESSAGE(1),
@@ -9688,7 +10492,7 @@ public final class Metadata {
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @Deprecated
+      @java.lang.Deprecated
       public static MessageTypeCase valueOf(int value) {
         return forNumber(value);
       }
@@ -9724,20 +10528,20 @@ public final class Metadata {
     /**
      * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
      */
-    public ReplicateMessage getReplicateMessage() {
+    public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage getReplicateMessage() {
       if (messageTypeCase_ == 1) {
-         return (ReplicateMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_;
       }
-      return ReplicateMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance();
     }
     /**
      * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
      */
-    public ReplicateMessageOrBuilder getReplicateMessageOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessageOrBuilder getReplicateMessageOrBuilder() {
       if (messageTypeCase_ == 1) {
-         return (ReplicateMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_;
       }
-      return ReplicateMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance();
     }
 
     public static final int HEARTBEAT_MESSAGE_FIELD_NUMBER = 2;
@@ -9750,20 +10554,20 @@ public final class Metadata {
     /**
      * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
      */
-    public HeartbeatMessage getHeartbeatMessage() {
+    public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage getHeartbeatMessage() {
       if (messageTypeCase_ == 2) {
-         return (HeartbeatMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_;
       }
-      return HeartbeatMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance();
     }
     /**
      * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
      */
-    public HeartbeatMessageOrBuilder getHeartbeatMessageOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessageOrBuilder getHeartbeatMessageOrBuilder() {
       if (messageTypeCase_ == 2) {
-         return (HeartbeatMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_;
       }
-      return HeartbeatMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance();
     }
 
     public static final int VV_MESSAGE_FIELD_NUMBER = 3;
@@ -9776,20 +10580,20 @@ public final class Metadata {
     /**
      * <code>.Metadata.VVMessage vv_message = 3;</code>
      */
-    public VVMessage getVvMessage() {
+    public edu.msu.cse.dkvf.metadata.Metadata.VVMessage getVvMessage() {
       if (messageTypeCase_ == 3) {
-         return (VVMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_;
       }
-      return VVMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance();
     }
     /**
      * <code>.Metadata.VVMessage vv_message = 3;</code>
      */
-    public VVMessageOrBuilder getVvMessageOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.VVMessageOrBuilder getVvMessageOrBuilder() {
       if (messageTypeCase_ == 3) {
-         return (VVMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_;
       }
-      return VVMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance();
     }
 
     public static final int DSV_MESSAGE_FIELD_NUMBER = 4;
@@ -9802,20 +10606,20 @@ public final class Metadata {
     /**
      * <code>.Metadata.DSVMessage dsv_message = 4;</code>
      */
-    public DSVMessage getDsvMessage() {
+    public edu.msu.cse.dkvf.metadata.Metadata.DSVMessage getDsvMessage() {
       if (messageTypeCase_ == 4) {
-         return (DSVMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_;
       }
-      return DSVMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance();
     }
     /**
      * <code>.Metadata.DSVMessage dsv_message = 4;</code>
      */
-    public DSVMessageOrBuilder getDsvMessageOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.DSVMessageOrBuilder getDsvMessageOrBuilder() {
       if (messageTypeCase_ == 4) {
-         return (DSVMessage) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_;
       }
-      return DSVMessage.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9831,16 +10635,16 @@ public final class Metadata {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (messageTypeCase_ == 1) {
-        output.writeMessage(1, (ReplicateMessage) messageType_);
+        output.writeMessage(1, (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_);
       }
       if (messageTypeCase_ == 2) {
-        output.writeMessage(2, (HeartbeatMessage) messageType_);
+        output.writeMessage(2, (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_);
       }
       if (messageTypeCase_ == 3) {
-        output.writeMessage(3, (VVMessage) messageType_);
+        output.writeMessage(3, (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_);
       }
       if (messageTypeCase_ == 4) {
-        output.writeMessage(4, (DSVMessage) messageType_);
+        output.writeMessage(4, (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_);
       }
       unknownFields.writeTo(output);
     }
@@ -9852,34 +10656,34 @@ public final class Metadata {
       size = 0;
       if (messageTypeCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (ReplicateMessage) messageType_);
+          .computeMessageSize(1, (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_);
       }
       if (messageTypeCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (HeartbeatMessage) messageType_);
+          .computeMessageSize(2, (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_);
       }
       if (messageTypeCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (VVMessage) messageType_);
+          .computeMessageSize(3, (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_);
       }
       if (messageTypeCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (DSVMessage) messageType_);
+          .computeMessageSize(4, (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ServerMessage)) {
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.ServerMessage)) {
         return super.equals(obj);
       }
-      ServerMessage other = (ServerMessage) obj;
+      edu.msu.cse.dkvf.metadata.Metadata.ServerMessage other = (edu.msu.cse.dkvf.metadata.Metadata.ServerMessage) obj;
 
       boolean result = true;
       result = result && getMessageTypeCase().equals(
@@ -9909,7 +10713,7 @@ public final class Metadata {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -9941,69 +10745,69 @@ public final class Metadata {
       return hash;
     }
 
-    public static ServerMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ServerMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ServerMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ServerMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ServerMessage parseFrom(byte[] data)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ServerMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ServerMessage parseFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ServerMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ServerMessage parseDelimitedFrom(java.io.InputStream input)
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ServerMessage parseDelimitedFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ServerMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ServerMessage parseFrom(
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10015,7 +10819,7 @@ public final class Metadata {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ServerMessage prototype) {
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.ServerMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -10023,7 +10827,7 @@ public final class Metadata {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -10035,17 +10839,17 @@ public final class Metadata {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Metadata.ServerMessage)
-        ServerMessageOrBuilder {
+        edu.msu.cse.dkvf.metadata.Metadata.ServerMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Metadata.internal_static_Metadata_ServerMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ServerMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Metadata.internal_static_Metadata_ServerMessage_fieldAccessorTable
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ServerMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ServerMessage.class, Builder.class);
+                edu.msu.cse.dkvf.metadata.Metadata.ServerMessage.class, edu.msu.cse.dkvf.metadata.Metadata.ServerMessage.Builder.class);
       }
 
       // Construct using edu.msu.cse.dkvf.metadata.Metadata.ServerMessage.newBuilder()
@@ -10072,23 +10876,23 @@ public final class Metadata {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Metadata.internal_static_Metadata_ServerMessage_descriptor;
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_ServerMessage_descriptor;
       }
 
-      public ServerMessage getDefaultInstanceForType() {
-        return ServerMessage.getDefaultInstance();
+      public edu.msu.cse.dkvf.metadata.Metadata.ServerMessage getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.ServerMessage.getDefaultInstance();
       }
 
-      public ServerMessage build() {
-        ServerMessage result = buildPartial();
+      public edu.msu.cse.dkvf.metadata.Metadata.ServerMessage build() {
+        edu.msu.cse.dkvf.metadata.Metadata.ServerMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public ServerMessage buildPartial() {
-        ServerMessage result = new ServerMessage(this);
+      public edu.msu.cse.dkvf.metadata.Metadata.ServerMessage buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.ServerMessage result = new edu.msu.cse.dkvf.metadata.Metadata.ServerMessage(this);
         if (messageTypeCase_ == 1) {
           if (replicateMessageBuilder_ == null) {
             result.messageType_ = messageType_;
@@ -10127,7 +10931,7 @@ public final class Metadata {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -10140,25 +10944,25 @@ public final class Metadata {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ServerMessage) {
-          return mergeFrom((ServerMessage)other);
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.ServerMessage) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.ServerMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ServerMessage other) {
-        if (other == ServerMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.ServerMessage other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.ServerMessage.getDefaultInstance()) return this;
         switch (other.getMessageTypeCase()) {
           case REPLICATE_MESSAGE: {
             mergeReplicateMessage(other.getReplicateMessage());
@@ -10193,11 +10997,11 @@ public final class Metadata {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ServerMessage parsedMessage = null;
+        edu.msu.cse.dkvf.metadata.Metadata.ServerMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ServerMessage) e.getUnfinishedMessage();
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.ServerMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10207,7 +11011,7 @@ public final class Metadata {
         return this;
       }
       private int messageTypeCase_ = 0;
-      private Object messageType_;
+      private java.lang.Object messageType_;
       public MessageTypeCase
           getMessageTypeCase() {
         return MessageTypeCase.forNumber(
@@ -10223,7 +11027,7 @@ public final class Metadata {
 
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          ReplicateMessage, ReplicateMessage.Builder, ReplicateMessageOrBuilder> replicateMessageBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage, edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessageOrBuilder> replicateMessageBuilder_;
       /**
        * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
        */
@@ -10233,23 +11037,23 @@ public final class Metadata {
       /**
        * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
        */
-      public ReplicateMessage getReplicateMessage() {
+      public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage getReplicateMessage() {
         if (replicateMessageBuilder_ == null) {
           if (messageTypeCase_ == 1) {
-            return (ReplicateMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_;
           }
-          return ReplicateMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 1) {
             return replicateMessageBuilder_.getMessage();
           }
-          return ReplicateMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
        */
-      public Builder setReplicateMessage(ReplicateMessage value) {
+      public Builder setReplicateMessage(edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage value) {
         if (replicateMessageBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10266,7 +11070,7 @@ public final class Metadata {
        * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
        */
       public Builder setReplicateMessage(
-          ReplicateMessage.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.Builder builderForValue) {
         if (replicateMessageBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
@@ -10279,11 +11083,11 @@ public final class Metadata {
       /**
        * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
        */
-      public Builder mergeReplicateMessage(ReplicateMessage value) {
+      public Builder mergeReplicateMessage(edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage value) {
         if (replicateMessageBuilder_ == null) {
           if (messageTypeCase_ == 1 &&
-              messageType_ != ReplicateMessage.getDefaultInstance()) {
-            messageType_ = ReplicateMessage.newBuilder((ReplicateMessage) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -10320,35 +11124,35 @@ public final class Metadata {
       /**
        * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
        */
-      public ReplicateMessage.Builder getReplicateMessageBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.Builder getReplicateMessageBuilder() {
         return getReplicateMessageFieldBuilder().getBuilder();
       }
       /**
        * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
        */
-      public ReplicateMessageOrBuilder getReplicateMessageOrBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessageOrBuilder getReplicateMessageOrBuilder() {
         if ((messageTypeCase_ == 1) && (replicateMessageBuilder_ != null)) {
           return replicateMessageBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 1) {
-            return (ReplicateMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_;
           }
-          return ReplicateMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.ReplicateMessage replicate_message = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          ReplicateMessage, ReplicateMessage.Builder, ReplicateMessageOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage, edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessageOrBuilder> 
           getReplicateMessageFieldBuilder() {
         if (replicateMessageBuilder_ == null) {
           if (!(messageTypeCase_ == 1)) {
-            messageType_ = ReplicateMessage.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.getDefaultInstance();
           }
           replicateMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ReplicateMessage, ReplicateMessage.Builder, ReplicateMessageOrBuilder>(
-                  (ReplicateMessage) messageType_,
+              edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage, edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessageOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
@@ -10359,7 +11163,7 @@ public final class Metadata {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          HeartbeatMessage, HeartbeatMessage.Builder, HeartbeatMessageOrBuilder> heartbeatMessageBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage, edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessageOrBuilder> heartbeatMessageBuilder_;
       /**
        * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
        */
@@ -10369,23 +11173,23 @@ public final class Metadata {
       /**
        * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
        */
-      public HeartbeatMessage getHeartbeatMessage() {
+      public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage getHeartbeatMessage() {
         if (heartbeatMessageBuilder_ == null) {
           if (messageTypeCase_ == 2) {
-            return (HeartbeatMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_;
           }
-          return HeartbeatMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 2) {
             return heartbeatMessageBuilder_.getMessage();
           }
-          return HeartbeatMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
        */
-      public Builder setHeartbeatMessage(HeartbeatMessage value) {
+      public Builder setHeartbeatMessage(edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage value) {
         if (heartbeatMessageBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10402,7 +11206,7 @@ public final class Metadata {
        * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
        */
       public Builder setHeartbeatMessage(
-          HeartbeatMessage.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.Builder builderForValue) {
         if (heartbeatMessageBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
@@ -10415,11 +11219,11 @@ public final class Metadata {
       /**
        * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
        */
-      public Builder mergeHeartbeatMessage(HeartbeatMessage value) {
+      public Builder mergeHeartbeatMessage(edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage value) {
         if (heartbeatMessageBuilder_ == null) {
           if (messageTypeCase_ == 2 &&
-              messageType_ != HeartbeatMessage.getDefaultInstance()) {
-            messageType_ = HeartbeatMessage.newBuilder((HeartbeatMessage) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -10456,35 +11260,35 @@ public final class Metadata {
       /**
        * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
        */
-      public HeartbeatMessage.Builder getHeartbeatMessageBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.Builder getHeartbeatMessageBuilder() {
         return getHeartbeatMessageFieldBuilder().getBuilder();
       }
       /**
        * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
        */
-      public HeartbeatMessageOrBuilder getHeartbeatMessageOrBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessageOrBuilder getHeartbeatMessageOrBuilder() {
         if ((messageTypeCase_ == 2) && (heartbeatMessageBuilder_ != null)) {
           return heartbeatMessageBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 2) {
-            return (HeartbeatMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_;
           }
-          return HeartbeatMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.HeartbeatMessage heartbeat_message = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          HeartbeatMessage, HeartbeatMessage.Builder, HeartbeatMessageOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage, edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessageOrBuilder> 
           getHeartbeatMessageFieldBuilder() {
         if (heartbeatMessageBuilder_ == null) {
           if (!(messageTypeCase_ == 2)) {
-            messageType_ = HeartbeatMessage.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.getDefaultInstance();
           }
           heartbeatMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              HeartbeatMessage, HeartbeatMessage.Builder, HeartbeatMessageOrBuilder>(
-                  (HeartbeatMessage) messageType_,
+              edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage, edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessageOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.HeartbeatMessage) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
@@ -10495,7 +11299,7 @@ public final class Metadata {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          VVMessage, VVMessage.Builder, VVMessageOrBuilder> vvMessageBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.VVMessage, edu.msu.cse.dkvf.metadata.Metadata.VVMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.VVMessageOrBuilder> vvMessageBuilder_;
       /**
        * <code>.Metadata.VVMessage vv_message = 3;</code>
        */
@@ -10505,23 +11309,23 @@ public final class Metadata {
       /**
        * <code>.Metadata.VVMessage vv_message = 3;</code>
        */
-      public VVMessage getVvMessage() {
+      public edu.msu.cse.dkvf.metadata.Metadata.VVMessage getVvMessage() {
         if (vvMessageBuilder_ == null) {
           if (messageTypeCase_ == 3) {
-            return (VVMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_;
           }
-          return VVMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 3) {
             return vvMessageBuilder_.getMessage();
           }
-          return VVMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.VVMessage vv_message = 3;</code>
        */
-      public Builder setVvMessage(VVMessage value) {
+      public Builder setVvMessage(edu.msu.cse.dkvf.metadata.Metadata.VVMessage value) {
         if (vvMessageBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10538,7 +11342,7 @@ public final class Metadata {
        * <code>.Metadata.VVMessage vv_message = 3;</code>
        */
       public Builder setVvMessage(
-          VVMessage.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.VVMessage.Builder builderForValue) {
         if (vvMessageBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
@@ -10551,11 +11355,11 @@ public final class Metadata {
       /**
        * <code>.Metadata.VVMessage vv_message = 3;</code>
        */
-      public Builder mergeVvMessage(VVMessage value) {
+      public Builder mergeVvMessage(edu.msu.cse.dkvf.metadata.Metadata.VVMessage value) {
         if (vvMessageBuilder_ == null) {
           if (messageTypeCase_ == 3 &&
-              messageType_ != VVMessage.getDefaultInstance()) {
-            messageType_ = VVMessage.newBuilder((VVMessage) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.VVMessage.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -10592,35 +11396,35 @@ public final class Metadata {
       /**
        * <code>.Metadata.VVMessage vv_message = 3;</code>
        */
-      public VVMessage.Builder getVvMessageBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.VVMessage.Builder getVvMessageBuilder() {
         return getVvMessageFieldBuilder().getBuilder();
       }
       /**
        * <code>.Metadata.VVMessage vv_message = 3;</code>
        */
-      public VVMessageOrBuilder getVvMessageOrBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.VVMessageOrBuilder getVvMessageOrBuilder() {
         if ((messageTypeCase_ == 3) && (vvMessageBuilder_ != null)) {
           return vvMessageBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 3) {
-            return (VVMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_;
           }
-          return VVMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.VVMessage vv_message = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          VVMessage, VVMessage.Builder, VVMessageOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.VVMessage, edu.msu.cse.dkvf.metadata.Metadata.VVMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.VVMessageOrBuilder> 
           getVvMessageFieldBuilder() {
         if (vvMessageBuilder_ == null) {
           if (!(messageTypeCase_ == 3)) {
-            messageType_ = VVMessage.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.VVMessage.getDefaultInstance();
           }
           vvMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              VVMessage, VVMessage.Builder, VVMessageOrBuilder>(
-                  (VVMessage) messageType_,
+              edu.msu.cse.dkvf.metadata.Metadata.VVMessage, edu.msu.cse.dkvf.metadata.Metadata.VVMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.VVMessageOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.VVMessage) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
@@ -10631,7 +11435,7 @@ public final class Metadata {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          DSVMessage, DSVMessage.Builder, DSVMessageOrBuilder> dsvMessageBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.DSVMessage, edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.DSVMessageOrBuilder> dsvMessageBuilder_;
       /**
        * <code>.Metadata.DSVMessage dsv_message = 4;</code>
        */
@@ -10641,23 +11445,23 @@ public final class Metadata {
       /**
        * <code>.Metadata.DSVMessage dsv_message = 4;</code>
        */
-      public DSVMessage getDsvMessage() {
+      public edu.msu.cse.dkvf.metadata.Metadata.DSVMessage getDsvMessage() {
         if (dsvMessageBuilder_ == null) {
           if (messageTypeCase_ == 4) {
-            return (DSVMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_;
           }
-          return DSVMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 4) {
             return dsvMessageBuilder_.getMessage();
           }
-          return DSVMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.DSVMessage dsv_message = 4;</code>
        */
-      public Builder setDsvMessage(DSVMessage value) {
+      public Builder setDsvMessage(edu.msu.cse.dkvf.metadata.Metadata.DSVMessage value) {
         if (dsvMessageBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10674,7 +11478,7 @@ public final class Metadata {
        * <code>.Metadata.DSVMessage dsv_message = 4;</code>
        */
       public Builder setDsvMessage(
-          DSVMessage.Builder builderForValue) {
+          edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.Builder builderForValue) {
         if (dsvMessageBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
@@ -10687,11 +11491,11 @@ public final class Metadata {
       /**
        * <code>.Metadata.DSVMessage dsv_message = 4;</code>
        */
-      public Builder mergeDsvMessage(DSVMessage value) {
+      public Builder mergeDsvMessage(edu.msu.cse.dkvf.metadata.Metadata.DSVMessage value) {
         if (dsvMessageBuilder_ == null) {
           if (messageTypeCase_ == 4 &&
-              messageType_ != DSVMessage.getDefaultInstance()) {
-            messageType_ = DSVMessage.newBuilder((DSVMessage) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -10728,35 +11532,35 @@ public final class Metadata {
       /**
        * <code>.Metadata.DSVMessage dsv_message = 4;</code>
        */
-      public DSVMessage.Builder getDsvMessageBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.Builder getDsvMessageBuilder() {
         return getDsvMessageFieldBuilder().getBuilder();
       }
       /**
        * <code>.Metadata.DSVMessage dsv_message = 4;</code>
        */
-      public DSVMessageOrBuilder getDsvMessageOrBuilder() {
+      public edu.msu.cse.dkvf.metadata.Metadata.DSVMessageOrBuilder getDsvMessageOrBuilder() {
         if ((messageTypeCase_ == 4) && (dsvMessageBuilder_ != null)) {
           return dsvMessageBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 4) {
-            return (DSVMessage) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_;
           }
-          return DSVMessage.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance();
         }
       }
       /**
        * <code>.Metadata.DSVMessage dsv_message = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          DSVMessage, DSVMessage.Builder, DSVMessageOrBuilder>
+          edu.msu.cse.dkvf.metadata.Metadata.DSVMessage, edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.DSVMessageOrBuilder> 
           getDsvMessageFieldBuilder() {
         if (dsvMessageBuilder_ == null) {
           if (!(messageTypeCase_ == 4)) {
-            messageType_ = DSVMessage.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.getDefaultInstance();
           }
           dsvMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              DSVMessage, DSVMessage.Builder, DSVMessageOrBuilder>(
-                  (DSVMessage) messageType_,
+              edu.msu.cse.dkvf.metadata.Metadata.DSVMessage, edu.msu.cse.dkvf.metadata.Metadata.DSVMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.DSVMessageOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.DSVMessage) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
@@ -10780,12 +11584,12 @@ public final class Metadata {
     }
 
     // @@protoc_insertion_point(class_scope:Metadata.ServerMessage)
-    private static final ServerMessage DEFAULT_INSTANCE;
+    private static final edu.msu.cse.dkvf.metadata.Metadata.ServerMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ServerMessage();
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.ServerMessage();
     }
 
-    public static ServerMessage getDefaultInstance() {
+    public static edu.msu.cse.dkvf.metadata.Metadata.ServerMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10803,12 +11607,12 @@ public final class Metadata {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ServerMessage> getParserForType() {
       return PARSER;
     }
 
-    public ServerMessage getDefaultInstanceForType() {
+    public edu.msu.cse.dkvf.metadata.Metadata.ServerMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10844,6 +11648,11 @@ public final class Metadata {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Metadata_GetReply_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Metadata_MultipleVersions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Metadata_MultipleVersions_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Metadata_PutReply_descriptor;
   private static final 
@@ -10887,7 +11696,7 @@ public final class Metadata {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\032protos/causalSpartan.proto\022\010Metadata\")" +
       "\n\nDcTimeItem\022\r\n\005dc_id\030\001 \001(\005\022\014\n\004time\030\002 \001(" +
       "\003\"V\n\006Record\022\r\n\005value\030\002 \001(\014\022\n\n\002ut\030\003 \001(\003\022\n" +
@@ -10900,24 +11709,25 @@ public final class Metadata {
       "\013put_message\030\002 \001(\0132\024.Metadata.PutMessage",
       "H\000B\016\n\014message_type\"R\n\010GetReply\022\r\n\005value\030" +
       "\001 \001(\014\022%\n\007ds_item\030\003 \003(\0132\024.Metadata.DcTime" +
-      "Item\022\020\n\010dsv_item\030\002 \003(\003\"\"\n\010PutReply\022\n\n\002ut" +
-      "\030\001 \001(\003\022\n\n\002sr\030\002 \001(\005\"\177\n\013ClientReply\022\016\n\006sta" +
-      "tus\030\001 \001(\010\022\'\n\tget_reply\030\002 \001(\0132\022.Metadata." +
-      "GetReplyH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Metadata" +
-      ".PutReplyH\000B\016\n\014message_type\"M\n\020Replicate" +
-      "Message\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132\020.Meta" +
-      "data.Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020HeartbeatM" +
-      "essage\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(\005\")\n\tV",
-      "VMessage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002 \001(\005\"+" +
-      "\n\nDSVMessage\022\017\n\007dsvItem\030\001 \003(\003\022\014\n\004p_id\030\002 " +
-      "\001(\005\"\351\001\n\rServerMessage\0227\n\021replicate_messa" +
-      "ge\030\001 \001(\0132\032.Metadata.ReplicateMessageH\000\0227" +
-      "\n\021heartbeat_message\030\002 \001(\0132\032.Metadata.Hea" +
-      "rtbeatMessageH\000\022)\n\nvv_message\030\003 \001(\0132\023.Me" +
-      "tadata.VVMessageH\000\022+\n\013dsv_message\030\004 \001(\0132" +
-      "\024.Metadata.DSVMessageH\000B\016\n\014message_typeB" +
-      "%\n\031edu.msu.cse.dkvf.metadataB\010Metadatab\006" +
-      "proto3"
+      "Item\022\020\n\010dsv_item\030\002 \003(\003\"9\n\020MultipleVersio" +
+      "ns\022%\n\tget_reply\030\001 \003(\0132\022.Metadata.GetRepl" +
+      "y\"\"\n\010PutReply\022\n\n\002ut\030\001 \001(\003\022\n\n\002sr\030\002 \001(\005\"\217\001" +
+      "\n\013ClientReply\022\016\n\006status\030\001 \001(\010\0227\n\021multipl" +
+      "e_versions\030\002 \001(\0132\032.Metadata.MultipleVers" +
+      "ionsH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Metadata.Put" +
+      "ReplyH\000B\016\n\014message_type\"M\n\020ReplicateMess" +
+      "age\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132\020.Metadata",
+      ".Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020HeartbeatMessa" +
+      "ge\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(\005\")\n\tVVMes" +
+      "sage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002 \001(\005\"\035\n\nDS" +
+      "VMessage\022\017\n\007dsvItem\030\001 \003(\003\"\351\001\n\rServerMess" +
+      "age\0227\n\021replicate_message\030\001 \001(\0132\032.Metadat" +
+      "a.ReplicateMessageH\000\0227\n\021heartbeat_messag" +
+      "e\030\002 \001(\0132\032.Metadata.HeartbeatMessageH\000\022)\n" +
+      "\nvv_message\030\003 \001(\0132\023.Metadata.VVMessageH\000" +
+      "\022+\n\013dsv_message\030\004 \001(\0132\024.Metadata.DSVMess" +
+      "ageH\000B\016\n\014message_typeB%\n\031edu.msu.cse.dkv",
+      "f.metadataB\010Metadatab\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10936,79 +11746,85 @@ public final class Metadata {
     internal_static_Metadata_DcTimeItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_DcTimeItem_descriptor,
-        new String[] { "DcId", "Time", });
+        new java.lang.String[] { "DcId", "Time", });
     internal_static_Metadata_Record_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_Metadata_Record_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_Record_descriptor,
-        new String[] { "Value", "Ut", "Sr", "DsItem", });
+        new java.lang.String[] { "Value", "Ut", "Sr", "DsItem", });
     internal_static_Metadata_GetMessage_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Metadata_GetMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_GetMessage_descriptor,
-        new String[] { "Key", "DsvItem", });
+        new java.lang.String[] { "Key", "DsvItem", });
     internal_static_Metadata_PutMessage_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_Metadata_PutMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_PutMessage_descriptor,
-        new String[] { "Key", "Value", "DsItem", });
+        new java.lang.String[] { "Key", "Value", "DsItem", });
     internal_static_Metadata_ClientMessage_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_Metadata_ClientMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_ClientMessage_descriptor,
-        new String[] { "GetMessage", "PutMessage", "MessageType", });
+        new java.lang.String[] { "GetMessage", "PutMessage", "MessageType", });
     internal_static_Metadata_GetReply_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_Metadata_GetReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_GetReply_descriptor,
-        new String[] { "Value", "DsItem", "DsvItem", });
-    internal_static_Metadata_PutReply_descriptor =
+        new java.lang.String[] { "Value", "DsItem", "DsvItem", });
+    internal_static_Metadata_MultipleVersions_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_Metadata_MultipleVersions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Metadata_MultipleVersions_descriptor,
+        new java.lang.String[] { "GetReply", });
+    internal_static_Metadata_PutReply_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_Metadata_PutReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_PutReply_descriptor,
-        new String[] { "Ut", "Sr", });
+        new java.lang.String[] { "Ut", "Sr", });
     internal_static_Metadata_ClientReply_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_Metadata_ClientReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_ClientReply_descriptor,
-        new String[] { "Status", "GetReply", "PutReply", "MessageType", });
+        new java.lang.String[] { "Status", "MultipleVersions", "PutReply", "MessageType", });
     internal_static_Metadata_ReplicateMessage_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_Metadata_ReplicateMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_ReplicateMessage_descriptor,
-        new String[] { "Key", "Rec", "DcId", });
+        new java.lang.String[] { "Key", "Rec", "DcId", });
     internal_static_Metadata_HeartbeatMessage_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_Metadata_HeartbeatMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_HeartbeatMessage_descriptor,
-        new String[] { "Time", "DcId", });
+        new java.lang.String[] { "Time", "DcId", });
     internal_static_Metadata_VVMessage_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_Metadata_VVMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_VVMessage_descriptor,
-        new String[] { "VvItem", "PId", });
+        new java.lang.String[] { "VvItem", "PId", });
     internal_static_Metadata_DSVMessage_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_Metadata_DSVMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_DSVMessage_descriptor,
-        new String[] { "DsvItem", "PId", });
+        new java.lang.String[] { "DsvItem", });
     internal_static_Metadata_ServerMessage_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_Metadata_ServerMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_ServerMessage_descriptor,
-        new String[] { "ReplicateMessage", "HeartbeatMessage", "VvMessage", "DsvMessage", "MessageType", });
+        new java.lang.String[] { "ReplicateMessage", "HeartbeatMessage", "VvMessage", "DsvMessage", "MessageType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
