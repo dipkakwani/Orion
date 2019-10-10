@@ -1,5 +1,6 @@
 package edu.msu.cse.causalSpartan.server;
 
+import java.io.UnsupportedEncodingException;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +22,7 @@ import edu.msu.cse.dkvf.metadata.Metadata.DSVMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem;
 import edu.msu.cse.dkvf.metadata.Metadata.GetMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.GetReply;
+import edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions;
 import edu.msu.cse.dkvf.metadata.Metadata.PutMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.PutReply;
 import edu.msu.cse.dkvf.metadata.Metadata.Record;
@@ -116,10 +118,21 @@ public class CausalSpartanServer extends DKVFServer {
 		List<Record> result = new ArrayList<>();
 		StorageStatus ss = read(gm.getKey(), isVisible, result);
 		ClientReply cr = null;
+		int numVersions = 3;
+        System.out.println("GET MESSAGE " + result.size());
 		if (ss == StorageStatus.SUCCESS) {
-			Record rec = result.get(0);
-			List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(),rec.getDsItemList());
-			cr = ClientReply.newBuilder().setStatus(true).setGetReply(GetReply.newBuilder().setValue(rec.getValue()).addAllDsItem(newDs).addAllDsvItem(dsv)).build();
+		    List<GetReply> multipleVersions = new ArrayList<>(numVersions);
+		    for (int i = 0; i < numVersions && i < result.size(); i++) {
+                Record rec = result.get(i);
+                try {
+                    System.out.println("VALUE " + rec.getValue().toString("UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
+                multipleVersions.add(GetReply.newBuilder().setValue(rec.getValue()).addAllDsItem(newDs).addAllDsvItem(dsv).build());
+            }
+            cr = ClientReply.newBuilder().setStatus(true).setMultipleVersions(MultipleVersions.newBuilder().addAllGetReply(multipleVersions)).build();
 		} else {
 			cr = ClientReply.newBuilder().setStatus(false).build();
 		}
@@ -151,6 +164,7 @@ public class CausalSpartanServer extends DKVFServer {
 	};
 
 	private void handlePutMessage(ClientMessageAgent cma) {
+        System.out.println("PUT CALLED");
 		PutMessage pm = cma.getClientMessage().getPutMessage();
 		long dt = Utils.maxDsTime(pm.getDsItemList());
 		updateHlc(dt);

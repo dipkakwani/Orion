@@ -5591,6 +5591,760 @@ public final class Metadata {
 
   }
 
+  public interface MultipleVersionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Metadata.MultipleVersions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> 
+        getGetReplyList();
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply(int index);
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    int getGetReplyCount();
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
+        getGetReplyOrBuilderList();
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code Metadata.MultipleVersions}
+   */
+  public  static final class MultipleVersions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Metadata.MultipleVersions)
+      MultipleVersionsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MultipleVersions.newBuilder() to construct.
+    private MultipleVersions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MultipleVersions() {
+      getReply_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MultipleVersions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                getReply_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetReply>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              getReply_.add(
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.GetReply.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          getReply_ = java.util.Collections.unmodifiableList(getReply_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.class, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder.class);
+    }
+
+    public static final int GET_REPLY_FIELD_NUMBER = 1;
+    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getReply_;
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getGetReplyList() {
+      return getReply_;
+    }
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
+        getGetReplyOrBuilderList() {
+      return getReply_;
+    }
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public int getGetReplyCount() {
+      return getReply_.size();
+    }
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply(int index) {
+      return getReply_.get(index);
+    }
+    /**
+     * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+     */
+    public edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder(
+        int index) {
+      return getReply_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < getReply_.size(); i++) {
+        output.writeMessage(1, getReply_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < getReply_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getReply_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions)) {
+        return super.equals(obj);
+      }
+      edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions other = (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) obj;
+
+      boolean result = true;
+      result = result && getGetReplyList()
+          .equals(other.getGetReplyList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getGetReplyCount() > 0) {
+        hash = (37 * hash) + GET_REPLY_FIELD_NUMBER;
+        hash = (53 * hash) + getGetReplyList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Metadata.MultipleVersions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Metadata.MultipleVersions)
+        edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.class, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder.class);
+      }
+
+      // Construct using edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getGetReplyFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (getReplyBuilder_ == null) {
+          getReply_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          getReplyBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_MultipleVersions_descriptor;
+      }
+
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getDefaultInstanceForType() {
+        return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
+      }
+
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions build() {
+        edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions buildPartial() {
+        edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions result = new edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions(this);
+        int from_bitField0_ = bitField0_;
+        if (getReplyBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            getReply_ = java.util.Collections.unmodifiableList(getReply_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.getReply_ = getReply_;
+        } else {
+          result.getReply_ = getReplyBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) {
+          return mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions other) {
+        if (other == edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance()) return this;
+        if (getReplyBuilder_ == null) {
+          if (!other.getReply_.isEmpty()) {
+            if (getReply_.isEmpty()) {
+              getReply_ = other.getReply_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureGetReplyIsMutable();
+              getReply_.addAll(other.getReply_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.getReply_.isEmpty()) {
+            if (getReplyBuilder_.isEmpty()) {
+              getReplyBuilder_.dispose();
+              getReplyBuilder_ = null;
+              getReply_ = other.getReply_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              getReplyBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getGetReplyFieldBuilder() : null;
+            } else {
+              getReplyBuilder_.addAllMessages(other.getReply_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getReply_ =
+        java.util.Collections.emptyList();
+      private void ensureGetReplyIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          getReply_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetReply>(getReply_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> getReplyBuilder_;
+
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getGetReplyList() {
+        if (getReplyBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(getReply_);
+        } else {
+          return getReplyBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public int getGetReplyCount() {
+        if (getReplyBuilder_ == null) {
+          return getReply_.size();
+        } else {
+          return getReplyBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply(int index) {
+        if (getReplyBuilder_ == null) {
+          return getReply_.get(index);
+        } else {
+          return getReplyBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder setGetReply(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
+        if (getReplyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGetReplyIsMutable();
+          getReply_.set(index, value);
+          onChanged();
+        } else {
+          getReplyBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder setGetReply(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          getReply_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          getReplyBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addGetReply(edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
+        if (getReplyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGetReplyIsMutable();
+          getReply_.add(value);
+          onChanged();
+        } else {
+          getReplyBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addGetReply(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
+        if (getReplyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGetReplyIsMutable();
+          getReply_.add(index, value);
+          onChanged();
+        } else {
+          getReplyBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addGetReply(
+          edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          getReply_.add(builderForValue.build());
+          onChanged();
+        } else {
+          getReplyBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addGetReply(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          getReply_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          getReplyBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder addAllGetReply(
+          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReply> values) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, getReply_);
+          onChanged();
+        } else {
+          getReplyBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder clearGetReply() {
+        if (getReplyBuilder_ == null) {
+          getReply_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          getReplyBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public Builder removeGetReply(int index) {
+        if (getReplyBuilder_ == null) {
+          ensureGetReplyIsMutable();
+          getReply_.remove(index);
+          onChanged();
+        } else {
+          getReplyBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder getGetReplyBuilder(
+          int index) {
+        return getGetReplyFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder(
+          int index) {
+        if (getReplyBuilder_ == null) {
+          return getReply_.get(index);  } else {
+          return getReplyBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
+           getGetReplyOrBuilderList() {
+        if (getReplyBuilder_ != null) {
+          return getReplyBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(getReply_);
+        }
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder addGetReplyBuilder() {
+        return getGetReplyFieldBuilder().addBuilder(
+            edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder addGetReplyBuilder(
+          int index) {
+        return getGetReplyFieldBuilder().addBuilder(
+            index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Metadata.GetReply get_reply = 1;</code>
+       */
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder> 
+           getGetReplyBuilderList() {
+        return getGetReplyFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
+          getGetReplyFieldBuilder() {
+        if (getReplyBuilder_ == null) {
+          getReplyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder>(
+                  getReply_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          getReply_ = null;
+        }
+        return getReplyBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Metadata.MultipleVersions)
+    }
+
+    // @@protoc_insertion_point(class_scope:Metadata.MultipleVersions)
+    private static final edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions();
+    }
+
+    public static edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MultipleVersions>
+        PARSER = new com.google.protobuf.AbstractParser<MultipleVersions>() {
+      public MultipleVersions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MultipleVersions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MultipleVersions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MultipleVersions> getParserForType() {
+      return PARSER;
+    }
+
+    public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PutReplyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Metadata.PutReply)
       com.google.protobuf.MessageOrBuilder {
@@ -6113,17 +6867,17 @@ public final class Metadata {
     boolean getStatus();
 
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    boolean hasGetReply();
+    boolean hasMultipleVersions();
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply();
+    edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getMultipleVersions();
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder();
+    edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder getMultipleVersionsOrBuilder();
 
     /**
      * <code>.Metadata.PutReply put_reply = 3;</code>
@@ -6190,14 +6944,14 @@ public final class Metadata {
               break;
             }
             case 18: {
-              edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder subBuilder = null;
+              edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder subBuilder = null;
               if (messageTypeCase_ == 2) {
-                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_).toBuilder();
+                subBuilder = ((edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_).toBuilder();
               }
               messageType_ =
-                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.GetReply.parser(), extensionRegistry);
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_);
+                subBuilder.mergeFrom((edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_);
                 messageType_ = subBuilder.buildPartial();
               }
               messageTypeCase_ = 2;
@@ -6245,7 +6999,7 @@ public final class Metadata {
     private java.lang.Object messageType_;
     public enum MessageTypeCase
         implements com.google.protobuf.Internal.EnumLite {
-      GET_REPLY(2),
+      MULTIPLE_VERSIONS(2),
       PUT_REPLY(3),
       MESSAGETYPE_NOT_SET(0);
       private final int value;
@@ -6262,7 +7016,7 @@ public final class Metadata {
 
       public static MessageTypeCase forNumber(int value) {
         switch (value) {
-          case 2: return GET_REPLY;
+          case 2: return MULTIPLE_VERSIONS;
           case 3: return PUT_REPLY;
           case 0: return MESSAGETYPE_NOT_SET;
           default: return null;
@@ -6288,30 +7042,30 @@ public final class Metadata {
       return status_;
     }
 
-    public static final int GET_REPLY_FIELD_NUMBER = 2;
+    public static final int MULTIPLE_VERSIONS_FIELD_NUMBER = 2;
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    public boolean hasGetReply() {
+    public boolean hasMultipleVersions() {
       return messageTypeCase_ == 2;
     }
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply() {
+    public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getMultipleVersions() {
       if (messageTypeCase_ == 2) {
-         return (edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_;
       }
-      return edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
     }
     /**
-     * <code>.Metadata.GetReply get_reply = 2;</code>
+     * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder() {
+    public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder getMultipleVersionsOrBuilder() {
       if (messageTypeCase_ == 2) {
-         return (edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_;
+         return (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_;
       }
-      return edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance();
+      return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
     }
 
     public static final int PUT_REPLY_FIELD_NUMBER = 3;
@@ -6356,7 +7110,7 @@ public final class Metadata {
         output.writeBool(1, status_);
       }
       if (messageTypeCase_ == 2) {
-        output.writeMessage(2, (edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_);
+        output.writeMessage(2, (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_);
       }
       if (messageTypeCase_ == 3) {
         output.writeMessage(3, (edu.msu.cse.dkvf.metadata.Metadata.PutReply) messageType_);
@@ -6375,7 +7129,7 @@ public final class Metadata {
       }
       if (messageTypeCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_);
+          .computeMessageSize(2, (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_);
       }
       if (messageTypeCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
@@ -6404,8 +7158,8 @@ public final class Metadata {
       if (!result) return false;
       switch (messageTypeCase_) {
         case 2:
-          result = result && getGetReply()
-              .equals(other.getGetReply());
+          result = result && getMultipleVersions()
+              .equals(other.getMultipleVersions());
           break;
         case 3:
           result = result && getPutReply()
@@ -6430,8 +7184,8 @@ public final class Metadata {
           getStatus());
       switch (messageTypeCase_) {
         case 2:
-          hash = (37 * hash) + GET_REPLY_FIELD_NUMBER;
-          hash = (53 * hash) + getGetReply().hashCode();
+          hash = (37 * hash) + MULTIPLE_VERSIONS_FIELD_NUMBER;
+          hash = (53 * hash) + getMultipleVersions().hashCode();
           break;
         case 3:
           hash = (37 * hash) + PUT_REPLY_FIELD_NUMBER;
@@ -6597,10 +7351,10 @@ public final class Metadata {
         edu.msu.cse.dkvf.metadata.Metadata.ClientReply result = new edu.msu.cse.dkvf.metadata.Metadata.ClientReply(this);
         result.status_ = status_;
         if (messageTypeCase_ == 2) {
-          if (getReplyBuilder_ == null) {
+          if (multipleVersionsBuilder_ == null) {
             result.messageType_ = messageType_;
           } else {
-            result.messageType_ = getReplyBuilder_.build();
+            result.messageType_ = multipleVersionsBuilder_.build();
           }
         }
         if (messageTypeCase_ == 3) {
@@ -6656,8 +7410,8 @@ public final class Metadata {
           setStatus(other.getStatus());
         }
         switch (other.getMessageTypeCase()) {
-          case GET_REPLY: {
-            mergeGetReply(other.getGetReply());
+          case MULTIPLE_VERSIONS: {
+            mergeMultipleVersions(other.getMultipleVersions());
             break;
           }
           case PUT_REPLY: {
@@ -6737,67 +7491,67 @@ public final class Metadata {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> getReplyBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder> multipleVersionsBuilder_;
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public boolean hasGetReply() {
+      public boolean hasMultipleVersions() {
         return messageTypeCase_ == 2;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetReply getGetReply() {
-        if (getReplyBuilder_ == null) {
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions getMultipleVersions() {
+        if (multipleVersionsBuilder_ == null) {
           if (messageTypeCase_ == 2) {
-            return (edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_;
           }
-          return edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
         } else {
           if (messageTypeCase_ == 2) {
-            return getReplyBuilder_.getMessage();
+            return multipleVersionsBuilder_.getMessage();
           }
-          return edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
         }
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public Builder setGetReply(edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
-        if (getReplyBuilder_ == null) {
+      public Builder setMultipleVersions(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions value) {
+        if (multipleVersionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           messageType_ = value;
           onChanged();
         } else {
-          getReplyBuilder_.setMessage(value);
+          multipleVersionsBuilder_.setMessage(value);
         }
         messageTypeCase_ = 2;
         return this;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public Builder setGetReply(
-          edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
-        if (getReplyBuilder_ == null) {
+      public Builder setMultipleVersions(
+          edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder builderForValue) {
+        if (multipleVersionsBuilder_ == null) {
           messageType_ = builderForValue.build();
           onChanged();
         } else {
-          getReplyBuilder_.setMessage(builderForValue.build());
+          multipleVersionsBuilder_.setMessage(builderForValue.build());
         }
         messageTypeCase_ = 2;
         return this;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public Builder mergeGetReply(edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
-        if (getReplyBuilder_ == null) {
+      public Builder mergeMultipleVersions(edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions value) {
+        if (multipleVersionsBuilder_ == null) {
           if (messageTypeCase_ == 2 &&
-              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance()) {
-            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.GetReply.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_)
+              messageType_ != edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance()) {
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.newBuilder((edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_)
                 .mergeFrom(value).buildPartial();
           } else {
             messageType_ = value;
@@ -6805,18 +7559,18 @@ public final class Metadata {
           onChanged();
         } else {
           if (messageTypeCase_ == 2) {
-            getReplyBuilder_.mergeFrom(value);
+            multipleVersionsBuilder_.mergeFrom(value);
           }
-          getReplyBuilder_.setMessage(value);
+          multipleVersionsBuilder_.setMessage(value);
         }
         messageTypeCase_ = 2;
         return this;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public Builder clearGetReply() {
-        if (getReplyBuilder_ == null) {
+      public Builder clearMultipleVersions() {
+        if (multipleVersionsBuilder_ == null) {
           if (messageTypeCase_ == 2) {
             messageTypeCase_ = 0;
             messageType_ = null;
@@ -6827,49 +7581,49 @@ public final class Metadata {
             messageTypeCase_ = 0;
             messageType_ = null;
           }
-          getReplyBuilder_.clear();
+          multipleVersionsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder getGetReplyBuilder() {
-        return getGetReplyFieldBuilder().getBuilder();
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder getMultipleVersionsBuilder() {
+        return getMultipleVersionsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getGetReplyOrBuilder() {
-        if ((messageTypeCase_ == 2) && (getReplyBuilder_ != null)) {
-          return getReplyBuilder_.getMessageOrBuilder();
+      public edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder getMultipleVersionsOrBuilder() {
+        if ((messageTypeCase_ == 2) && (multipleVersionsBuilder_ != null)) {
+          return multipleVersionsBuilder_.getMessageOrBuilder();
         } else {
           if (messageTypeCase_ == 2) {
-            return (edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_;
+            return (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_;
           }
-          return edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance();
+          return edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
         }
       }
       /**
-       * <code>.Metadata.GetReply get_reply = 2;</code>
+       * <code>.Metadata.MultipleVersions multiple_versions = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
-          getGetReplyFieldBuilder() {
-        if (getReplyBuilder_ == null) {
+          edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder> 
+          getMultipleVersionsFieldBuilder() {
+        if (multipleVersionsBuilder_ == null) {
           if (!(messageTypeCase_ == 2)) {
-            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance();
+            messageType_ = edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.getDefaultInstance();
           }
-          getReplyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder>(
-                  (edu.msu.cse.dkvf.metadata.Metadata.GetReply) messageType_,
+          multipleVersionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions.Builder, edu.msu.cse.dkvf.metadata.Metadata.MultipleVersionsOrBuilder>(
+                  (edu.msu.cse.dkvf.metadata.Metadata.MultipleVersions) messageType_,
                   getParentForChildren(),
                   isClean());
           messageType_ = null;
         }
         messageTypeCase_ = 2;
         onChanged();;
-        return getReplyBuilder_;
+        return multipleVersionsBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -10895,6 +11649,11 @@ public final class Metadata {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Metadata_GetReply_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Metadata_MultipleVersions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Metadata_MultipleVersions_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Metadata_PutReply_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -10950,23 +11709,25 @@ public final class Metadata {
       "\013put_message\030\002 \001(\0132\024.Metadata.PutMessage",
       "H\000B\016\n\014message_type\"R\n\010GetReply\022\r\n\005value\030" +
       "\001 \001(\014\022%\n\007ds_item\030\003 \003(\0132\024.Metadata.DcTime" +
-      "Item\022\020\n\010dsv_item\030\002 \003(\003\"\"\n\010PutReply\022\n\n\002ut" +
-      "\030\001 \001(\003\022\n\n\002sr\030\002 \001(\005\"\177\n\013ClientReply\022\016\n\006sta" +
-      "tus\030\001 \001(\010\022\'\n\tget_reply\030\002 \001(\0132\022.Metadata." +
-      "GetReplyH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Metadata" +
-      ".PutReplyH\000B\016\n\014message_type\"M\n\020Replicate" +
-      "Message\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132\020.Meta" +
-      "data.Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020HeartbeatM" +
-      "essage\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(\005\")\n\tV",
-      "VMessage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002 \001(\005\"\035" +
-      "\n\nDSVMessage\022\017\n\007dsvItem\030\001 \003(\003\"\351\001\n\rServer" +
-      "Message\0227\n\021replicate_message\030\001 \001(\0132\032.Met" +
-      "adata.ReplicateMessageH\000\0227\n\021heartbeat_me" +
-      "ssage\030\002 \001(\0132\032.Metadata.HeartbeatMessageH" +
-      "\000\022)\n\nvv_message\030\003 \001(\0132\023.Metadata.VVMessa" +
-      "geH\000\022+\n\013dsv_message\030\004 \001(\0132\024.Metadata.DSV" +
-      "MessageH\000B\016\n\014message_typeB%\n\031edu.msu.cse" +
-      ".dkvf.metadataB\010Metadatab\006proto3"
+      "Item\022\020\n\010dsv_item\030\002 \003(\003\"9\n\020MultipleVersio" +
+      "ns\022%\n\tget_reply\030\001 \003(\0132\022.Metadata.GetRepl" +
+      "y\"\"\n\010PutReply\022\n\n\002ut\030\001 \001(\003\022\n\n\002sr\030\002 \001(\005\"\217\001" +
+      "\n\013ClientReply\022\016\n\006status\030\001 \001(\010\0227\n\021multipl" +
+      "e_versions\030\002 \001(\0132\032.Metadata.MultipleVers" +
+      "ionsH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Metadata.Put" +
+      "ReplyH\000B\016\n\014message_type\"M\n\020ReplicateMess" +
+      "age\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132\020.Metadata",
+      ".Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020HeartbeatMessa" +
+      "ge\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(\005\")\n\tVVMes" +
+      "sage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002 \001(\005\"\035\n\nDS" +
+      "VMessage\022\017\n\007dsvItem\030\001 \003(\003\"\351\001\n\rServerMess" +
+      "age\0227\n\021replicate_message\030\001 \001(\0132\032.Metadat" +
+      "a.ReplicateMessageH\000\0227\n\021heartbeat_messag" +
+      "e\030\002 \001(\0132\032.Metadata.HeartbeatMessageH\000\022)\n" +
+      "\nvv_message\030\003 \001(\0132\023.Metadata.VVMessageH\000" +
+      "\022+\n\013dsv_message\030\004 \001(\0132\024.Metadata.DSVMess" +
+      "ageH\000B\016\n\014message_typeB%\n\031edu.msu.cse.dkv",
+      "f.metadataB\010Metadatab\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11016,44 +11777,50 @@ public final class Metadata {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_GetReply_descriptor,
         new java.lang.String[] { "Value", "DsItem", "DsvItem", });
-    internal_static_Metadata_PutReply_descriptor =
+    internal_static_Metadata_MultipleVersions_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_Metadata_MultipleVersions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Metadata_MultipleVersions_descriptor,
+        new java.lang.String[] { "GetReply", });
+    internal_static_Metadata_PutReply_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_Metadata_PutReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_PutReply_descriptor,
         new java.lang.String[] { "Ut", "Sr", });
     internal_static_Metadata_ClientReply_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_Metadata_ClientReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_ClientReply_descriptor,
-        new java.lang.String[] { "Status", "GetReply", "PutReply", "MessageType", });
+        new java.lang.String[] { "Status", "MultipleVersions", "PutReply", "MessageType", });
     internal_static_Metadata_ReplicateMessage_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_Metadata_ReplicateMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_ReplicateMessage_descriptor,
         new java.lang.String[] { "Key", "Rec", "DcId", });
     internal_static_Metadata_HeartbeatMessage_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_Metadata_HeartbeatMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_HeartbeatMessage_descriptor,
         new java.lang.String[] { "Time", "DcId", });
     internal_static_Metadata_VVMessage_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_Metadata_VVMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_VVMessage_descriptor,
         new java.lang.String[] { "VvItem", "PId", });
     internal_static_Metadata_DSVMessage_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_Metadata_DSVMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_DSVMessage_descriptor,
         new java.lang.String[] { "DsvItem", });
     internal_static_Metadata_ServerMessage_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_Metadata_ServerMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_ServerMessage_descriptor,

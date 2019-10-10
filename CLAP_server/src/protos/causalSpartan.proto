@@ -46,6 +46,10 @@ message GetReply{
 	repeated int64 dsv_item = 2;  //DSV
 }
 
+message MultipleVersions{
+    repeated GetReply get_reply = 1;
+}
+
 message PutReply{
 	int64 ut = 1;
 	int32 sr =2; 
@@ -53,7 +57,7 @@ message PutReply{
 message ClientReply {
 	bool status = 1;
 	oneof message_type{
-		GetReply get_reply= 2;
+		MultipleVersions multiple_versions = 2;
 		PutReply put_reply= 3;
 	}
 }

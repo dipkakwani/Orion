@@ -51,7 +51,7 @@ public class ServerConnector implements Runnable {
 		this.serversOut = serversOut;
 		this.serversIn = serversIn;
 		this.sockets = sockets;
-
+		
 		this.pendingServers = new ArrayList<>();
 		for (ServerInfo si : serversInfoToConnect){
 			if (!serversIn.containsKey(si.id))

@@ -93,7 +93,8 @@ public abstract class DKVFClient extends DKVFBase {
 	 */
 	public NetworkStatus sendToServer(String serverId, ClientMessage cm) {
 		try {
-            serversOut.get(serverId).writeInt32NoTag(cm.getSerializedSize());
+            System.out.println("SEND TO SERVER " + serverId + serversOut.get(serverId));
+			serversOut.get(serverId).writeInt32NoTag(cm.getSerializedSize());
 			cm.writeTo(serversOut.get(serverId));
 			serversOut.get(serverId).flush();
 			//cm.writeDelimitedTo(serversOut.get(serverId));
