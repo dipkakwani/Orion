@@ -11,7 +11,7 @@ public class Main {
 		CausalSpartanClient client = new CausalSpartanClient(cnfReader);
         System.out.println(client.runAll());
         System.out.println("Client started...");
-		client.put("k1", "value1".getBytes());
+        client.put("k1", "value1".getBytes());
         try {
             System.out.println(new String(client.get("k1"), "UTF-8"));
         } catch (UnsupportedEncodingException e) {
