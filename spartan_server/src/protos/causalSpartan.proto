@@ -29,11 +29,15 @@ message PutMessage {
     repeated DcTimeItem ds_item = 3; //DS
 }
 
+message RotMessage {
+    repeated GetMessage msg = 1;
+}
 
 message ClientMessage {
     oneof message_type {
         GetMessage get_message = 1;
         PutMessage put_message = 2;
+        RotMessage rot_message = 3;
     }
 }
 //-----------------------------------------------
@@ -49,11 +53,17 @@ message PutReply {
     int64 ut = 1;
     int32 sr = 2;
 }
+
+message RotReply {
+    repeated GetReply rep = 1;
+}
+
 message ClientReply {
     bool status = 1;
     oneof message_type {
         GetReply get_reply = 2;
         PutReply put_reply = 3;
+        RotReply rot_reply = 4;
     }
 }
 //-----------------------------------------------
@@ -77,12 +87,29 @@ message VVMessage {
 message DSVMessage {
     repeated int64 dsvItem = 1;
 }
+
+message SliceRequestMessage {
+    int32 p_id = 1;         // Requesting partition ID
+    int64 rotID = 2;
+    string key = 3;
+    repeated int64 sv = 4;  // Snapshot vector
+}
+
+message SliceReplyMessage {
+    int64 rotID = 1;
+    string key = 2;
+    bytes value = 3;
+    repeated DcTimeItem ds = 4;
+}
+
 message ServerMessage {
     oneof message_type {
         ReplicateMessage replicate_message = 1;
         HeartbeatMessage heartbeat_message = 2;
         VVMessage vv_message = 3;
         DSVMessage dsv_message = 4;
+        SliceRequestMessage sreq_message = 5;
+        SliceReplyMessage srep_message = 6;
     }
 }
 //-----------------------------------------------
