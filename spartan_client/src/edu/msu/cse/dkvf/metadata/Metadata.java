@@ -3540,27 +3540,59 @@ public final class Metadata {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated string keys = 1;</code>
      */
-    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> 
-        getGetMsgsList();
+    java.util.List<java.lang.String>
+        getKeysList();
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated string keys = 1;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMsgs(int index);
+    int getKeysCount();
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated string keys = 1;</code>
      */
-    int getGetMsgsCount();
+    java.lang.String getKeys(int index);
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated string keys = 1;</code>
      */
-    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
-        getGetMsgsOrBuilderList();
+    com.google.protobuf.ByteString
+        getKeysBytes(int index);
+
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated int64 dsv_item = 2;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMsgsOrBuilder(
+    java.util.List<java.lang.Long> getDsvItemList();
+    /**
+     * <code>repeated int64 dsv_item = 2;</code>
+     */
+    int getDsvItemCount();
+    /**
+     * <code>repeated int64 dsv_item = 2;</code>
+     */
+    long getDsvItem(int index);
+
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> 
+        getDsItemList();
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index);
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    int getDsItemCount();
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
+        getDsItemOrBuilderList();
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
         int index);
   }
   /**
@@ -3576,7 +3608,9 @@ public final class Metadata {
       super(builder);
     }
     private RotMessage() {
-      getMsgs_ = java.util.Collections.emptyList();
+      keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      dsvItem_ = java.util.Collections.emptyList();
+      dsItem_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3608,12 +3642,42 @@ public final class Metadata {
               break;
             }
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                getMsgs_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetMessage>();
+                keys_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              getMsgs_.add(
-                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.GetMessage.parser(), extensionRegistry));
+              keys_.add(s);
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              dsvItem_.add(input.readInt64());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                dsvItem_.add(input.readInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              dsItem_.add(
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.parser(), extensionRegistry));
               break;
             }
           }
@@ -3625,7 +3689,13 @@ public final class Metadata {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          getMsgs_ = java.util.Collections.unmodifiableList(getMsgs_);
+          keys_ = keys_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          dsItem_ = java.util.Collections.unmodifiableList(dsItem_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3643,39 +3713,91 @@ public final class Metadata {
               edu.msu.cse.dkvf.metadata.Metadata.RotMessage.class, edu.msu.cse.dkvf.metadata.Metadata.RotMessage.Builder.class);
     }
 
-    public static final int GET_MSGS_FIELD_NUMBER = 1;
-    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getMsgs_;
+    public static final int KEYS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList keys_;
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated string keys = 1;</code>
      */
-    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getGetMsgsList() {
-      return getMsgs_;
+    public com.google.protobuf.ProtocolStringList
+        getKeysList() {
+      return keys_;
     }
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated string keys = 1;</code>
      */
-    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
-        getGetMsgsOrBuilderList() {
-      return getMsgs_;
+    public int getKeysCount() {
+      return keys_.size();
     }
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated string keys = 1;</code>
      */
-    public int getGetMsgsCount() {
-      return getMsgs_.size();
+    public java.lang.String getKeys(int index) {
+      return keys_.get(index);
     }
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated string keys = 1;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMsgs(int index) {
-      return getMsgs_.get(index);
+    public com.google.protobuf.ByteString
+        getKeysBytes(int index) {
+      return keys_.getByteString(index);
+    }
+
+    public static final int DSV_ITEM_FIELD_NUMBER = 2;
+    private java.util.List<java.lang.Long> dsvItem_;
+    /**
+     * <code>repeated int64 dsv_item = 2;</code>
+     */
+    public java.util.List<java.lang.Long>
+        getDsvItemList() {
+      return dsvItem_;
     }
     /**
-     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+     * <code>repeated int64 dsv_item = 2;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMsgsOrBuilder(
+    public int getDsvItemCount() {
+      return dsvItem_.size();
+    }
+    /**
+     * <code>repeated int64 dsv_item = 2;</code>
+     */
+    public long getDsvItem(int index) {
+      return dsvItem_.get(index);
+    }
+    private int dsvItemMemoizedSerializedSize = -1;
+
+    public static final int DS_ITEM_FIELD_NUMBER = 3;
+    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_;
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
+      return dsItem_;
+    }
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
+        getDsItemOrBuilderList() {
+      return dsItem_;
+    }
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public int getDsItemCount() {
+      return dsItem_.size();
+    }
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
+      return dsItem_.get(index);
+    }
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
         int index) {
-      return getMsgs_.get(index);
+      return dsItem_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3690,8 +3812,19 @@ public final class Metadata {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < getMsgs_.size(); i++) {
-        output.writeMessage(1, getMsgs_.get(i));
+      getSerializedSize();
+      for (int i = 0; i < keys_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keys_.getRaw(i));
+      }
+      if (getDsvItemList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(dsvItemMemoizedSerializedSize);
+      }
+      for (int i = 0; i < dsvItem_.size(); i++) {
+        output.writeInt64NoTag(dsvItem_.get(i));
+      }
+      for (int i = 0; i < dsItem_.size(); i++) {
+        output.writeMessage(3, dsItem_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -3701,9 +3834,31 @@ public final class Metadata {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < getMsgs_.size(); i++) {
+      {
+        int dataSize = 0;
+        for (int i = 0; i < keys_.size(); i++) {
+          dataSize += computeStringSizeNoTag(keys_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getKeysList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dsvItem_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt64SizeNoTag(dsvItem_.get(i));
+        }
+        size += dataSize;
+        if (!getDsvItemList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        dsvItemMemoizedSerializedSize = dataSize;
+      }
+      for (int i = 0; i < dsItem_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getMsgs_.get(i));
+          .computeMessageSize(3, dsItem_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3721,8 +3876,12 @@ public final class Metadata {
       edu.msu.cse.dkvf.metadata.Metadata.RotMessage other = (edu.msu.cse.dkvf.metadata.Metadata.RotMessage) obj;
 
       boolean result = true;
-      result = result && getGetMsgsList()
-          .equals(other.getGetMsgsList());
+      result = result && getKeysList()
+          .equals(other.getKeysList());
+      result = result && getDsvItemList()
+          .equals(other.getDsvItemList());
+      result = result && getDsItemList()
+          .equals(other.getDsItemList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3734,9 +3893,17 @@ public final class Metadata {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getGetMsgsCount() > 0) {
-        hash = (37 * hash) + GET_MSGS_FIELD_NUMBER;
-        hash = (53 * hash) + getGetMsgsList().hashCode();
+      if (getKeysCount() > 0) {
+        hash = (37 * hash) + KEYS_FIELD_NUMBER;
+        hash = (53 * hash) + getKeysList().hashCode();
+      }
+      if (getDsvItemCount() > 0) {
+        hash = (37 * hash) + DSV_ITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getDsvItemList().hashCode();
+      }
+      if (getDsItemCount() > 0) {
+        hash = (37 * hash) + DS_ITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getDsItemList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3863,16 +4030,20 @@ public final class Metadata {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getGetMsgsFieldBuilder();
+          getDsItemFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (getMsgsBuilder_ == null) {
-          getMsgs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dsvItem_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (dsItemBuilder_ == null) {
+          dsItem_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          getMsgsBuilder_.clear();
+          dsItemBuilder_.clear();
         }
         return this;
       }
@@ -3897,14 +4068,24 @@ public final class Metadata {
       public edu.msu.cse.dkvf.metadata.Metadata.RotMessage buildPartial() {
         edu.msu.cse.dkvf.metadata.Metadata.RotMessage result = new edu.msu.cse.dkvf.metadata.Metadata.RotMessage(this);
         int from_bitField0_ = bitField0_;
-        if (getMsgsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            getMsgs_ = java.util.Collections.unmodifiableList(getMsgs_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          keys_ = keys_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.keys_ = keys_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.dsvItem_ = dsvItem_;
+        if (dsItemBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            dsItem_ = java.util.Collections.unmodifiableList(dsItem_);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
-          result.getMsgs_ = getMsgs_;
+          result.dsItem_ = dsItem_;
         } else {
-          result.getMsgs_ = getMsgsBuilder_.build();
+          result.dsItem_ = dsItemBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3947,29 +4128,49 @@ public final class Metadata {
 
       public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.RotMessage other) {
         if (other == edu.msu.cse.dkvf.metadata.Metadata.RotMessage.getDefaultInstance()) return this;
-        if (getMsgsBuilder_ == null) {
-          if (!other.getMsgs_.isEmpty()) {
-            if (getMsgs_.isEmpty()) {
-              getMsgs_ = other.getMsgs_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+        if (!other.keys_.isEmpty()) {
+          if (keys_.isEmpty()) {
+            keys_ = other.keys_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureKeysIsMutable();
+            keys_.addAll(other.keys_);
+          }
+          onChanged();
+        }
+        if (!other.dsvItem_.isEmpty()) {
+          if (dsvItem_.isEmpty()) {
+            dsvItem_ = other.dsvItem_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDsvItemIsMutable();
+            dsvItem_.addAll(other.dsvItem_);
+          }
+          onChanged();
+        }
+        if (dsItemBuilder_ == null) {
+          if (!other.dsItem_.isEmpty()) {
+            if (dsItem_.isEmpty()) {
+              dsItem_ = other.dsItem_;
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
-              ensureGetMsgsIsMutable();
-              getMsgs_.addAll(other.getMsgs_);
+              ensureDsItemIsMutable();
+              dsItem_.addAll(other.dsItem_);
             }
             onChanged();
           }
         } else {
-          if (!other.getMsgs_.isEmpty()) {
-            if (getMsgsBuilder_.isEmpty()) {
-              getMsgsBuilder_.dispose();
-              getMsgsBuilder_ = null;
-              getMsgs_ = other.getMsgs_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              getMsgsBuilder_ = 
+          if (!other.dsItem_.isEmpty()) {
+            if (dsItemBuilder_.isEmpty()) {
+              dsItemBuilder_.dispose();
+              dsItemBuilder_ = null;
+              dsItem_ = other.dsItem_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              dsItemBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getGetMsgsFieldBuilder() : null;
+                   getDsItemFieldBuilder() : null;
             } else {
-              getMsgsBuilder_.addAllMessages(other.getMsgs_);
+              dsItemBuilder_.addAllMessages(other.dsItem_);
             }
           }
         }
@@ -4001,244 +4202,404 @@ public final class Metadata {
       }
       private int bitField0_;
 
-      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getMsgs_ =
-        java.util.Collections.emptyList();
-      private void ensureGetMsgsIsMutable() {
+      private com.google.protobuf.LazyStringList keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureKeysIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          getMsgs_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetMessage>(getMsgs_);
+          keys_ = new com.google.protobuf.LazyStringArrayList(keys_);
           bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getKeysList() {
+        return keys_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public int getKeysCount() {
+        return keys_.size();
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public java.lang.String getKeys(int index) {
+        return keys_.get(index);
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeysBytes(int index) {
+        return keys_.getByteString(index);
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public Builder setKeys(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKeysIsMutable();
+        keys_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public Builder addKeys(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKeysIsMutable();
+        keys_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public Builder addAllKeys(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureKeysIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, keys_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public Builder clearKeys() {
+        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keys = 1;</code>
+       */
+      public Builder addKeysBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureKeysIsMutable();
+        keys_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Long> dsvItem_ = java.util.Collections.emptyList();
+      private void ensureDsvItemIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          dsvItem_ = new java.util.ArrayList<java.lang.Long>(dsvItem_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public java.util.List<java.lang.Long>
+          getDsvItemList() {
+        return java.util.Collections.unmodifiableList(dsvItem_);
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public int getDsvItemCount() {
+        return dsvItem_.size();
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public long getDsvItem(int index) {
+        return dsvItem_.get(index);
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public Builder setDsvItem(
+          int index, long value) {
+        ensureDsvItemIsMutable();
+        dsvItem_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public Builder addDsvItem(long value) {
+        ensureDsvItemIsMutable();
+        dsvItem_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public Builder addAllDsvItem(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureDsvItemIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, dsvItem_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public Builder clearDsvItem() {
+        dsvItem_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_ =
+        java.util.Collections.emptyList();
+      private void ensureDsItemIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>(dsItem_);
+          bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> getMsgsBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> dsItemBuilder_;
 
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getGetMsgsList() {
-        if (getMsgsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(getMsgs_);
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
+        if (dsItemBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dsItem_);
         } else {
-          return getMsgsBuilder_.getMessageList();
+          return dsItemBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public int getGetMsgsCount() {
-        if (getMsgsBuilder_ == null) {
-          return getMsgs_.size();
+      public int getDsItemCount() {
+        if (dsItemBuilder_ == null) {
+          return dsItem_.size();
         } else {
-          return getMsgsBuilder_.getCount();
+          return dsItemBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMsgs(int index) {
-        if (getMsgsBuilder_ == null) {
-          return getMsgs_.get(index);
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
+        if (dsItemBuilder_ == null) {
+          return dsItem_.get(index);
         } else {
-          return getMsgsBuilder_.getMessage(index);
+          return dsItemBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder setGetMsgs(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
-        if (getMsgsBuilder_ == null) {
+      public Builder setDsItem(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
+        if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureGetMsgsIsMutable();
-          getMsgs_.set(index, value);
+          ensureDsItemIsMutable();
+          dsItem_.set(index, value);
           onChanged();
         } else {
-          getMsgsBuilder_.setMessage(index, value);
+          dsItemBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder setGetMsgs(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder builderForValue) {
-        if (getMsgsBuilder_ == null) {
-          ensureGetMsgsIsMutable();
-          getMsgs_.set(index, builderForValue.build());
+      public Builder setDsItem(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
+          dsItem_.set(index, builderForValue.build());
           onChanged();
         } else {
-          getMsgsBuilder_.setMessage(index, builderForValue.build());
+          dsItemBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addGetMsgs(edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
-        if (getMsgsBuilder_ == null) {
+      public Builder addDsItem(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
+        if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureGetMsgsIsMutable();
-          getMsgs_.add(value);
+          ensureDsItemIsMutable();
+          dsItem_.add(value);
           onChanged();
         } else {
-          getMsgsBuilder_.addMessage(value);
+          dsItemBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addGetMsgs(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
-        if (getMsgsBuilder_ == null) {
+      public Builder addDsItem(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
+        if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureGetMsgsIsMutable();
-          getMsgs_.add(index, value);
+          ensureDsItemIsMutable();
+          dsItem_.add(index, value);
           onChanged();
         } else {
-          getMsgsBuilder_.addMessage(index, value);
+          dsItemBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addGetMsgs(
-          edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder builderForValue) {
-        if (getMsgsBuilder_ == null) {
-          ensureGetMsgsIsMutable();
-          getMsgs_.add(builderForValue.build());
+      public Builder addDsItem(
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
+          dsItem_.add(builderForValue.build());
           onChanged();
         } else {
-          getMsgsBuilder_.addMessage(builderForValue.build());
+          dsItemBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addGetMsgs(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder builderForValue) {
-        if (getMsgsBuilder_ == null) {
-          ensureGetMsgsIsMutable();
-          getMsgs_.add(index, builderForValue.build());
+      public Builder addDsItem(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
+          dsItem_.add(index, builderForValue.build());
           onChanged();
         } else {
-          getMsgsBuilder_.addMessage(index, builderForValue.build());
+          dsItemBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addAllGetMsgs(
-          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.GetMessage> values) {
-        if (getMsgsBuilder_ == null) {
-          ensureGetMsgsIsMutable();
+      public Builder addAllDsItem(
+          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> values) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, getMsgs_);
+              values, dsItem_);
           onChanged();
         } else {
-          getMsgsBuilder_.addAllMessages(values);
+          dsItemBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder clearGetMsgs() {
-        if (getMsgsBuilder_ == null) {
-          getMsgs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder clearDsItem() {
+        if (dsItemBuilder_ == null) {
+          dsItem_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          getMsgsBuilder_.clear();
+          dsItemBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder removeGetMsgs(int index) {
-        if (getMsgsBuilder_ == null) {
-          ensureGetMsgsIsMutable();
-          getMsgs_.remove(index);
+      public Builder removeDsItem(int index) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
+          dsItem_.remove(index);
           onChanged();
         } else {
-          getMsgsBuilder_.remove(index);
+          dsItemBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder getGetMsgsBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder getDsItemBuilder(
           int index) {
-        return getGetMsgsFieldBuilder().getBuilder(index);
+        return getDsItemFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMsgsOrBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
           int index) {
-        if (getMsgsBuilder_ == null) {
-          return getMsgs_.get(index);  } else {
-          return getMsgsBuilder_.getMessageOrBuilder(index);
+        if (dsItemBuilder_ == null) {
+          return dsItem_.get(index);  } else {
+          return dsItemBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
-           getGetMsgsOrBuilderList() {
-        if (getMsgsBuilder_ != null) {
-          return getMsgsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
+           getDsItemOrBuilderList() {
+        if (dsItemBuilder_ != null) {
+          return dsItemBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(getMsgs_);
+          return java.util.Collections.unmodifiableList(dsItem_);
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder addGetMsgsBuilder() {
-        return getGetMsgsFieldBuilder().addBuilder(
-            edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance());
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder() {
+        return getDsItemFieldBuilder().addBuilder(
+            edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder addGetMsgsBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder(
           int index) {
-        return getGetMsgsFieldBuilder().addBuilder(
-            index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance());
+        return getDsItemFieldBuilder().addBuilder(
+            index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
-       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder> 
-           getGetMsgsBuilderList() {
-        return getGetMsgsFieldBuilder().getBuilderList();
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder> 
+           getDsItemBuilderList() {
+        return getDsItemFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
-          getGetMsgsFieldBuilder() {
-        if (getMsgsBuilder_ == null) {
-          getMsgsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder>(
-                  getMsgs_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
+          getDsItemFieldBuilder() {
+        if (dsItemBuilder_ == null) {
+          dsItemBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder>(
+                  dsItem_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
-          getMsgs_ = null;
+          dsItem_ = null;
         }
-        return getMsgsBuilder_;
+        return dsItemBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7079,27 +7440,53 @@ public final class Metadata {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated bytes values = 1;</code>
      */
-    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> 
-        getRepList();
+    java.util.List<com.google.protobuf.ByteString> getValuesList();
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated bytes values = 1;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.GetReply getRep(int index);
+    int getValuesCount();
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated bytes values = 1;</code>
      */
-    int getRepCount();
+    com.google.protobuf.ByteString getValues(int index);
+
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated int64 dsv_item = 2;</code>
      */
-    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
-        getRepOrBuilderList();
+    java.util.List<java.lang.Long> getDsvItemList();
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated int64 dsv_item = 2;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getRepOrBuilder(
+    int getDsvItemCount();
+    /**
+     * <code>repeated int64 dsv_item = 2;</code>
+     */
+    long getDsvItem(int index);
+
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> 
+        getDsItemList();
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index);
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    int getDsItemCount();
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
+        getDsItemOrBuilderList();
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
         int index);
   }
   /**
@@ -7115,7 +7502,9 @@ public final class Metadata {
       super(builder);
     }
     private RotReply() {
-      rep_ = java.util.Collections.emptyList();
+      values_ = java.util.Collections.emptyList();
+      dsvItem_ = java.util.Collections.emptyList();
+      dsItem_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -7148,11 +7537,40 @@ public final class Metadata {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                rep_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetReply>();
+                values_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              rep_.add(
-                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.GetReply.parser(), extensionRegistry));
+              values_.add(input.readBytes());
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              dsvItem_.add(input.readInt64());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                dsvItem_.add(input.readInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              dsItem_.add(
+                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.parser(), extensionRegistry));
               break;
             }
           }
@@ -7164,7 +7582,13 @@ public final class Metadata {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          rep_ = java.util.Collections.unmodifiableList(rep_);
+          values_ = java.util.Collections.unmodifiableList(values_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          dsItem_ = java.util.Collections.unmodifiableList(dsItem_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -7182,39 +7606,84 @@ public final class Metadata {
               edu.msu.cse.dkvf.metadata.Metadata.RotReply.class, edu.msu.cse.dkvf.metadata.Metadata.RotReply.Builder.class);
     }
 
-    public static final int REP_FIELD_NUMBER = 1;
-    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> rep_;
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private java.util.List<com.google.protobuf.ByteString> values_;
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated bytes values = 1;</code>
      */
-    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getRepList() {
-      return rep_;
+    public java.util.List<com.google.protobuf.ByteString>
+        getValuesList() {
+      return values_;
     }
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated bytes values = 1;</code>
      */
-    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
-        getRepOrBuilderList() {
-      return rep_;
+    public int getValuesCount() {
+      return values_.size();
     }
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated bytes values = 1;</code>
      */
-    public int getRepCount() {
-      return rep_.size();
+    public com.google.protobuf.ByteString getValues(int index) {
+      return values_.get(index);
+    }
+
+    public static final int DSV_ITEM_FIELD_NUMBER = 2;
+    private java.util.List<java.lang.Long> dsvItem_;
+    /**
+     * <code>repeated int64 dsv_item = 2;</code>
+     */
+    public java.util.List<java.lang.Long>
+        getDsvItemList() {
+      return dsvItem_;
     }
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated int64 dsv_item = 2;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.GetReply getRep(int index) {
-      return rep_.get(index);
+    public int getDsvItemCount() {
+      return dsvItem_.size();
     }
     /**
-     * <code>repeated .Metadata.GetReply rep = 1;</code>
+     * <code>repeated int64 dsv_item = 2;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getRepOrBuilder(
+    public long getDsvItem(int index) {
+      return dsvItem_.get(index);
+    }
+    private int dsvItemMemoizedSerializedSize = -1;
+
+    public static final int DS_ITEM_FIELD_NUMBER = 3;
+    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_;
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
+      return dsItem_;
+    }
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
+        getDsItemOrBuilderList() {
+      return dsItem_;
+    }
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public int getDsItemCount() {
+      return dsItem_.size();
+    }
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
+      return dsItem_.get(index);
+    }
+    /**
+     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     */
+    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
         int index) {
-      return rep_.get(index);
+      return dsItem_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7229,8 +7698,19 @@ public final class Metadata {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < rep_.size(); i++) {
-        output.writeMessage(1, rep_.get(i));
+      getSerializedSize();
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeBytes(1, values_.get(i));
+      }
+      if (getDsvItemList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(dsvItemMemoizedSerializedSize);
+      }
+      for (int i = 0; i < dsvItem_.size(); i++) {
+        output.writeInt64NoTag(dsvItem_.get(i));
+      }
+      for (int i = 0; i < dsItem_.size(); i++) {
+        output.writeMessage(3, dsItem_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -7240,9 +7720,32 @@ public final class Metadata {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < rep_.size(); i++) {
+      {
+        int dataSize = 0;
+        for (int i = 0; i < values_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(values_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getValuesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dsvItem_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt64SizeNoTag(dsvItem_.get(i));
+        }
+        size += dataSize;
+        if (!getDsvItemList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        dsvItemMemoizedSerializedSize = dataSize;
+      }
+      for (int i = 0; i < dsItem_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, rep_.get(i));
+          .computeMessageSize(3, dsItem_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7260,8 +7763,12 @@ public final class Metadata {
       edu.msu.cse.dkvf.metadata.Metadata.RotReply other = (edu.msu.cse.dkvf.metadata.Metadata.RotReply) obj;
 
       boolean result = true;
-      result = result && getRepList()
-          .equals(other.getRepList());
+      result = result && getValuesList()
+          .equals(other.getValuesList());
+      result = result && getDsvItemList()
+          .equals(other.getDsvItemList());
+      result = result && getDsItemList()
+          .equals(other.getDsItemList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -7273,9 +7780,17 @@ public final class Metadata {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRepCount() > 0) {
-        hash = (37 * hash) + REP_FIELD_NUMBER;
-        hash = (53 * hash) + getRepList().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      if (getDsvItemCount() > 0) {
+        hash = (37 * hash) + DSV_ITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getDsvItemList().hashCode();
+      }
+      if (getDsItemCount() > 0) {
+        hash = (37 * hash) + DS_ITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getDsItemList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7402,16 +7917,20 @@ public final class Metadata {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRepFieldBuilder();
+          getDsItemFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (repBuilder_ == null) {
-          rep_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        values_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dsvItem_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (dsItemBuilder_ == null) {
+          dsItem_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          repBuilder_.clear();
+          dsItemBuilder_.clear();
         }
         return this;
       }
@@ -7436,14 +7955,24 @@ public final class Metadata {
       public edu.msu.cse.dkvf.metadata.Metadata.RotReply buildPartial() {
         edu.msu.cse.dkvf.metadata.Metadata.RotReply result = new edu.msu.cse.dkvf.metadata.Metadata.RotReply(this);
         int from_bitField0_ = bitField0_;
-        if (repBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            rep_ = java.util.Collections.unmodifiableList(rep_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          values_ = java.util.Collections.unmodifiableList(values_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.dsvItem_ = dsvItem_;
+        if (dsItemBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            dsItem_ = java.util.Collections.unmodifiableList(dsItem_);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
-          result.rep_ = rep_;
+          result.dsItem_ = dsItem_;
         } else {
-          result.rep_ = repBuilder_.build();
+          result.dsItem_ = dsItemBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7486,29 +8015,49 @@ public final class Metadata {
 
       public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.RotReply other) {
         if (other == edu.msu.cse.dkvf.metadata.Metadata.RotReply.getDefaultInstance()) return this;
-        if (repBuilder_ == null) {
-          if (!other.rep_.isEmpty()) {
-            if (rep_.isEmpty()) {
-              rep_ = other.rep_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        if (!other.dsvItem_.isEmpty()) {
+          if (dsvItem_.isEmpty()) {
+            dsvItem_ = other.dsvItem_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDsvItemIsMutable();
+            dsvItem_.addAll(other.dsvItem_);
+          }
+          onChanged();
+        }
+        if (dsItemBuilder_ == null) {
+          if (!other.dsItem_.isEmpty()) {
+            if (dsItem_.isEmpty()) {
+              dsItem_ = other.dsItem_;
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
-              ensureRepIsMutable();
-              rep_.addAll(other.rep_);
+              ensureDsItemIsMutable();
+              dsItem_.addAll(other.dsItem_);
             }
             onChanged();
           }
         } else {
-          if (!other.rep_.isEmpty()) {
-            if (repBuilder_.isEmpty()) {
-              repBuilder_.dispose();
-              repBuilder_ = null;
-              rep_ = other.rep_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              repBuilder_ = 
+          if (!other.dsItem_.isEmpty()) {
+            if (dsItemBuilder_.isEmpty()) {
+              dsItemBuilder_.dispose();
+              dsItemBuilder_ = null;
+              dsItem_ = other.dsItem_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              dsItemBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRepFieldBuilder() : null;
+                   getDsItemFieldBuilder() : null;
             } else {
-              repBuilder_.addAllMessages(other.rep_);
+              dsItemBuilder_.addAllMessages(other.dsItem_);
             }
           }
         }
@@ -7540,244 +8089,382 @@ public final class Metadata {
       }
       private int bitField0_;
 
-      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> rep_ =
-        java.util.Collections.emptyList();
-      private void ensureRepIsMutable() {
+      private java.util.List<com.google.protobuf.ByteString> values_ = java.util.Collections.emptyList();
+      private void ensureValuesIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          rep_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetReply>(rep_);
+          values_ = new java.util.ArrayList<com.google.protobuf.ByteString>(values_);
           bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated bytes values = 1;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getValuesList() {
+        return java.util.Collections.unmodifiableList(values_);
+      }
+      /**
+       * <code>repeated bytes values = 1;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated bytes values = 1;</code>
+       */
+      public com.google.protobuf.ByteString getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       * <code>repeated bytes values = 1;</code>
+       */
+      public Builder setValues(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureValuesIsMutable();
+        values_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes values = 1;</code>
+       */
+      public Builder addValues(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureValuesIsMutable();
+        values_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes values = 1;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes values = 1;</code>
+       */
+      public Builder clearValues() {
+        values_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Long> dsvItem_ = java.util.Collections.emptyList();
+      private void ensureDsvItemIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          dsvItem_ = new java.util.ArrayList<java.lang.Long>(dsvItem_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public java.util.List<java.lang.Long>
+          getDsvItemList() {
+        return java.util.Collections.unmodifiableList(dsvItem_);
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public int getDsvItemCount() {
+        return dsvItem_.size();
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public long getDsvItem(int index) {
+        return dsvItem_.get(index);
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public Builder setDsvItem(
+          int index, long value) {
+        ensureDsvItemIsMutable();
+        dsvItem_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public Builder addDsvItem(long value) {
+        ensureDsvItemIsMutable();
+        dsvItem_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public Builder addAllDsvItem(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureDsvItemIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, dsvItem_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 dsv_item = 2;</code>
+       */
+      public Builder clearDsvItem() {
+        dsvItem_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_ =
+        java.util.Collections.emptyList();
+      private void ensureDsItemIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>(dsItem_);
+          bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> repBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> dsItemBuilder_;
 
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply> getRepList() {
-        if (repBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(rep_);
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
+        if (dsItemBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dsItem_);
         } else {
-          return repBuilder_.getMessageList();
+          return dsItemBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public int getRepCount() {
-        if (repBuilder_ == null) {
-          return rep_.size();
+      public int getDsItemCount() {
+        if (dsItemBuilder_ == null) {
+          return dsItem_.size();
         } else {
-          return repBuilder_.getCount();
+          return dsItemBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetReply getRep(int index) {
-        if (repBuilder_ == null) {
-          return rep_.get(index);
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
+        if (dsItemBuilder_ == null) {
+          return dsItem_.get(index);
         } else {
-          return repBuilder_.getMessage(index);
+          return dsItemBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder setRep(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
-        if (repBuilder_ == null) {
+      public Builder setDsItem(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
+        if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRepIsMutable();
-          rep_.set(index, value);
+          ensureDsItemIsMutable();
+          dsItem_.set(index, value);
           onChanged();
         } else {
-          repBuilder_.setMessage(index, value);
+          dsItemBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder setRep(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
-        if (repBuilder_ == null) {
-          ensureRepIsMutable();
-          rep_.set(index, builderForValue.build());
+      public Builder setDsItem(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
+          dsItem_.set(index, builderForValue.build());
           onChanged();
         } else {
-          repBuilder_.setMessage(index, builderForValue.build());
+          dsItemBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addRep(edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
-        if (repBuilder_ == null) {
+      public Builder addDsItem(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
+        if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRepIsMutable();
-          rep_.add(value);
+          ensureDsItemIsMutable();
+          dsItem_.add(value);
           onChanged();
         } else {
-          repBuilder_.addMessage(value);
+          dsItemBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addRep(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply value) {
-        if (repBuilder_ == null) {
+      public Builder addDsItem(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
+        if (dsItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRepIsMutable();
-          rep_.add(index, value);
+          ensureDsItemIsMutable();
+          dsItem_.add(index, value);
           onChanged();
         } else {
-          repBuilder_.addMessage(index, value);
+          dsItemBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addRep(
-          edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
-        if (repBuilder_ == null) {
-          ensureRepIsMutable();
-          rep_.add(builderForValue.build());
+      public Builder addDsItem(
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
+          dsItem_.add(builderForValue.build());
           onChanged();
         } else {
-          repBuilder_.addMessage(builderForValue.build());
+          dsItemBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addRep(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder builderForValue) {
-        if (repBuilder_ == null) {
-          ensureRepIsMutable();
-          rep_.add(index, builderForValue.build());
+      public Builder addDsItem(
+          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
+          dsItem_.add(index, builderForValue.build());
           onChanged();
         } else {
-          repBuilder_.addMessage(index, builderForValue.build());
+          dsItemBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder addAllRep(
-          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReply> values) {
-        if (repBuilder_ == null) {
-          ensureRepIsMutable();
+      public Builder addAllDsItem(
+          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> values) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, rep_);
+              values, dsItem_);
           onChanged();
         } else {
-          repBuilder_.addAllMessages(values);
+          dsItemBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder clearRep() {
-        if (repBuilder_ == null) {
-          rep_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder clearDsItem() {
+        if (dsItemBuilder_ == null) {
+          dsItem_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          repBuilder_.clear();
+          dsItemBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public Builder removeRep(int index) {
-        if (repBuilder_ == null) {
-          ensureRepIsMutable();
-          rep_.remove(index);
+      public Builder removeDsItem(int index) {
+        if (dsItemBuilder_ == null) {
+          ensureDsItemIsMutable();
+          dsItem_.remove(index);
           onChanged();
         } else {
-          repBuilder_.remove(index);
+          dsItemBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder getRepBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder getDsItemBuilder(
           int index) {
-        return getRepFieldBuilder().getBuilder(index);
+        return getDsItemFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder getRepOrBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
           int index) {
-        if (repBuilder_ == null) {
-          return rep_.get(index);  } else {
-          return repBuilder_.getMessageOrBuilder(index);
+        if (dsItemBuilder_ == null) {
+          return dsItem_.get(index);  } else {
+          return dsItemBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
-           getRepOrBuilderList() {
-        if (repBuilder_ != null) {
-          return repBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
+           getDsItemOrBuilderList() {
+        if (dsItemBuilder_ != null) {
+          return dsItemBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(rep_);
+          return java.util.Collections.unmodifiableList(dsItem_);
         }
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder addRepBuilder() {
-        return getRepFieldBuilder().addBuilder(
-            edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance());
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder() {
+        return getDsItemFieldBuilder().addBuilder(
+            edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder addRepBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder(
           int index) {
-        return getRepFieldBuilder().addBuilder(
-            index, edu.msu.cse.dkvf.metadata.Metadata.GetReply.getDefaultInstance());
+        return getDsItemFieldBuilder().addBuilder(
+            index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
       }
       /**
-       * <code>repeated .Metadata.GetReply rep = 1;</code>
+       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
        */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder> 
-           getRepBuilderList() {
-        return getRepFieldBuilder().getBuilderList();
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder> 
+           getDsItemBuilderList() {
+        return getDsItemFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder> 
-          getRepFieldBuilder() {
-        if (repBuilder_ == null) {
-          repBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              edu.msu.cse.dkvf.metadata.Metadata.GetReply, edu.msu.cse.dkvf.metadata.Metadata.GetReply.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetReplyOrBuilder>(
-                  rep_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
+          getDsItemFieldBuilder() {
+        if (dsItemBuilder_ == null) {
+          dsItemBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder>(
+                  dsItem_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
-          rep_ = null;
+          dsItem_ = null;
         }
-        return repBuilder_;
+        return dsItemBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15263,41 +15950,42 @@ public final class Metadata {
       "\030\005 \003(\0132\024.Metadata.DcTimeItem\"+\n\nGetMessa" +
       "ge\022\013\n\003key\030\001 \001(\t\022\020\n\010dsv_item\030\002 \003(\003\"O\n\nPut" +
       "Message\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\022%\n\007d" +
-      "s_item\030\003 \003(\0132\024.Metadata.DcTimeItem\"4\n\nRo" +
-      "tMessage\022&\n\010get_msgs\030\001 \003(\0132\024.Metadata.Ge" +
-      "tMessage\"\246\001\n\rClientMessage\022+\n\013get_messag",
-      "e\030\001 \001(\0132\024.Metadata.GetMessageH\000\022+\n\013put_m" +
-      "essage\030\002 \001(\0132\024.Metadata.PutMessageH\000\022+\n\013" +
-      "rot_message\030\003 \001(\0132\024.Metadata.RotMessageH" +
-      "\000B\016\n\014message_type\"R\n\010GetReply\022\r\n\005value\030\001" +
-      " \001(\014\022%\n\007ds_item\030\003 \003(\0132\024.Metadata.DcTimeI" +
-      "tem\022\020\n\010dsv_item\030\002 \003(\003\"\"\n\010PutReply\022\n\n\002ut\030" +
-      "\001 \001(\003\022\n\n\002sr\030\002 \001(\005\"+\n\010RotReply\022\037\n\003rep\030\001 \003" +
-      "(\0132\022.Metadata.GetReply\"\250\001\n\013ClientReply\022\016" +
-      "\n\006status\030\001 \001(\010\022\'\n\tget_reply\030\002 \001(\0132\022.Meta" +
-      "data.GetReplyH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Met",
-      "adata.PutReplyH\000\022\'\n\trot_reply\030\004 \001(\0132\022.Me" +
-      "tadata.RotReplyH\000B\016\n\014message_type\"M\n\020Rep" +
-      "licateMessage\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132" +
-      "\020.Metadata.Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020Hear" +
-      "tbeatMessage\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(" +
-      "\005\")\n\tVVMessage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002" +
-      " \001(\005\"\035\n\nDSVMessage\022\017\n\007dsvItem\030\001 \003(\003\"K\n\023S" +
-      "liceRequestMessage\022\014\n\004p_id\030\001 \001(\005\022\r\n\005rotI" +
-      "D\030\002 \001(\003\022\013\n\003key\030\003 \001(\t\022\n\n\002sv\030\004 \003(\003\"`\n\021Slic" +
-      "eReplyMessage\022\r\n\005rotID\030\001 \001(\003\022\013\n\003key\030\002 \001(",
-      "\t\022\r\n\005value\030\003 \001(\014\022 \n\002ds\030\004 \003(\0132\024.Metadata." +
-      "DcTimeItem\"\325\002\n\rServerMessage\0227\n\021replicat" +
-      "e_message\030\001 \001(\0132\032.Metadata.ReplicateMess" +
-      "ageH\000\0227\n\021heartbeat_message\030\002 \001(\0132\032.Metad" +
-      "ata.HeartbeatMessageH\000\022)\n\nvv_message\030\003 \001" +
-      "(\0132\023.Metadata.VVMessageH\000\022+\n\013dsv_message" +
-      "\030\004 \001(\0132\024.Metadata.DSVMessageH\000\0225\n\014sreq_m" +
-      "essage\030\005 \001(\0132\035.Metadata.SliceRequestMess" +
-      "ageH\000\0223\n\014srep_message\030\006 \001(\0132\033.Metadata.S" +
-      "liceReplyMessageH\000B\016\n\014message_typeB%\n\031ed",
-      "u.msu.cse.dkvf.metadataB\010Metadatab\006proto" +
-      "3"
+      "s_item\030\003 \003(\0132\024.Metadata.DcTimeItem\"S\n\nRo" +
+      "tMessage\022\014\n\004keys\030\001 \003(\t\022\020\n\010dsv_item\030\002 \003(\003" +
+      "\022%\n\007ds_item\030\003 \003(\0132\024.Metadata.DcTimeItem\"",
+      "\246\001\n\rClientMessage\022+\n\013get_message\030\001 \001(\0132\024" +
+      ".Metadata.GetMessageH\000\022+\n\013put_message\030\002 " +
+      "\001(\0132\024.Metadata.PutMessageH\000\022+\n\013rot_messa" +
+      "ge\030\003 \001(\0132\024.Metadata.RotMessageH\000B\016\n\014mess" +
+      "age_type\"R\n\010GetReply\022\r\n\005value\030\001 \001(\014\022%\n\007d" +
+      "s_item\030\003 \003(\0132\024.Metadata.DcTimeItem\022\020\n\010ds" +
+      "v_item\030\002 \003(\003\"\"\n\010PutReply\022\n\n\002ut\030\001 \001(\003\022\n\n\002" +
+      "sr\030\002 \001(\005\"S\n\010RotReply\022\016\n\006values\030\001 \003(\014\022\020\n\010" +
+      "dsv_item\030\002 \003(\003\022%\n\007ds_item\030\003 \003(\0132\024.Metada" +
+      "ta.DcTimeItem\"\250\001\n\013ClientReply\022\016\n\006status\030",
+      "\001 \001(\010\022\'\n\tget_reply\030\002 \001(\0132\022.Metadata.GetR" +
+      "eplyH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Metadata.Put" +
+      "ReplyH\000\022\'\n\trot_reply\030\004 \001(\0132\022.Metadata.Ro" +
+      "tReplyH\000B\016\n\014message_type\"M\n\020ReplicateMes" +
+      "sage\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132\020.Metadat" +
+      "a.Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020HeartbeatMess" +
+      "age\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(\005\")\n\tVVMe" +
+      "ssage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002 \001(\005\"\035\n\nD" +
+      "SVMessage\022\017\n\007dsvItem\030\001 \003(\003\"K\n\023SliceReque" +
+      "stMessage\022\014\n\004p_id\030\001 \001(\005\022\r\n\005rotID\030\002 \001(\003\022\013",
+      "\n\003key\030\003 \001(\t\022\n\n\002sv\030\004 \003(\003\"`\n\021SliceReplyMes" +
+      "sage\022\r\n\005rotID\030\001 \001(\003\022\013\n\003key\030\002 \001(\t\022\r\n\005valu" +
+      "e\030\003 \001(\014\022 \n\002ds\030\004 \003(\0132\024.Metadata.DcTimeIte" +
+      "m\"\325\002\n\rServerMessage\0227\n\021replicate_message" +
+      "\030\001 \001(\0132\032.Metadata.ReplicateMessageH\000\0227\n\021" +
+      "heartbeat_message\030\002 \001(\0132\032.Metadata.Heart" +
+      "beatMessageH\000\022)\n\nvv_message\030\003 \001(\0132\023.Meta" +
+      "data.VVMessageH\000\022+\n\013dsv_message\030\004 \001(\0132\024." +
+      "Metadata.DSVMessageH\000\0225\n\014sreq_message\030\005 " +
+      "\001(\0132\035.Metadata.SliceRequestMessageH\000\0223\n\014",
+      "srep_message\030\006 \001(\0132\033.Metadata.SliceReply" +
+      "MessageH\000B\016\n\014message_typeB%\n\031edu.msu.cse" +
+      ".dkvf.metadataB\010Metadatab\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15340,7 +16028,7 @@ public final class Metadata {
     internal_static_Metadata_RotMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_RotMessage_descriptor,
-        new java.lang.String[] { "GetMsgs", });
+        new java.lang.String[] { "Keys", "DsvItem", "DsItem", });
     internal_static_Metadata_ClientMessage_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_Metadata_ClientMessage_fieldAccessorTable = new
@@ -15364,7 +16052,7 @@ public final class Metadata {
     internal_static_Metadata_RotReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_RotReply_descriptor,
-        new java.lang.String[] { "Rep", });
+        new java.lang.String[] { "Values", "DsvItem", "DsItem", });
     internal_static_Metadata_ClientReply_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_Metadata_ClientReply_fieldAccessorTable = new

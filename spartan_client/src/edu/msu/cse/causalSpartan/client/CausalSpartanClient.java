@@ -17,6 +17,7 @@ import edu.msu.cse.dkvf.metadata.Metadata.ClientReply;
 import edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem;
 import edu.msu.cse.dkvf.metadata.Metadata.GetMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.PutMessage;
+import edu.msu.cse.dkvf.metadata.Metadata.RotMessage;
 
 public class CausalSpartanClient extends DKVFClient {
 
@@ -88,6 +89,38 @@ public class CausalSpartanClient extends DKVFClient {
             return null;
         }
     }
+
+    public List<byte[]> rot(List<String> keys) {
+        try {
+            RotMessage rm = RotMessage.newBuilder().addAllKeys(keys)
+                            .addAllDsvItem(dsv).addAllDsItem(getDcTimeItems()).build();
+            ClientMessage cm = ClientMessage.newBuilder().setRotMessage(rm).build();
+
+            // Contact the partition of first key for ROT
+            int partition = findPartition(keys.get(0));
+            String serverId = dcId + "_" + partition;
+            if (sendToServer(serverId, cm) == NetworkStatus.FAILURE)
+                return null;
+            ClientReply cr = readFromServer(serverId);
+            if (cr != null && cr.getStatus()) {
+                updateDsv(cr.getRotReply().getDsvItemList());
+                for (DcTimeItem dti : cr.getRotReply().getDsItemList()) {
+                    updateDS(dti.getDcId(), dti.getTime());
+                }
+                List<byte[]> values = new ArrayList<>(cr.getRotReply().getValuesCount());
+                for (ByteString value : cr.getRotReply().getValuesList())
+                    values.add(value.toByteArray());
+                return values;
+            } else {
+                protocolLOGGER.severe("Server could not get the keys= " + keys);
+                return null;
+            }
+        } catch (Exception e) {
+            protocolLOGGER.severe(Utils.exceptionLogMessge("Failed to get due to exception", e));
+            return null;
+        }
+    }
+
 
     private int findPartition(String key) throws NoSuchAlgorithmException {
         long hash = Utils.getMd5HashLong(key);

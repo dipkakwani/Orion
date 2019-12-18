@@ -30,7 +30,9 @@ message PutMessage {
 }
 
 message RotMessage {
-    repeated GetMessage get_msgs = 1;
+    repeated string keys = 1;
+    repeated int64 dsv_item = 2;
+    repeated DcTimeItem ds_item = 3;
 }
 
 message ClientMessage {
@@ -55,7 +57,9 @@ message PutReply {
 }
 
 message RotReply {
-    repeated GetReply rep = 1;
+    repeated bytes values = 1;
+    repeated int64 dsv_item = 2;
+    repeated DcTimeItem ds_item = 3;
 }
 
 message ClientReply {
