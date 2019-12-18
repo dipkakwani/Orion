@@ -19,9 +19,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -60,8 +60,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -107,11 +105,9 @@ public class Config {
 
     /**
      * Gets the value of the id property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getId() {
         return id;
@@ -119,11 +115,9 @@ public class Config {
 
     /**
      * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setId(String value) {
         this.id = value;
@@ -131,11 +125,9 @@ public class Config {
 
     /**
      * Gets the value of the clientPort property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getClientPort() {
         return clientPort;
@@ -143,11 +135,9 @@ public class Config {
 
     /**
      * Sets the value of the clientPort property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setClientPort(String value) {
         this.clientPort = value;
@@ -155,11 +145,9 @@ public class Config {
 
     /**
      * Gets the value of the serverPort property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getServerPort() {
         return serverPort;
@@ -167,11 +155,9 @@ public class Config {
 
     /**
      * Sets the value of the serverPort property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setServerPort(String value) {
         this.serverPort = value;
@@ -179,11 +165,9 @@ public class Config {
 
     /**
      * Gets the value of the controlPort property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getControlPort() {
         return controlPort;
@@ -191,11 +175,9 @@ public class Config {
 
     /**
      * Sets the value of the controlPort property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setControlPort(String value) {
         this.controlPort = value;
@@ -203,11 +185,9 @@ public class Config {
 
     /**
      * Gets the value of the storage property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Storage }
-     *     
+     *
+     * @return possible object is
+     * {@link Storage }
      */
     public Storage getStorage() {
         return storage;
@@ -215,11 +195,9 @@ public class Config {
 
     /**
      * Sets the value of the storage property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Storage }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Storage }
      */
     public void setStorage(Storage value) {
         this.storage = value;
@@ -227,11 +205,9 @@ public class Config {
 
     /**
      * Gets the value of the connectorSleepTime property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getConnectorSleepTime() {
         return connectorSleepTime;
@@ -239,11 +215,9 @@ public class Config {
 
     /**
      * Sets the value of the connectorSleepTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setConnectorSleepTime(String value) {
         this.connectorSleepTime = value;
@@ -251,11 +225,9 @@ public class Config {
 
     /**
      * Gets the value of the channelCapacity property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getChannelCapacity() {
         return channelCapacity;
@@ -263,11 +235,9 @@ public class Config {
 
     /**
      * Sets the value of the channelCapacity property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setChannelCapacity(String value) {
         this.channelCapacity = value;
@@ -275,11 +245,9 @@ public class Config {
 
     /**
      * Gets the value of the synchCommunication property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isSynchCommunication() {
         return synchCommunication;
@@ -287,11 +255,9 @@ public class Config {
 
     /**
      * Sets the value of the synchCommunication property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setSynchCommunication(Boolean value) {
         this.synchCommunication = value;
@@ -299,11 +265,9 @@ public class Config {
 
     /**
      * Gets the value of the protocolLogFile property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getProtocolLogFile() {
         return protocolLogFile;
@@ -311,11 +275,9 @@ public class Config {
 
     /**
      * Sets the value of the protocolLogFile property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setProtocolLogFile(String value) {
         this.protocolLogFile = value;
@@ -323,11 +285,9 @@ public class Config {
 
     /**
      * Gets the value of the protocolLogLevel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getProtocolLogLevel() {
         return protocolLogLevel;
@@ -335,11 +295,9 @@ public class Config {
 
     /**
      * Sets the value of the protocolLogLevel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setProtocolLogLevel(String value) {
         this.protocolLogLevel = value;
@@ -347,11 +305,9 @@ public class Config {
 
     /**
      * Gets the value of the protocolLogType property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getProtocolLogType() {
         return protocolLogType;
@@ -359,11 +315,9 @@ public class Config {
 
     /**
      * Sets the value of the protocolLogType property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setProtocolLogType(String value) {
         this.protocolLogType = value;
@@ -371,11 +325,9 @@ public class Config {
 
     /**
      * Gets the value of the protocolStdLogLevel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getProtocolStdLogLevel() {
         return protocolStdLogLevel;
@@ -383,11 +335,9 @@ public class Config {
 
     /**
      * Sets the value of the protocolStdLogLevel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setProtocolStdLogLevel(String value) {
         this.protocolStdLogLevel = value;
@@ -395,11 +345,9 @@ public class Config {
 
     /**
      * Gets the value of the frameworkLogFile property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFrameworkLogFile() {
         return frameworkLogFile;
@@ -407,11 +355,9 @@ public class Config {
 
     /**
      * Sets the value of the frameworkLogFile property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFrameworkLogFile(String value) {
         this.frameworkLogFile = value;
@@ -419,11 +365,9 @@ public class Config {
 
     /**
      * Gets the value of the frameworkLogLevel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFrameworkLogLevel() {
         return frameworkLogLevel;
@@ -431,11 +375,9 @@ public class Config {
 
     /**
      * Sets the value of the frameworkLogLevel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFrameworkLogLevel(String value) {
         this.frameworkLogLevel = value;
@@ -443,11 +385,9 @@ public class Config {
 
     /**
      * Gets the value of the frameworkLogType property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFrameworkLogType() {
         return frameworkLogType;
@@ -455,11 +395,9 @@ public class Config {
 
     /**
      * Sets the value of the frameworkLogType property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFrameworkLogType(String value) {
         this.frameworkLogType = value;
@@ -467,11 +405,9 @@ public class Config {
 
     /**
      * Gets the value of the frameworkStdLogLevel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFrameworkStdLogLevel() {
         return frameworkStdLogLevel;
@@ -479,11 +415,9 @@ public class Config {
 
     /**
      * Sets the value of the frameworkStdLogLevel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFrameworkStdLogLevel(String value) {
         this.frameworkStdLogLevel = value;
@@ -491,11 +425,9 @@ public class Config {
 
     /**
      * Gets the value of the connectTo property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ConnectTo }
-     *     
+     *
+     * @return possible object is
+     * {@link ConnectTo }
      */
     public ConnectTo getConnectTo() {
         return connectTo;
@@ -503,11 +435,9 @@ public class Config {
 
     /**
      * Sets the value of the connectTo property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ConnectTo }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ConnectTo }
      */
     public void setConnectTo(ConnectTo value) {
         this.connectTo = value;
@@ -515,11 +445,9 @@ public class Config {
 
     /**
      * Gets the value of the protocolProperties property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProtocolProperties }
-     *     
+     *
+     * @return possible object is
+     * {@link ProtocolProperties }
      */
     public ProtocolProperties getProtocolProperties() {
         return protocolProperties;
@@ -527,11 +455,9 @@ public class Config {
 
     /**
      * Sets the value of the protocolProperties property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProtocolProperties }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ProtocolProperties }
      */
     public void setProtocolProperties(ProtocolProperties value) {
         this.protocolProperties = value;
@@ -540,9 +466,9 @@ public class Config {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -554,12 +480,10 @@ public class Config {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "property"
+            "property"
     })
     public static class ProtocolProperties {
 
@@ -568,25 +492,23 @@ public class Config {
 
         /**
          * Gets the value of the property property.
-         * 
+         *
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
          * This is why there is not a <CODE>set</CODE> method for the property property.
-         * 
+         *
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
          *    getProperty().add(newItem);
          * </pre>
-         * 
-         * 
+         *
+         *
          * <p>
          * Objects of the following type(s) are allowed in the list
          * {@link Property }
-         * 
-         * 
          */
         public List<Property> getProperty() {
             if (property == null) {
