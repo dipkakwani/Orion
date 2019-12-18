@@ -30,7 +30,7 @@ message PutMessage {
 }
 
 message RotMessage {
-    repeated GetMessage msg = 1;
+    repeated GetMessage get_msgs = 1;
 }
 
 message ClientMessage {

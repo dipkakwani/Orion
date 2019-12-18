@@ -3540,27 +3540,27 @@ public final class Metadata {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
     java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> 
-        getMsgList();
+        getGetMsgsList();
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.GetMessage getMsg(int index);
+    edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMsgs(int index);
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
-    int getMsgCount();
+    int getGetMsgsCount();
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
     java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
-        getMsgOrBuilderList();
+        getGetMsgsOrBuilderList();
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getMsgOrBuilder(
+    edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMsgsOrBuilder(
         int index);
   }
   /**
@@ -3576,7 +3576,7 @@ public final class Metadata {
       super(builder);
     }
     private RotMessage() {
-      msg_ = java.util.Collections.emptyList();
+      getMsgs_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3609,10 +3609,10 @@ public final class Metadata {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                msg_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetMessage>();
+                getMsgs_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetMessage>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              msg_.add(
+              getMsgs_.add(
                   input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.GetMessage.parser(), extensionRegistry));
               break;
             }
@@ -3625,7 +3625,7 @@ public final class Metadata {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          msg_ = java.util.Collections.unmodifiableList(msg_);
+          getMsgs_ = java.util.Collections.unmodifiableList(getMsgs_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3643,39 +3643,39 @@ public final class Metadata {
               edu.msu.cse.dkvf.metadata.Metadata.RotMessage.class, edu.msu.cse.dkvf.metadata.Metadata.RotMessage.Builder.class);
     }
 
-    public static final int MSG_FIELD_NUMBER = 1;
-    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> msg_;
+    public static final int GET_MSGS_FIELD_NUMBER = 1;
+    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getMsgs_;
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
-    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getMsgList() {
-      return msg_;
+    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getGetMsgsList() {
+      return getMsgs_;
     }
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
     public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
-        getMsgOrBuilderList() {
-      return msg_;
+        getGetMsgsOrBuilderList() {
+      return getMsgs_;
     }
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
-    public int getMsgCount() {
-      return msg_.size();
+    public int getGetMsgsCount() {
+      return getMsgs_.size();
     }
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getMsg(int index) {
-      return msg_.get(index);
+    public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMsgs(int index) {
+      return getMsgs_.get(index);
     }
     /**
-     * <code>repeated .Metadata.GetMessage msg = 1;</code>
+     * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getMsgOrBuilder(
+    public edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMsgsOrBuilder(
         int index) {
-      return msg_.get(index);
+      return getMsgs_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3690,8 +3690,8 @@ public final class Metadata {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < msg_.size(); i++) {
-        output.writeMessage(1, msg_.get(i));
+      for (int i = 0; i < getMsgs_.size(); i++) {
+        output.writeMessage(1, getMsgs_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -3701,9 +3701,9 @@ public final class Metadata {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < msg_.size(); i++) {
+      for (int i = 0; i < getMsgs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, msg_.get(i));
+          .computeMessageSize(1, getMsgs_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3721,8 +3721,8 @@ public final class Metadata {
       edu.msu.cse.dkvf.metadata.Metadata.RotMessage other = (edu.msu.cse.dkvf.metadata.Metadata.RotMessage) obj;
 
       boolean result = true;
-      result = result && getMsgList()
-          .equals(other.getMsgList());
+      result = result && getGetMsgsList()
+          .equals(other.getGetMsgsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3734,9 +3734,9 @@ public final class Metadata {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getMsgCount() > 0) {
-        hash = (37 * hash) + MSG_FIELD_NUMBER;
-        hash = (53 * hash) + getMsgList().hashCode();
+      if (getGetMsgsCount() > 0) {
+        hash = (37 * hash) + GET_MSGS_FIELD_NUMBER;
+        hash = (53 * hash) + getGetMsgsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3863,16 +3863,16 @@ public final class Metadata {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getMsgFieldBuilder();
+          getGetMsgsFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (msgBuilder_ == null) {
-          msg_ = java.util.Collections.emptyList();
+        if (getMsgsBuilder_ == null) {
+          getMsgs_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          msgBuilder_.clear();
+          getMsgsBuilder_.clear();
         }
         return this;
       }
@@ -3897,14 +3897,14 @@ public final class Metadata {
       public edu.msu.cse.dkvf.metadata.Metadata.RotMessage buildPartial() {
         edu.msu.cse.dkvf.metadata.Metadata.RotMessage result = new edu.msu.cse.dkvf.metadata.Metadata.RotMessage(this);
         int from_bitField0_ = bitField0_;
-        if (msgBuilder_ == null) {
+        if (getMsgsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            msg_ = java.util.Collections.unmodifiableList(msg_);
+            getMsgs_ = java.util.Collections.unmodifiableList(getMsgs_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.msg_ = msg_;
+          result.getMsgs_ = getMsgs_;
         } else {
-          result.msg_ = msgBuilder_.build();
+          result.getMsgs_ = getMsgsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3947,29 +3947,29 @@ public final class Metadata {
 
       public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.RotMessage other) {
         if (other == edu.msu.cse.dkvf.metadata.Metadata.RotMessage.getDefaultInstance()) return this;
-        if (msgBuilder_ == null) {
-          if (!other.msg_.isEmpty()) {
-            if (msg_.isEmpty()) {
-              msg_ = other.msg_;
+        if (getMsgsBuilder_ == null) {
+          if (!other.getMsgs_.isEmpty()) {
+            if (getMsgs_.isEmpty()) {
+              getMsgs_ = other.getMsgs_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureMsgIsMutable();
-              msg_.addAll(other.msg_);
+              ensureGetMsgsIsMutable();
+              getMsgs_.addAll(other.getMsgs_);
             }
             onChanged();
           }
         } else {
-          if (!other.msg_.isEmpty()) {
-            if (msgBuilder_.isEmpty()) {
-              msgBuilder_.dispose();
-              msgBuilder_ = null;
-              msg_ = other.msg_;
+          if (!other.getMsgs_.isEmpty()) {
+            if (getMsgsBuilder_.isEmpty()) {
+              getMsgsBuilder_.dispose();
+              getMsgsBuilder_ = null;
+              getMsgs_ = other.getMsgs_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              msgBuilder_ = 
+              getMsgsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMsgFieldBuilder() : null;
+                   getGetMsgsFieldBuilder() : null;
             } else {
-              msgBuilder_.addAllMessages(other.msg_);
+              getMsgsBuilder_.addAllMessages(other.getMsgs_);
             }
           }
         }
@@ -4001,244 +4001,244 @@ public final class Metadata {
       }
       private int bitField0_;
 
-      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> msg_ =
+      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getMsgs_ =
         java.util.Collections.emptyList();
-      private void ensureMsgIsMutable() {
+      private void ensureGetMsgsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          msg_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetMessage>(msg_);
+          getMsgs_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.GetMessage>(getMsgs_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> msgBuilder_;
+          edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> getMsgsBuilder_;
 
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getMsgList() {
-        if (msgBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(msg_);
+      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage> getGetMsgsList() {
+        if (getMsgsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(getMsgs_);
         } else {
-          return msgBuilder_.getMessageList();
+          return getMsgsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public int getMsgCount() {
-        if (msgBuilder_ == null) {
-          return msg_.size();
+      public int getGetMsgsCount() {
+        if (getMsgsBuilder_ == null) {
+          return getMsgs_.size();
         } else {
-          return msgBuilder_.getCount();
+          return getMsgsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getMsg(int index) {
-        if (msgBuilder_ == null) {
-          return msg_.get(index);
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage getGetMsgs(int index) {
+        if (getMsgsBuilder_ == null) {
+          return getMsgs_.get(index);
         } else {
-          return msgBuilder_.getMessage(index);
+          return getMsgsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder setMsg(
+      public Builder setGetMsgs(
           int index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
-        if (msgBuilder_ == null) {
+        if (getMsgsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMsgIsMutable();
-          msg_.set(index, value);
+          ensureGetMsgsIsMutable();
+          getMsgs_.set(index, value);
           onChanged();
         } else {
-          msgBuilder_.setMessage(index, value);
+          getMsgsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder setMsg(
+      public Builder setGetMsgs(
           int index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder builderForValue) {
-        if (msgBuilder_ == null) {
-          ensureMsgIsMutable();
-          msg_.set(index, builderForValue.build());
+        if (getMsgsBuilder_ == null) {
+          ensureGetMsgsIsMutable();
+          getMsgs_.set(index, builderForValue.build());
           onChanged();
         } else {
-          msgBuilder_.setMessage(index, builderForValue.build());
+          getMsgsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder addMsg(edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
-        if (msgBuilder_ == null) {
+      public Builder addGetMsgs(edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
+        if (getMsgsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMsgIsMutable();
-          msg_.add(value);
+          ensureGetMsgsIsMutable();
+          getMsgs_.add(value);
           onChanged();
         } else {
-          msgBuilder_.addMessage(value);
+          getMsgsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder addMsg(
+      public Builder addGetMsgs(
           int index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage value) {
-        if (msgBuilder_ == null) {
+        if (getMsgsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMsgIsMutable();
-          msg_.add(index, value);
+          ensureGetMsgsIsMutable();
+          getMsgs_.add(index, value);
           onChanged();
         } else {
-          msgBuilder_.addMessage(index, value);
+          getMsgsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder addMsg(
+      public Builder addGetMsgs(
           edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder builderForValue) {
-        if (msgBuilder_ == null) {
-          ensureMsgIsMutable();
-          msg_.add(builderForValue.build());
+        if (getMsgsBuilder_ == null) {
+          ensureGetMsgsIsMutable();
+          getMsgs_.add(builderForValue.build());
           onChanged();
         } else {
-          msgBuilder_.addMessage(builderForValue.build());
+          getMsgsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder addMsg(
+      public Builder addGetMsgs(
           int index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder builderForValue) {
-        if (msgBuilder_ == null) {
-          ensureMsgIsMutable();
-          msg_.add(index, builderForValue.build());
+        if (getMsgsBuilder_ == null) {
+          ensureGetMsgsIsMutable();
+          getMsgs_.add(index, builderForValue.build());
           onChanged();
         } else {
-          msgBuilder_.addMessage(index, builderForValue.build());
+          getMsgsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder addAllMsg(
+      public Builder addAllGetMsgs(
           java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.GetMessage> values) {
-        if (msgBuilder_ == null) {
-          ensureMsgIsMutable();
+        if (getMsgsBuilder_ == null) {
+          ensureGetMsgsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, msg_);
+              values, getMsgs_);
           onChanged();
         } else {
-          msgBuilder_.addAllMessages(values);
+          getMsgsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder clearMsg() {
-        if (msgBuilder_ == null) {
-          msg_ = java.util.Collections.emptyList();
+      public Builder clearGetMsgs() {
+        if (getMsgsBuilder_ == null) {
+          getMsgs_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          msgBuilder_.clear();
+          getMsgsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public Builder removeMsg(int index) {
-        if (msgBuilder_ == null) {
-          ensureMsgIsMutable();
-          msg_.remove(index);
+      public Builder removeGetMsgs(int index) {
+        if (getMsgsBuilder_ == null) {
+          ensureGetMsgsIsMutable();
+          getMsgs_.remove(index);
           onChanged();
         } else {
-          msgBuilder_.remove(index);
+          getMsgsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder getMsgBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder getGetMsgsBuilder(
           int index) {
-        return getMsgFieldBuilder().getBuilder(index);
+        return getGetMsgsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getMsgOrBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder getGetMsgsOrBuilder(
           int index) {
-        if (msgBuilder_ == null) {
-          return msg_.get(index);  } else {
-          return msgBuilder_.getMessageOrBuilder(index);
+        if (getMsgsBuilder_ == null) {
+          return getMsgs_.get(index);  } else {
+          return getMsgsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
       public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
-           getMsgOrBuilderList() {
-        if (msgBuilder_ != null) {
-          return msgBuilder_.getMessageOrBuilderList();
+           getGetMsgsOrBuilderList() {
+        if (getMsgsBuilder_ != null) {
+          return getMsgsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(msg_);
+          return java.util.Collections.unmodifiableList(getMsgs_);
         }
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder addMsgBuilder() {
-        return getMsgFieldBuilder().addBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder addGetMsgsBuilder() {
+        return getGetMsgsFieldBuilder().addBuilder(
             edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance());
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder addMsgBuilder(
+      public edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder addGetMsgsBuilder(
           int index) {
-        return getMsgFieldBuilder().addBuilder(
+        return getGetMsgsFieldBuilder().addBuilder(
             index, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.getDefaultInstance());
       }
       /**
-       * <code>repeated .Metadata.GetMessage msg = 1;</code>
+       * <code>repeated .Metadata.GetMessage get_msgs = 1;</code>
        */
       public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder> 
-           getMsgBuilderList() {
-        return getMsgFieldBuilder().getBuilderList();
+           getGetMsgsBuilderList() {
+        return getGetMsgsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder> 
-          getMsgFieldBuilder() {
-        if (msgBuilder_ == null) {
-          msgBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getGetMsgsFieldBuilder() {
+        if (getMsgsBuilder_ == null) {
+          getMsgsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               edu.msu.cse.dkvf.metadata.Metadata.GetMessage, edu.msu.cse.dkvf.metadata.Metadata.GetMessage.Builder, edu.msu.cse.dkvf.metadata.Metadata.GetMessageOrBuilder>(
-                  msg_,
+                  getMsgs_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
-          msg_ = null;
+          getMsgs_ = null;
         }
-        return msgBuilder_;
+        return getMsgsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15263,40 +15263,41 @@ public final class Metadata {
       "\030\005 \003(\0132\024.Metadata.DcTimeItem\"+\n\nGetMessa" +
       "ge\022\013\n\003key\030\001 \001(\t\022\020\n\010dsv_item\030\002 \003(\003\"O\n\nPut" +
       "Message\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\022%\n\007d" +
-      "s_item\030\003 \003(\0132\024.Metadata.DcTimeItem\"/\n\nRo" +
-      "tMessage\022!\n\003msg\030\001 \003(\0132\024.Metadata.GetMess" +
-      "age\"\246\001\n\rClientMessage\022+\n\013get_message\030\001 \001",
-      "(\0132\024.Metadata.GetMessageH\000\022+\n\013put_messag" +
-      "e\030\002 \001(\0132\024.Metadata.PutMessageH\000\022+\n\013rot_m" +
-      "essage\030\003 \001(\0132\024.Metadata.RotMessageH\000B\016\n\014" +
-      "message_type\"R\n\010GetReply\022\r\n\005value\030\001 \001(\014\022" +
-      "%\n\007ds_item\030\003 \003(\0132\024.Metadata.DcTimeItem\022\020" +
-      "\n\010dsv_item\030\002 \003(\003\"\"\n\010PutReply\022\n\n\002ut\030\001 \001(\003" +
-      "\022\n\n\002sr\030\002 \001(\005\"+\n\010RotReply\022\037\n\003rep\030\001 \003(\0132\022." +
-      "Metadata.GetReply\"\250\001\n\013ClientReply\022\016\n\006sta" +
-      "tus\030\001 \001(\010\022\'\n\tget_reply\030\002 \001(\0132\022.Metadata." +
-      "GetReplyH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Metadata",
-      ".PutReplyH\000\022\'\n\trot_reply\030\004 \001(\0132\022.Metadat" +
-      "a.RotReplyH\000B\016\n\014message_type\"M\n\020Replicat" +
-      "eMessage\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132\020.Met" +
-      "adata.Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020Heartbeat" +
-      "Message\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(\005\")\n\t" +
-      "VVMessage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002 \001(\005\"" +
-      "\035\n\nDSVMessage\022\017\n\007dsvItem\030\001 \003(\003\"K\n\023SliceR" +
-      "equestMessage\022\014\n\004p_id\030\001 \001(\005\022\r\n\005rotID\030\002 \001" +
-      "(\003\022\013\n\003key\030\003 \001(\t\022\n\n\002sv\030\004 \003(\003\"`\n\021SliceRepl" +
-      "yMessage\022\r\n\005rotID\030\001 \001(\003\022\013\n\003key\030\002 \001(\t\022\r\n\005",
-      "value\030\003 \001(\014\022 \n\002ds\030\004 \003(\0132\024.Metadata.DcTim" +
-      "eItem\"\325\002\n\rServerMessage\0227\n\021replicate_mes" +
-      "sage\030\001 \001(\0132\032.Metadata.ReplicateMessageH\000" +
-      "\0227\n\021heartbeat_message\030\002 \001(\0132\032.Metadata.H" +
-      "eartbeatMessageH\000\022)\n\nvv_message\030\003 \001(\0132\023." +
-      "Metadata.VVMessageH\000\022+\n\013dsv_message\030\004 \001(" +
-      "\0132\024.Metadata.DSVMessageH\000\0225\n\014sreq_messag" +
-      "e\030\005 \001(\0132\035.Metadata.SliceRequestMessageH\000" +
-      "\0223\n\014srep_message\030\006 \001(\0132\033.Metadata.SliceR" +
-      "eplyMessageH\000B\016\n\014message_typeB%\n\031edu.msu",
-      ".cse.dkvf.metadataB\010Metadatab\006proto3"
+      "s_item\030\003 \003(\0132\024.Metadata.DcTimeItem\"4\n\nRo" +
+      "tMessage\022&\n\010get_msgs\030\001 \003(\0132\024.Metadata.Ge" +
+      "tMessage\"\246\001\n\rClientMessage\022+\n\013get_messag",
+      "e\030\001 \001(\0132\024.Metadata.GetMessageH\000\022+\n\013put_m" +
+      "essage\030\002 \001(\0132\024.Metadata.PutMessageH\000\022+\n\013" +
+      "rot_message\030\003 \001(\0132\024.Metadata.RotMessageH" +
+      "\000B\016\n\014message_type\"R\n\010GetReply\022\r\n\005value\030\001" +
+      " \001(\014\022%\n\007ds_item\030\003 \003(\0132\024.Metadata.DcTimeI" +
+      "tem\022\020\n\010dsv_item\030\002 \003(\003\"\"\n\010PutReply\022\n\n\002ut\030" +
+      "\001 \001(\003\022\n\n\002sr\030\002 \001(\005\"+\n\010RotReply\022\037\n\003rep\030\001 \003" +
+      "(\0132\022.Metadata.GetReply\"\250\001\n\013ClientReply\022\016" +
+      "\n\006status\030\001 \001(\010\022\'\n\tget_reply\030\002 \001(\0132\022.Meta" +
+      "data.GetReplyH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Met",
+      "adata.PutReplyH\000\022\'\n\trot_reply\030\004 \001(\0132\022.Me" +
+      "tadata.RotReplyH\000B\016\n\014message_type\"M\n\020Rep" +
+      "licateMessage\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132" +
+      "\020.Metadata.Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020Hear" +
+      "tbeatMessage\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(" +
+      "\005\")\n\tVVMessage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002" +
+      " \001(\005\"\035\n\nDSVMessage\022\017\n\007dsvItem\030\001 \003(\003\"K\n\023S" +
+      "liceRequestMessage\022\014\n\004p_id\030\001 \001(\005\022\r\n\005rotI" +
+      "D\030\002 \001(\003\022\013\n\003key\030\003 \001(\t\022\n\n\002sv\030\004 \003(\003\"`\n\021Slic" +
+      "eReplyMessage\022\r\n\005rotID\030\001 \001(\003\022\013\n\003key\030\002 \001(",
+      "\t\022\r\n\005value\030\003 \001(\014\022 \n\002ds\030\004 \003(\0132\024.Metadata." +
+      "DcTimeItem\"\325\002\n\rServerMessage\0227\n\021replicat" +
+      "e_message\030\001 \001(\0132\032.Metadata.ReplicateMess" +
+      "ageH\000\0227\n\021heartbeat_message\030\002 \001(\0132\032.Metad" +
+      "ata.HeartbeatMessageH\000\022)\n\nvv_message\030\003 \001" +
+      "(\0132\023.Metadata.VVMessageH\000\022+\n\013dsv_message" +
+      "\030\004 \001(\0132\024.Metadata.DSVMessageH\000\0225\n\014sreq_m" +
+      "essage\030\005 \001(\0132\035.Metadata.SliceRequestMess" +
+      "ageH\000\0223\n\014srep_message\030\006 \001(\0132\033.Metadata.S" +
+      "liceReplyMessageH\000B\016\n\014message_typeB%\n\031ed",
+      "u.msu.cse.dkvf.metadataB\010Metadatab\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15339,7 +15340,7 @@ public final class Metadata {
     internal_static_Metadata_RotMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_RotMessage_descriptor,
-        new java.lang.String[] { "Msg", });
+        new java.lang.String[] { "GetMsgs", });
     internal_static_Metadata_ClientMessage_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_Metadata_ClientMessage_fieldAccessorTable = new
