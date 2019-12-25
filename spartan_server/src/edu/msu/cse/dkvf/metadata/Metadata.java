@@ -3572,28 +3572,38 @@ public final class Metadata {
     long getDsvItem(int index);
 
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
      */
-    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> 
-        getDsItemList();
+    int getDsItemsCount();
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index);
+    boolean containsDsItems(
+        int key);
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * Use {@link #getDsItemsMap()} instead.
      */
-    int getDsItemCount();
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, java.lang.Long>
+    getDsItems();
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
      */
-    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
-        getDsItemOrBuilderList();
+    java.util.Map<java.lang.Integer, java.lang.Long>
+    getDsItemsMap();
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
-        int index);
+
+    long getDsItemsOrDefault(
+        int key,
+        long defaultValue);
+    /**
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
+     */
+
+    long getDsItemsOrThrow(
+        int key);
   }
   /**
    * Protobuf type {@code Metadata.RotMessage}
@@ -3610,7 +3620,6 @@ public final class Metadata {
     private RotMessage() {
       keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       dsvItem_ = java.util.Collections.emptyList();
-      dsItem_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3673,11 +3682,15 @@ public final class Metadata {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>();
+                dsItems_ = com.google.protobuf.MapField.newMapField(
+                    DsItemsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000004;
               }
-              dsItem_.add(
-                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.parser(), extensionRegistry));
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Long>
+              dsItems__ = input.readMessage(
+                  DsItemsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              dsItems_.getMutableMap().put(
+                  dsItems__.getKey(), dsItems__.getValue());
               break;
             }
           }
@@ -3694,9 +3707,6 @@ public final class Metadata {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
         }
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          dsItem_ = java.util.Collections.unmodifiableList(dsItem_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3706,6 +3716,17 @@ public final class Metadata {
       return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotMessage_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetDsItems();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotMessage_fieldAccessorTable
@@ -3765,39 +3786,80 @@ public final class Metadata {
     }
     private int dsvItemMemoizedSerializedSize = -1;
 
-    public static final int DS_ITEM_FIELD_NUMBER = 3;
-    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_;
-    /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-     */
-    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
-      return dsItem_;
+    public static final int DS_ITEMS_FIELD_NUMBER = 3;
+    private static final class DsItemsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, java.lang.Long> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, java.lang.Long>newDefaultInstance(
+                  edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotMessage_DsItemsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.INT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.INT64,
+                  0L);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, java.lang.Long> dsItems_;
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
+    internalGetDsItems() {
+      if (dsItems_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DsItemsDefaultEntryHolder.defaultEntry);
+      }
+      return dsItems_;
+    }
+
+    public int getDsItemsCount() {
+      return internalGetDsItems().getMap().size();
     }
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
      */
-    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
-        getDsItemOrBuilderList() {
-      return dsItem_;
+
+    public boolean containsDsItems(
+        int key) {
+      
+      return internalGetDsItems().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * Use {@link #getDsItemsMap()} instead.
      */
-    public int getDsItemCount() {
-      return dsItem_.size();
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.Long> getDsItems() {
+      return getDsItemsMap();
     }
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
-      return dsItem_.get(index);
+
+    public java.util.Map<java.lang.Integer, java.lang.Long> getDsItemsMap() {
+      return internalGetDsItems().getMap();
     }
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
-        int index) {
-      return dsItem_.get(index);
+
+    public long getDsItemsOrDefault(
+        int key,
+        long defaultValue) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Long> map =
+          internalGetDsItems().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
+     */
+
+    public long getDsItemsOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Long> map =
+          internalGetDsItems().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3823,9 +3885,12 @@ public final class Metadata {
       for (int i = 0; i < dsvItem_.size(); i++) {
         output.writeInt64NoTag(dsvItem_.get(i));
       }
-      for (int i = 0; i < dsItem_.size(); i++) {
-        output.writeMessage(3, dsItem_.get(i));
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeIntegerMapTo(
+          output,
+          internalGetDsItems(),
+          DsItemsDefaultEntryHolder.defaultEntry,
+          3);
       unknownFields.writeTo(output);
     }
 
@@ -3856,9 +3921,15 @@ public final class Metadata {
         }
         dsvItemMemoizedSerializedSize = dataSize;
       }
-      for (int i = 0; i < dsItem_.size(); i++) {
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Long> entry
+           : internalGetDsItems().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Long>
+        dsItems__ = DsItemsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, dsItem_.get(i));
+            .computeMessageSize(3, dsItems__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3880,8 +3951,8 @@ public final class Metadata {
           .equals(other.getKeysList());
       result = result && getDsvItemList()
           .equals(other.getDsvItemList());
-      result = result && getDsItemList()
-          .equals(other.getDsItemList());
+      result = result && internalGetDsItems().equals(
+          other.internalGetDsItems());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3901,9 +3972,9 @@ public final class Metadata {
         hash = (37 * hash) + DSV_ITEM_FIELD_NUMBER;
         hash = (53 * hash) + getDsvItemList().hashCode();
       }
-      if (getDsItemCount() > 0) {
-        hash = (37 * hash) + DS_ITEM_FIELD_NUMBER;
-        hash = (53 * hash) + getDsItemList().hashCode();
+      if (!internalGetDsItems().getMap().isEmpty()) {
+        hash = (37 * hash) + DS_ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDsItems().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4010,6 +4081,28 @@ public final class Metadata {
         return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotMessage_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetDsItems();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutableDsItems();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotMessage_fieldAccessorTable
@@ -4030,7 +4123,6 @@ public final class Metadata {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getDsItemFieldBuilder();
         }
       }
       public Builder clear() {
@@ -4039,12 +4131,7 @@ public final class Metadata {
         bitField0_ = (bitField0_ & ~0x00000001);
         dsvItem_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        if (dsItemBuilder_ == null) {
-          dsItem_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          dsItemBuilder_.clear();
-        }
+        internalGetMutableDsItems().clear();
         return this;
       }
 
@@ -4078,15 +4165,8 @@ public final class Metadata {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.dsvItem_ = dsvItem_;
-        if (dsItemBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            dsItem_ = java.util.Collections.unmodifiableList(dsItem_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.dsItem_ = dsItem_;
-        } else {
-          result.dsItem_ = dsItemBuilder_.build();
-        }
+        result.dsItems_ = internalGetDsItems();
+        result.dsItems_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -4148,32 +4228,8 @@ public final class Metadata {
           }
           onChanged();
         }
-        if (dsItemBuilder_ == null) {
-          if (!other.dsItem_.isEmpty()) {
-            if (dsItem_.isEmpty()) {
-              dsItem_ = other.dsItem_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureDsItemIsMutable();
-              dsItem_.addAll(other.dsItem_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.dsItem_.isEmpty()) {
-            if (dsItemBuilder_.isEmpty()) {
-              dsItemBuilder_.dispose();
-              dsItemBuilder_ = null;
-              dsItem_ = other.dsItem_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              dsItemBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getDsItemFieldBuilder() : null;
-            } else {
-              dsItemBuilder_.addAllMessages(other.dsItem_);
-            }
-          }
-        }
+        internalGetMutableDsItems().mergeFrom(
+            other.internalGetDsItems());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4362,244 +4418,127 @@ public final class Metadata {
         return this;
       }
 
-      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_ =
-        java.util.Collections.emptyList();
-      private void ensureDsItemIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>(dsItem_);
-          bitField0_ |= 0x00000004;
-         }
+      private com.google.protobuf.MapField<
+          java.lang.Integer, java.lang.Long> dsItems_;
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
+      internalGetDsItems() {
+        if (dsItems_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              DsItemsDefaultEntryHolder.defaultEntry);
+        }
+        return dsItems_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
+      internalGetMutableDsItems() {
+        onChanged();;
+        if (dsItems_ == null) {
+          dsItems_ = com.google.protobuf.MapField.newMapField(
+              DsItemsDefaultEntryHolder.defaultEntry);
+        }
+        if (!dsItems_.isMutable()) {
+          dsItems_ = dsItems_.copy();
+        }
+        return dsItems_;
       }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> dsItemBuilder_;
+      public int getDsItemsCount() {
+        return internalGetDsItems().getMap().size();
+      }
+      /**
+       * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
+       */
 
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
-        if (dsItemBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(dsItem_);
-        } else {
-          return dsItemBuilder_.getMessageList();
-        }
+      public boolean containsDsItems(
+          int key) {
+        
+        return internalGetDsItems().getMap().containsKey(key);
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * Use {@link #getDsItemsMap()} instead.
        */
-      public int getDsItemCount() {
-        if (dsItemBuilder_ == null) {
-          return dsItem_.size();
-        } else {
-          return dsItemBuilder_.getCount();
-        }
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Long> getDsItems() {
+        return getDsItemsMap();
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
-        if (dsItemBuilder_ == null) {
-          return dsItem_.get(index);
-        } else {
-          return dsItemBuilder_.getMessage(index);
-        }
+
+      public java.util.Map<java.lang.Integer, java.lang.Long> getDsItemsMap() {
+        return internalGetDsItems().getMap();
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
        */
-      public Builder setDsItem(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
-        if (dsItemBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDsItemIsMutable();
-          dsItem_.set(index, value);
-          onChanged();
-        } else {
-          dsItemBuilder_.setMessage(index, value);
+
+      public long getDsItemsOrDefault(
+          int key,
+          long defaultValue) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Long> map =
+            internalGetDsItems().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
+       */
+
+      public long getDsItemsOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Long> map =
+            internalGetDsItems().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
         }
+        return map.get(key);
+      }
+
+      public Builder clearDsItems() {
+        internalGetMutableDsItems().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
        */
-      public Builder setDsItem(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          dsItem_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          dsItemBuilder_.setMessage(index, builderForValue.build());
-        }
+
+      public Builder removeDsItems(
+          int key) {
+        
+        internalGetMutableDsItems().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * Use alternate mutation accessors instead.
        */
-      public Builder addDsItem(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
-        if (dsItemBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDsItemIsMutable();
-          dsItem_.add(value);
-          onChanged();
-        } else {
-          dsItemBuilder_.addMessage(value);
-        }
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Long>
+      getMutableDsItems() {
+        return internalGetMutableDsItems().getMutableMap();
+      }
+      /**
+       * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
+       */
+      public Builder putDsItems(
+          int key,
+          long value) {
+        
+        
+        internalGetMutableDsItems().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * <code>map&lt;int32, int64&gt; ds_items = 3;</code>
        */
-      public Builder addDsItem(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
-        if (dsItemBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDsItemIsMutable();
-          dsItem_.add(index, value);
-          onChanged();
-        } else {
-          dsItemBuilder_.addMessage(index, value);
-        }
+
+      public Builder putAllDsItems(
+          java.util.Map<java.lang.Integer, java.lang.Long> values) {
+        internalGetMutableDsItems().getMutableMap()
+            .putAll(values);
         return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder addDsItem(
-          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          dsItem_.add(builderForValue.build());
-          onChanged();
-        } else {
-          dsItemBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder addDsItem(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          dsItem_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          dsItemBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder addAllDsItem(
-          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> values) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, dsItem_);
-          onChanged();
-        } else {
-          dsItemBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder clearDsItem() {
-        if (dsItemBuilder_ == null) {
-          dsItem_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          dsItemBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder removeDsItem(int index) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          dsItem_.remove(index);
-          onChanged();
-        } else {
-          dsItemBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder getDsItemBuilder(
-          int index) {
-        return getDsItemFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
-          int index) {
-        if (dsItemBuilder_ == null) {
-          return dsItem_.get(index);  } else {
-          return dsItemBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
-           getDsItemOrBuilderList() {
-        if (dsItemBuilder_ != null) {
-          return dsItemBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(dsItem_);
-        }
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder() {
-        return getDsItemFieldBuilder().addBuilder(
-            edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder(
-          int index) {
-        return getDsItemFieldBuilder().addBuilder(
-            index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder> 
-           getDsItemBuilderList() {
-        return getDsItemFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
-          getDsItemFieldBuilder() {
-        if (dsItemBuilder_ == null) {
-          dsItemBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder>(
-                  dsItem_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
-                  getParentForChildren(),
-                  isClean());
-          dsItem_ = null;
-        }
-        return dsItemBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7440,54 +7379,90 @@ public final class Metadata {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated bytes values = 1;</code>
+     * <code>int32 count = 1;</code>
      */
-    java.util.List<com.google.protobuf.ByteString> getValuesList();
-    /**
-     * <code>repeated bytes values = 1;</code>
-     */
-    int getValuesCount();
-    /**
-     * <code>repeated bytes values = 1;</code>
-     */
-    com.google.protobuf.ByteString getValues(int index);
+    int getCount();
 
     /**
-     * <code>repeated int64 dsv_item = 2;</code>
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+    int getKeyValueCount();
+    /**
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+    boolean containsKeyValue(
+        java.lang.String key);
+    /**
+     * Use {@link #getKeyValueMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
+    getKeyValue();
+    /**
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
+    getKeyValueMap();
+    /**
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+
+    com.google.protobuf.ByteString getKeyValueOrDefault(
+        java.lang.String key,
+        com.google.protobuf.ByteString defaultValue);
+    /**
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+
+    com.google.protobuf.ByteString getKeyValueOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>repeated int64 dsv_item = 3;</code>
      */
     java.util.List<java.lang.Long> getDsvItemList();
     /**
-     * <code>repeated int64 dsv_item = 2;</code>
+     * <code>repeated int64 dsv_item = 3;</code>
      */
     int getDsvItemCount();
     /**
-     * <code>repeated int64 dsv_item = 2;</code>
+     * <code>repeated int64 dsv_item = 3;</code>
      */
     long getDsvItem(int index);
 
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
      */
-    java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> 
-        getDsItemList();
+    int getDsItemsCount();
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index);
+    boolean containsDsItems(
+        int key);
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * Use {@link #getDsItemsMap()} instead.
      */
-    int getDsItemCount();
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, java.lang.Long>
+    getDsItems();
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
      */
-    java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
-        getDsItemOrBuilderList();
+    java.util.Map<java.lang.Integer, java.lang.Long>
+    getDsItemsMap();
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
      */
-    edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
-        int index);
+
+    long getDsItemsOrDefault(
+        int key,
+        long defaultValue);
+    /**
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
+     */
+
+    long getDsItemsOrThrow(
+        int key);
   }
   /**
    * Protobuf type {@code Metadata.RotReply}
@@ -7502,9 +7477,8 @@ public final class Metadata {
       super(builder);
     }
     private RotReply() {
-      values_ = java.util.Collections.emptyList();
+      count_ = 0;
       dsvItem_ = java.util.Collections.emptyList();
-      dsItem_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -7535,28 +7509,38 @@ public final class Metadata {
               }
               break;
             }
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                values_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              values_.add(input.readBytes());
+            case 8: {
+
+              count_ = input.readInt32();
               break;
             }
-            case 16: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
+                keyValue_ = com.google.protobuf.MapField.newMapField(
+                    KeyValueDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
+              keyValue__ = input.readMessage(
+                  KeyValueDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              keyValue_.getMutableMap().put(
+                  keyValue__.getKey(), keyValue__.getValue());
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                dsvItem_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000004;
               }
               dsvItem_.add(input.readInt64());
               break;
             }
-            case 18: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
                 dsvItem_ = new java.util.ArrayList<java.lang.Long>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
                 dsvItem_.add(input.readInt64());
@@ -7564,13 +7548,17 @@ public final class Metadata {
               input.popLimit(limit);
               break;
             }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>();
-                mutable_bitField0_ |= 0x00000004;
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                dsItems_ = com.google.protobuf.MapField.newMapField(
+                    DsItemsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
               }
-              dsItem_.add(
-                  input.readMessage(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.parser(), extensionRegistry));
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Long>
+              dsItems__ = input.readMessage(
+                  DsItemsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              dsItems_.getMutableMap().put(
+                  dsItems__.getKey(), dsItems__.getValue());
               break;
             }
           }
@@ -7581,14 +7569,8 @@ public final class Metadata {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
-        }
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          dsItem_ = java.util.Collections.unmodifiableList(dsItem_);
+          dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -7599,6 +7581,19 @@ public final class Metadata {
       return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotReply_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetKeyValue();
+        case 4:
+          return internalGetDsItems();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotReply_fieldAccessorTable
@@ -7606,84 +7601,189 @@ public final class Metadata {
               edu.msu.cse.dkvf.metadata.Metadata.RotReply.class, edu.msu.cse.dkvf.metadata.Metadata.RotReply.Builder.class);
     }
 
-    public static final int VALUES_FIELD_NUMBER = 1;
-    private java.util.List<com.google.protobuf.ByteString> values_;
+    private int bitField0_;
+    public static final int COUNT_FIELD_NUMBER = 1;
+    private int count_;
     /**
-     * <code>repeated bytes values = 1;</code>
+     * <code>int32 count = 1;</code>
      */
-    public java.util.List<com.google.protobuf.ByteString>
-        getValuesList() {
-      return values_;
-    }
-    /**
-     * <code>repeated bytes values = 1;</code>
-     */
-    public int getValuesCount() {
-      return values_.size();
-    }
-    /**
-     * <code>repeated bytes values = 1;</code>
-     */
-    public com.google.protobuf.ByteString getValues(int index) {
-      return values_.get(index);
+    public int getCount() {
+      return count_;
     }
 
-    public static final int DSV_ITEM_FIELD_NUMBER = 2;
+    public static final int KEY_VALUE_FIELD_NUMBER = 2;
+    private static final class KeyValueDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, com.google.protobuf.ByteString> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                  edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotReply_KeyValueEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.BYTES,
+                  com.google.protobuf.ByteString.EMPTY);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, com.google.protobuf.ByteString> keyValue_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
+    internalGetKeyValue() {
+      if (keyValue_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            KeyValueDefaultEntryHolder.defaultEntry);
+      }
+      return keyValue_;
+    }
+
+    public int getKeyValueCount() {
+      return internalGetKeyValue().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+
+    public boolean containsKeyValue(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetKeyValue().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getKeyValueMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getKeyValue() {
+      return getKeyValueMap();
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getKeyValueMap() {
+      return internalGetKeyValue().getMap();
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+
+    public com.google.protobuf.ByteString getKeyValueOrDefault(
+        java.lang.String key,
+        com.google.protobuf.ByteString defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
+          internalGetKeyValue().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+     */
+
+    public com.google.protobuf.ByteString getKeyValueOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
+          internalGetKeyValue().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int DSV_ITEM_FIELD_NUMBER = 3;
     private java.util.List<java.lang.Long> dsvItem_;
     /**
-     * <code>repeated int64 dsv_item = 2;</code>
+     * <code>repeated int64 dsv_item = 3;</code>
      */
     public java.util.List<java.lang.Long>
         getDsvItemList() {
       return dsvItem_;
     }
     /**
-     * <code>repeated int64 dsv_item = 2;</code>
+     * <code>repeated int64 dsv_item = 3;</code>
      */
     public int getDsvItemCount() {
       return dsvItem_.size();
     }
     /**
-     * <code>repeated int64 dsv_item = 2;</code>
+     * <code>repeated int64 dsv_item = 3;</code>
      */
     public long getDsvItem(int index) {
       return dsvItem_.get(index);
     }
     private int dsvItemMemoizedSerializedSize = -1;
 
-    public static final int DS_ITEM_FIELD_NUMBER = 3;
-    private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_;
-    /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-     */
-    public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
-      return dsItem_;
+    public static final int DS_ITEMS_FIELD_NUMBER = 4;
+    private static final class DsItemsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, java.lang.Long> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, java.lang.Long>newDefaultInstance(
+                  edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotReply_DsItemsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.INT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.INT64,
+                  0L);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, java.lang.Long> dsItems_;
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
+    internalGetDsItems() {
+      if (dsItems_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DsItemsDefaultEntryHolder.defaultEntry);
+      }
+      return dsItems_;
+    }
+
+    public int getDsItemsCount() {
+      return internalGetDsItems().getMap().size();
     }
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
      */
-    public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
-        getDsItemOrBuilderList() {
-      return dsItem_;
+
+    public boolean containsDsItems(
+        int key) {
+      
+      return internalGetDsItems().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * Use {@link #getDsItemsMap()} instead.
      */
-    public int getDsItemCount() {
-      return dsItem_.size();
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.Long> getDsItems() {
+      return getDsItemsMap();
     }
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
-      return dsItem_.get(index);
+
+    public java.util.Map<java.lang.Integer, java.lang.Long> getDsItemsMap() {
+      return internalGetDsItems().getMap();
     }
     /**
-     * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
      */
-    public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
-        int index) {
-      return dsItem_.get(index);
+
+    public long getDsItemsOrDefault(
+        int key,
+        long defaultValue) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Long> map =
+          internalGetDsItems().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
+     */
+
+    public long getDsItemsOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Long> map =
+          internalGetDsItems().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7699,19 +7799,28 @@ public final class Metadata {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < values_.size(); i++) {
-        output.writeBytes(1, values_.get(i));
+      if (count_ != 0) {
+        output.writeInt32(1, count_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetKeyValue(),
+          KeyValueDefaultEntryHolder.defaultEntry,
+          2);
       if (getDsvItemList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(dsvItemMemoizedSerializedSize);
       }
       for (int i = 0; i < dsvItem_.size(); i++) {
         output.writeInt64NoTag(dsvItem_.get(i));
       }
-      for (int i = 0; i < dsItem_.size(); i++) {
-        output.writeMessage(3, dsItem_.get(i));
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeIntegerMapTo(
+          output,
+          internalGetDsItems(),
+          DsItemsDefaultEntryHolder.defaultEntry,
+          4);
       unknownFields.writeTo(output);
     }
 
@@ -7720,14 +7829,19 @@ public final class Metadata {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < values_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(values_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getValuesList().size();
+      if (count_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, count_);
+      }
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
+           : internalGetKeyValue().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
+        keyValue__ = KeyValueDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, keyValue__);
       }
       {
         int dataSize = 0;
@@ -7743,9 +7857,15 @@ public final class Metadata {
         }
         dsvItemMemoizedSerializedSize = dataSize;
       }
-      for (int i = 0; i < dsItem_.size(); i++) {
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Long> entry
+           : internalGetDsItems().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Long>
+        dsItems__ = DsItemsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, dsItem_.get(i));
+            .computeMessageSize(4, dsItems__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7763,12 +7883,14 @@ public final class Metadata {
       edu.msu.cse.dkvf.metadata.Metadata.RotReply other = (edu.msu.cse.dkvf.metadata.Metadata.RotReply) obj;
 
       boolean result = true;
-      result = result && getValuesList()
-          .equals(other.getValuesList());
+      result = result && (getCount()
+          == other.getCount());
+      result = result && internalGetKeyValue().equals(
+          other.internalGetKeyValue());
       result = result && getDsvItemList()
           .equals(other.getDsvItemList());
-      result = result && getDsItemList()
-          .equals(other.getDsItemList());
+      result = result && internalGetDsItems().equals(
+          other.internalGetDsItems());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -7780,17 +7902,19 @@ public final class Metadata {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getValuesCount() > 0) {
-        hash = (37 * hash) + VALUES_FIELD_NUMBER;
-        hash = (53 * hash) + getValuesList().hashCode();
+      hash = (37 * hash) + COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getCount();
+      if (!internalGetKeyValue().getMap().isEmpty()) {
+        hash = (37 * hash) + KEY_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetKeyValue().hashCode();
       }
       if (getDsvItemCount() > 0) {
         hash = (37 * hash) + DSV_ITEM_FIELD_NUMBER;
         hash = (53 * hash) + getDsvItemList().hashCode();
       }
-      if (getDsItemCount() > 0) {
-        hash = (37 * hash) + DS_ITEM_FIELD_NUMBER;
-        hash = (53 * hash) + getDsItemList().hashCode();
+      if (!internalGetDsItems().getMap().isEmpty()) {
+        hash = (37 * hash) + DS_ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDsItems().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7897,6 +8021,32 @@ public final class Metadata {
         return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotReply_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetKeyValue();
+          case 4:
+            return internalGetDsItems();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableKeyValue();
+          case 4:
+            return internalGetMutableDsItems();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return edu.msu.cse.dkvf.metadata.Metadata.internal_static_Metadata_RotReply_fieldAccessorTable
@@ -7917,21 +8067,16 @@ public final class Metadata {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getDsItemFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        values_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        count_ = 0;
+
+        internalGetMutableKeyValue().clear();
         dsvItem_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (dsItemBuilder_ == null) {
-          dsItem_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          dsItemBuilder_.clear();
-        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        internalGetMutableDsItems().clear();
         return this;
       }
 
@@ -7955,25 +8100,18 @@ public final class Metadata {
       public edu.msu.cse.dkvf.metadata.Metadata.RotReply buildPartial() {
         edu.msu.cse.dkvf.metadata.Metadata.RotReply result = new edu.msu.cse.dkvf.metadata.Metadata.RotReply(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.values_ = values_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        int to_bitField0_ = 0;
+        result.count_ = count_;
+        result.keyValue_ = internalGetKeyValue();
+        result.keyValue_.makeImmutable();
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
           dsvItem_ = java.util.Collections.unmodifiableList(dsvItem_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.dsvItem_ = dsvItem_;
-        if (dsItemBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            dsItem_ = java.util.Collections.unmodifiableList(dsItem_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.dsItem_ = dsItem_;
-        } else {
-          result.dsItem_ = dsItemBuilder_.build();
-        }
+        result.dsItems_ = internalGetDsItems();
+        result.dsItems_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -8015,52 +8153,23 @@ public final class Metadata {
 
       public Builder mergeFrom(edu.msu.cse.dkvf.metadata.Metadata.RotReply other) {
         if (other == edu.msu.cse.dkvf.metadata.Metadata.RotReply.getDefaultInstance()) return this;
-        if (!other.values_.isEmpty()) {
-          if (values_.isEmpty()) {
-            values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureValuesIsMutable();
-            values_.addAll(other.values_);
-          }
-          onChanged();
+        if (other.getCount() != 0) {
+          setCount(other.getCount());
         }
+        internalGetMutableKeyValue().mergeFrom(
+            other.internalGetKeyValue());
         if (!other.dsvItem_.isEmpty()) {
           if (dsvItem_.isEmpty()) {
             dsvItem_ = other.dsvItem_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureDsvItemIsMutable();
             dsvItem_.addAll(other.dsvItem_);
           }
           onChanged();
         }
-        if (dsItemBuilder_ == null) {
-          if (!other.dsItem_.isEmpty()) {
-            if (dsItem_.isEmpty()) {
-              dsItem_ = other.dsItem_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureDsItemIsMutable();
-              dsItem_.addAll(other.dsItem_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.dsItem_.isEmpty()) {
-            if (dsItemBuilder_.isEmpty()) {
-              dsItemBuilder_.dispose();
-              dsItemBuilder_ = null;
-              dsItem_ = other.dsItem_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              dsItemBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getDsItemFieldBuilder() : null;
-            } else {
-              dsItemBuilder_.addAllMessages(other.dsItem_);
-            }
-          }
-        }
+        internalGetMutableDsItems().mergeFrom(
+            other.internalGetDsItems());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8089,106 +8198,183 @@ public final class Metadata {
       }
       private int bitField0_;
 
-      private java.util.List<com.google.protobuf.ByteString> values_ = java.util.Collections.emptyList();
-      private void ensureValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          values_ = new java.util.ArrayList<com.google.protobuf.ByteString>(values_);
-          bitField0_ |= 0x00000001;
-         }
+      private int count_ ;
+      /**
+       * <code>int32 count = 1;</code>
+       */
+      public int getCount() {
+        return count_;
       }
       /**
-       * <code>repeated bytes values = 1;</code>
+       * <code>int32 count = 1;</code>
        */
-      public java.util.List<com.google.protobuf.ByteString>
-          getValuesList() {
-        return java.util.Collections.unmodifiableList(values_);
-      }
-      /**
-       * <code>repeated bytes values = 1;</code>
-       */
-      public int getValuesCount() {
-        return values_.size();
-      }
-      /**
-       * <code>repeated bytes values = 1;</code>
-       */
-      public com.google.protobuf.ByteString getValues(int index) {
-        return values_.get(index);
-      }
-      /**
-       * <code>repeated bytes values = 1;</code>
-       */
-      public Builder setValues(
-          int index, com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValuesIsMutable();
-        values_.set(index, value);
+      public Builder setCount(int value) {
+        
+        count_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated bytes values = 1;</code>
+       * <code>int32 count = 1;</code>
        */
-      public Builder addValues(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValuesIsMutable();
-        values_.add(value);
+      public Builder clearCount() {
+        
+        count_ = 0;
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, com.google.protobuf.ByteString> keyValue_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
+      internalGetKeyValue() {
+        if (keyValue_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              KeyValueDefaultEntryHolder.defaultEntry);
+        }
+        return keyValue_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
+      internalGetMutableKeyValue() {
+        onChanged();;
+        if (keyValue_ == null) {
+          keyValue_ = com.google.protobuf.MapField.newMapField(
+              KeyValueDefaultEntryHolder.defaultEntry);
+        }
+        if (!keyValue_.isMutable()) {
+          keyValue_ = keyValue_.copy();
+        }
+        return keyValue_;
+      }
+
+      public int getKeyValueCount() {
+        return internalGetKeyValue().getMap().size();
+      }
       /**
-       * <code>repeated bytes values = 1;</code>
+       * <code>map&lt;string, bytes&gt; key_value = 2;</code>
        */
-      public Builder addAllValues(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureValuesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, values_);
-        onChanged();
+
+      public boolean containsKeyValue(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetKeyValue().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getKeyValueMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getKeyValue() {
+        return getKeyValueMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+       */
+
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getKeyValueMap() {
+        return internalGetKeyValue().getMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+       */
+
+      public com.google.protobuf.ByteString getKeyValueOrDefault(
+          java.lang.String key,
+          com.google.protobuf.ByteString defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
+            internalGetKeyValue().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+       */
+
+      public com.google.protobuf.ByteString getKeyValueOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
+            internalGetKeyValue().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearKeyValue() {
+        internalGetMutableKeyValue().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>repeated bytes values = 1;</code>
+       * <code>map&lt;string, bytes&gt; key_value = 2;</code>
        */
-      public Builder clearValues() {
-        values_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+
+      public Builder removeKeyValue(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableKeyValue().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
+      getMutableKeyValue() {
+        return internalGetMutableKeyValue().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+       */
+      public Builder putKeyValue(
+          java.lang.String key,
+          com.google.protobuf.ByteString value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableKeyValue().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; key_value = 2;</code>
+       */
+
+      public Builder putAllKeyValue(
+          java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
+        internalGetMutableKeyValue().getMutableMap()
+            .putAll(values);
         return this;
       }
 
       private java.util.List<java.lang.Long> dsvItem_ = java.util.Collections.emptyList();
       private void ensureDsvItemIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           dsvItem_ = new java.util.ArrayList<java.lang.Long>(dsvItem_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
       /**
-       * <code>repeated int64 dsv_item = 2;</code>
+       * <code>repeated int64 dsv_item = 3;</code>
        */
       public java.util.List<java.lang.Long>
           getDsvItemList() {
         return java.util.Collections.unmodifiableList(dsvItem_);
       }
       /**
-       * <code>repeated int64 dsv_item = 2;</code>
+       * <code>repeated int64 dsv_item = 3;</code>
        */
       public int getDsvItemCount() {
         return dsvItem_.size();
       }
       /**
-       * <code>repeated int64 dsv_item = 2;</code>
+       * <code>repeated int64 dsv_item = 3;</code>
        */
       public long getDsvItem(int index) {
         return dsvItem_.get(index);
       }
       /**
-       * <code>repeated int64 dsv_item = 2;</code>
+       * <code>repeated int64 dsv_item = 3;</code>
        */
       public Builder setDsvItem(
           int index, long value) {
@@ -8198,7 +8384,7 @@ public final class Metadata {
         return this;
       }
       /**
-       * <code>repeated int64 dsv_item = 2;</code>
+       * <code>repeated int64 dsv_item = 3;</code>
        */
       public Builder addDsvItem(long value) {
         ensureDsvItemIsMutable();
@@ -8207,7 +8393,7 @@ public final class Metadata {
         return this;
       }
       /**
-       * <code>repeated int64 dsv_item = 2;</code>
+       * <code>repeated int64 dsv_item = 3;</code>
        */
       public Builder addAllDsvItem(
           java.lang.Iterable<? extends java.lang.Long> values) {
@@ -8218,253 +8404,136 @@ public final class Metadata {
         return this;
       }
       /**
-       * <code>repeated int64 dsv_item = 2;</code>
+       * <code>repeated int64 dsv_item = 3;</code>
        */
       public Builder clearDsvItem() {
         dsvItem_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
 
-      private java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> dsItem_ =
-        java.util.Collections.emptyList();
-      private void ensureDsItemIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          dsItem_ = new java.util.ArrayList<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem>(dsItem_);
-          bitField0_ |= 0x00000004;
-         }
+      private com.google.protobuf.MapField<
+          java.lang.Integer, java.lang.Long> dsItems_;
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
+      internalGetDsItems() {
+        if (dsItems_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              DsItemsDefaultEntryHolder.defaultEntry);
+        }
+        return dsItems_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
+      internalGetMutableDsItems() {
+        onChanged();;
+        if (dsItems_ == null) {
+          dsItems_ = com.google.protobuf.MapField.newMapField(
+              DsItemsDefaultEntryHolder.defaultEntry);
+        }
+        if (!dsItems_.isMutable()) {
+          dsItems_ = dsItems_.copy();
+        }
+        return dsItems_;
       }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> dsItemBuilder_;
+      public int getDsItemsCount() {
+        return internalGetDsItems().getMap().size();
+      }
+      /**
+       * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
+       */
 
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> getDsItemList() {
-        if (dsItemBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(dsItem_);
-        } else {
-          return dsItemBuilder_.getMessageList();
-        }
+      public boolean containsDsItems(
+          int key) {
+        
+        return internalGetDsItems().getMap().containsKey(key);
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * Use {@link #getDsItemsMap()} instead.
        */
-      public int getDsItemCount() {
-        if (dsItemBuilder_ == null) {
-          return dsItem_.size();
-        } else {
-          return dsItemBuilder_.getCount();
-        }
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Long> getDsItems() {
+        return getDsItemsMap();
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
        */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem getDsItem(int index) {
-        if (dsItemBuilder_ == null) {
-          return dsItem_.get(index);
-        } else {
-          return dsItemBuilder_.getMessage(index);
-        }
+
+      public java.util.Map<java.lang.Integer, java.lang.Long> getDsItemsMap() {
+        return internalGetDsItems().getMap();
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
        */
-      public Builder setDsItem(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
-        if (dsItemBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDsItemIsMutable();
-          dsItem_.set(index, value);
-          onChanged();
-        } else {
-          dsItemBuilder_.setMessage(index, value);
+
+      public long getDsItemsOrDefault(
+          int key,
+          long defaultValue) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Long> map =
+            internalGetDsItems().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
+       */
+
+      public long getDsItemsOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Long> map =
+            internalGetDsItems().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
         }
+        return map.get(key);
+      }
+
+      public Builder clearDsItems() {
+        internalGetMutableDsItems().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
        */
-      public Builder setDsItem(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          dsItem_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          dsItemBuilder_.setMessage(index, builderForValue.build());
-        }
+
+      public Builder removeDsItems(
+          int key) {
+        
+        internalGetMutableDsItems().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * Use alternate mutation accessors instead.
        */
-      public Builder addDsItem(edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
-        if (dsItemBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDsItemIsMutable();
-          dsItem_.add(value);
-          onChanged();
-        } else {
-          dsItemBuilder_.addMessage(value);
-        }
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Long>
+      getMutableDsItems() {
+        return internalGetMutableDsItems().getMutableMap();
+      }
+      /**
+       * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
+       */
+      public Builder putDsItems(
+          int key,
+          long value) {
+        
+        
+        internalGetMutableDsItems().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
+       * <code>map&lt;int32, int64&gt; ds_items = 4;</code>
        */
-      public Builder addDsItem(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem value) {
-        if (dsItemBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDsItemIsMutable();
-          dsItem_.add(index, value);
-          onChanged();
-        } else {
-          dsItemBuilder_.addMessage(index, value);
-        }
+
+      public Builder putAllDsItems(
+          java.util.Map<java.lang.Integer, java.lang.Long> values) {
+        internalGetMutableDsItems().getMutableMap()
+            .putAll(values);
         return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder addDsItem(
-          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          dsItem_.add(builderForValue.build());
-          onChanged();
-        } else {
-          dsItemBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder addDsItem(
-          int index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder builderForValue) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          dsItem_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          dsItemBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder addAllDsItem(
-          java.lang.Iterable<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem> values) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, dsItem_);
-          onChanged();
-        } else {
-          dsItemBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder clearDsItem() {
-        if (dsItemBuilder_ == null) {
-          dsItem_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          dsItemBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public Builder removeDsItem(int index) {
-        if (dsItemBuilder_ == null) {
-          ensureDsItemIsMutable();
-          dsItem_.remove(index);
-          onChanged();
-        } else {
-          dsItemBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder getDsItemBuilder(
-          int index) {
-        return getDsItemFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder getDsItemOrBuilder(
-          int index) {
-        if (dsItemBuilder_ == null) {
-          return dsItem_.get(index);  } else {
-          return dsItemBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public java.util.List<? extends edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
-           getDsItemOrBuilderList() {
-        if (dsItemBuilder_ != null) {
-          return dsItemBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(dsItem_);
-        }
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder() {
-        return getDsItemFieldBuilder().addBuilder(
-            edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder addDsItemBuilder(
-          int index) {
-        return getDsItemFieldBuilder().addBuilder(
-            index, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Metadata.DcTimeItem ds_item = 3;</code>
-       */
-      public java.util.List<edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder> 
-           getDsItemBuilderList() {
-        return getDsItemFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder> 
-          getDsItemFieldBuilder() {
-        if (dsItemBuilder_ == null) {
-          dsItemBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem.Builder, edu.msu.cse.dkvf.metadata.Metadata.DcTimeItemOrBuilder>(
-                  dsItem_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
-                  getParentForChildren(),
-                  isClean());
-          dsItem_ = null;
-        }
-        return dsItemBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15875,6 +15944,11 @@ public final class Metadata {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Metadata_RotMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Metadata_RotMessage_DsItemsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Metadata_RotMessage_DsItemsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Metadata_ClientMessage_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -15894,6 +15968,16 @@ public final class Metadata {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Metadata_RotReply_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Metadata_RotReply_KeyValueEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Metadata_RotReply_KeyValueEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Metadata_RotReply_DsItemsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Metadata_RotReply_DsItemsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Metadata_ClientReply_descriptor;
   private static final 
@@ -15950,42 +16034,48 @@ public final class Metadata {
       "\030\005 \003(\0132\024.Metadata.DcTimeItem\"+\n\nGetMessa" +
       "ge\022\013\n\003key\030\001 \001(\t\022\020\n\010dsv_item\030\002 \003(\003\"O\n\nPut" +
       "Message\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\022%\n\007d" +
-      "s_item\030\003 \003(\0132\024.Metadata.DcTimeItem\"S\n\nRo" +
-      "tMessage\022\014\n\004keys\030\001 \003(\t\022\020\n\010dsv_item\030\002 \003(\003" +
-      "\022%\n\007ds_item\030\003 \003(\0132\024.Metadata.DcTimeItem\"",
-      "\246\001\n\rClientMessage\022+\n\013get_message\030\001 \001(\0132\024" +
-      ".Metadata.GetMessageH\000\022+\n\013put_message\030\002 " +
-      "\001(\0132\024.Metadata.PutMessageH\000\022+\n\013rot_messa" +
-      "ge\030\003 \001(\0132\024.Metadata.RotMessageH\000B\016\n\014mess" +
-      "age_type\"R\n\010GetReply\022\r\n\005value\030\001 \001(\014\022%\n\007d" +
-      "s_item\030\003 \003(\0132\024.Metadata.DcTimeItem\022\020\n\010ds" +
-      "v_item\030\002 \003(\003\"\"\n\010PutReply\022\n\n\002ut\030\001 \001(\003\022\n\n\002" +
-      "sr\030\002 \001(\005\"S\n\010RotReply\022\016\n\006values\030\001 \003(\014\022\020\n\010" +
-      "dsv_item\030\002 \003(\003\022%\n\007ds_item\030\003 \003(\0132\024.Metada" +
-      "ta.DcTimeItem\"\250\001\n\013ClientReply\022\016\n\006status\030",
-      "\001 \001(\010\022\'\n\tget_reply\030\002 \001(\0132\022.Metadata.GetR" +
-      "eplyH\000\022\'\n\tput_reply\030\003 \001(\0132\022.Metadata.Put" +
-      "ReplyH\000\022\'\n\trot_reply\030\004 \001(\0132\022.Metadata.Ro" +
-      "tReplyH\000B\016\n\014message_type\"M\n\020ReplicateMes" +
-      "sage\022\013\n\003key\030\001 \001(\t\022\035\n\003rec\030\002 \001(\0132\020.Metadat" +
-      "a.Record\022\r\n\005dc_id\030\003 \001(\005\"/\n\020HeartbeatMess" +
-      "age\022\014\n\004time\030\001 \001(\003\022\r\n\005dc_id\030\002 \001(\005\")\n\tVVMe" +
-      "ssage\022\016\n\006vvItem\030\001 \003(\003\022\014\n\004p_id\030\002 \001(\005\"\035\n\nD" +
-      "SVMessage\022\017\n\007dsvItem\030\001 \003(\003\"K\n\023SliceReque" +
-      "stMessage\022\014\n\004p_id\030\001 \001(\005\022\r\n\005rotID\030\002 \001(\003\022\013",
-      "\n\003key\030\003 \001(\t\022\n\n\002sv\030\004 \003(\003\"`\n\021SliceReplyMes" +
-      "sage\022\r\n\005rotID\030\001 \001(\003\022\013\n\003key\030\002 \001(\t\022\r\n\005valu" +
-      "e\030\003 \001(\014\022 \n\002ds\030\004 \003(\0132\024.Metadata.DcTimeIte" +
-      "m\"\325\002\n\rServerMessage\0227\n\021replicate_message" +
-      "\030\001 \001(\0132\032.Metadata.ReplicateMessageH\000\0227\n\021" +
-      "heartbeat_message\030\002 \001(\0132\032.Metadata.Heart" +
-      "beatMessageH\000\022)\n\nvv_message\030\003 \001(\0132\023.Meta" +
-      "data.VVMessageH\000\022+\n\013dsv_message\030\004 \001(\0132\024." +
-      "Metadata.DSVMessageH\000\0225\n\014sreq_message\030\005 " +
-      "\001(\0132\035.Metadata.SliceRequestMessageH\000\0223\n\014",
-      "srep_message\030\006 \001(\0132\033.Metadata.SliceReply" +
-      "MessageH\000B\016\n\014message_typeB%\n\031edu.msu.cse" +
-      ".dkvf.metadataB\010Metadatab\006proto3"
+      "s_item\030\003 \003(\0132\024.Metadata.DcTimeItem\"\221\001\n\nR" +
+      "otMessage\022\014\n\004keys\030\001 \003(\t\022\020\n\010dsv_item\030\002 \003(" +
+      "\003\0223\n\010ds_items\030\003 \003(\0132!.Metadata.RotMessag",
+      "e.DsItemsEntry\032.\n\014DsItemsEntry\022\013\n\003key\030\001 " +
+      "\001(\005\022\r\n\005value\030\002 \001(\003:\0028\001\"\246\001\n\rClientMessage" +
+      "\022+\n\013get_message\030\001 \001(\0132\024.Metadata.GetMess" +
+      "ageH\000\022+\n\013put_message\030\002 \001(\0132\024.Metadata.Pu" +
+      "tMessageH\000\022+\n\013rot_message\030\003 \001(\0132\024.Metada" +
+      "ta.RotMessageH\000B\016\n\014message_type\"R\n\010GetRe" +
+      "ply\022\r\n\005value\030\001 \001(\014\022%\n\007ds_item\030\003 \003(\0132\024.Me" +
+      "tadata.DcTimeItem\022\020\n\010dsv_item\030\002 \003(\003\"\"\n\010P" +
+      "utReply\022\n\n\002ut\030\001 \001(\003\022\n\n\002sr\030\002 \001(\005\"\364\001\n\010RotR" +
+      "eply\022\r\n\005count\030\001 \001(\005\0223\n\tkey_value\030\002 \003(\0132 ",
+      ".Metadata.RotReply.KeyValueEntry\022\020\n\010dsv_" +
+      "item\030\003 \003(\003\0221\n\010ds_items\030\004 \003(\0132\037.Metadata." +
+      "RotReply.DsItemsEntry\032/\n\rKeyValueEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\032.\n\014DsItem" +
+      "sEntry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\003:\0028\001\"\250" +
+      "\001\n\013ClientReply\022\016\n\006status\030\001 \001(\010\022\'\n\tget_re" +
+      "ply\030\002 \001(\0132\022.Metadata.GetReplyH\000\022\'\n\tput_r" +
+      "eply\030\003 \001(\0132\022.Metadata.PutReplyH\000\022\'\n\trot_" +
+      "reply\030\004 \001(\0132\022.Metadata.RotReplyH\000B\016\n\014mes" +
+      "sage_type\"M\n\020ReplicateMessage\022\013\n\003key\030\001 \001",
+      "(\t\022\035\n\003rec\030\002 \001(\0132\020.Metadata.Record\022\r\n\005dc_" +
+      "id\030\003 \001(\005\"/\n\020HeartbeatMessage\022\014\n\004time\030\001 \001" +
+      "(\003\022\r\n\005dc_id\030\002 \001(\005\")\n\tVVMessage\022\016\n\006vvItem" +
+      "\030\001 \003(\003\022\014\n\004p_id\030\002 \001(\005\"\035\n\nDSVMessage\022\017\n\007ds" +
+      "vItem\030\001 \003(\003\"K\n\023SliceRequestMessage\022\014\n\004p_" +
+      "id\030\001 \001(\005\022\r\n\005rotID\030\002 \001(\003\022\013\n\003key\030\003 \001(\t\022\n\n\002" +
+      "sv\030\004 \003(\003\"`\n\021SliceReplyMessage\022\r\n\005rotID\030\001" +
+      " \001(\003\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\014\022 \n\002ds\030\004" +
+      " \003(\0132\024.Metadata.DcTimeItem\"\325\002\n\rServerMes" +
+      "sage\0227\n\021replicate_message\030\001 \001(\0132\032.Metada",
+      "ta.ReplicateMessageH\000\0227\n\021heartbeat_messa" +
+      "ge\030\002 \001(\0132\032.Metadata.HeartbeatMessageH\000\022)" +
+      "\n\nvv_message\030\003 \001(\0132\023.Metadata.VVMessageH" +
+      "\000\022+\n\013dsv_message\030\004 \001(\0132\024.Metadata.DSVMes" +
+      "sageH\000\0225\n\014sreq_message\030\005 \001(\0132\035.Metadata." +
+      "SliceRequestMessageH\000\0223\n\014srep_message\030\006 " +
+      "\001(\0132\033.Metadata.SliceReplyMessageH\000B\016\n\014me" +
+      "ssage_typeB%\n\031edu.msu.cse.dkvf.metadataB" +
+      "\010Metadatab\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16028,7 +16118,13 @@ public final class Metadata {
     internal_static_Metadata_RotMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_RotMessage_descriptor,
-        new java.lang.String[] { "Keys", "DsvItem", "DsItem", });
+        new java.lang.String[] { "Keys", "DsvItem", "DsItems", });
+    internal_static_Metadata_RotMessage_DsItemsEntry_descriptor =
+      internal_static_Metadata_RotMessage_descriptor.getNestedTypes().get(0);
+    internal_static_Metadata_RotMessage_DsItemsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Metadata_RotMessage_DsItemsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_Metadata_ClientMessage_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_Metadata_ClientMessage_fieldAccessorTable = new
@@ -16052,7 +16148,19 @@ public final class Metadata {
     internal_static_Metadata_RotReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Metadata_RotReply_descriptor,
-        new java.lang.String[] { "Values", "DsvItem", "DsItem", });
+        new java.lang.String[] { "Count", "KeyValue", "DsvItem", "DsItems", });
+    internal_static_Metadata_RotReply_KeyValueEntry_descriptor =
+      internal_static_Metadata_RotReply_descriptor.getNestedTypes().get(0);
+    internal_static_Metadata_RotReply_KeyValueEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Metadata_RotReply_KeyValueEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_Metadata_RotReply_DsItemsEntry_descriptor =
+      internal_static_Metadata_RotReply_descriptor.getNestedTypes().get(1);
+    internal_static_Metadata_RotReply_DsItemsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Metadata_RotReply_DsItemsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_Metadata_ClientReply_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_Metadata_ClientReply_fieldAccessorTable = new

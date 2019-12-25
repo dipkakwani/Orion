@@ -90,32 +90,37 @@ public class CausalSpartanClient extends DKVFClient {
         }
     }
 
-    public List<byte[]> rot(List<String> keys) {
+    public Map<String, ByteString> rot(List<String> keys) {
         try {
+            System.out.println("ROT started");
             RotMessage rm = RotMessage.newBuilder().addAllKeys(keys)
-                            .addAllDsvItem(dsv).addAllDsItem(getDcTimeItems()).build();
+                            .addAllDsvItem(dsv).putAllDsItems(ds).build();
             ClientMessage cm = ClientMessage.newBuilder().setRotMessage(rm).build();
 
             // Contact the partition of first key for ROT
             int partition = findPartition(keys.get(0));
             String serverId = dcId + "_" + partition;
-            if (sendToServer(serverId, cm) == NetworkStatus.FAILURE)
+            System.out.println("Server ID: " + serverId);
+            if (sendToServer(serverId, cm) == NetworkStatus.FAILURE) {
+                System.out.println("Failed to send to server " + serverId);
                 return null;
+            }
+            System.out.println("Sent to server");
             ClientReply cr = readFromServer(serverId);
             if (cr != null && cr.getStatus()) {
+                System.out.println("ROT received reply");
                 updateDsv(cr.getRotReply().getDsvItemList());
-                for (DcTimeItem dti : cr.getRotReply().getDsItemList()) {
-                    updateDS(dti.getDcId(), dti.getTime());
+                for (Map.Entry<Integer, Long> dsEntry : cr.getRotReply().getDsItemsMap().entrySet()) {
+                    updateDS(dsEntry.getKey(), dsEntry.getValue());
                 }
-                List<byte[]> values = new ArrayList<>(cr.getRotReply().getValuesCount());
-                for (ByteString value : cr.getRotReply().getValuesList())
-                    values.add(value.toByteArray());
-                return values;
+                return cr.getRotReply().getKeyValueMap();
             } else {
+                System.out.println("Did not receive reply");
                 protocolLOGGER.severe("Server could not get the keys= " + keys);
                 return null;
             }
         } catch (Exception e) {
+            System.out.println("Exception occured " + e.getStackTrace());
             protocolLOGGER.severe(Utils.exceptionLogMessge("Failed to get due to exception", e));
             return null;
         }

@@ -1,5 +1,6 @@
 package edu.msu.cse.causalSpartan.server;
 
+import java.security.NoSuchAlgorithmException;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,11 +12,13 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Predicate;
 
+import com.google.protobuf.ByteString;
+import com.sun.security.ntlm.Server;
 import edu.msu.cse.dkvf.ClientMessageAgent;
 import edu.msu.cse.dkvf.DKVFServer;
 import edu.msu.cse.dkvf.Storage.StorageStatus;
-import edu.msu.cse.causalSpartan.server.Utils;
 import edu.msu.cse.dkvf.config.ConfigReader;
+import edu.msu.cse.dkvf.metadata.Metadata;
 import edu.msu.cse.dkvf.metadata.Metadata.ClientReply;
 import edu.msu.cse.dkvf.metadata.Metadata.DSVMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem;
@@ -23,9 +26,14 @@ import edu.msu.cse.dkvf.metadata.Metadata.GetMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.GetReply;
 import edu.msu.cse.dkvf.metadata.Metadata.PutMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.PutReply;
+import edu.msu.cse.dkvf.metadata.Metadata.RotMessage;
+import edu.msu.cse.dkvf.metadata.Metadata.RotReply;
 import edu.msu.cse.dkvf.metadata.Metadata.Record;
+import edu.msu.cse.dkvf.metadata.Metadata.SliceRequestMessage;
+import edu.msu.cse.dkvf.metadata.Metadata.SliceReplyMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.ServerMessage;
+import org.omg.CORBA.INTERNAL;
 
 public class CausalSpartanServer extends DKVFServer {
 
@@ -42,6 +50,10 @@ public class CausalSpartanServer extends DKVFServer {
     // Tree structure
     List<Integer> childrenPIds;
     int parentPId;
+
+    // ROT
+    long rotCount;
+    final Map<Long, RotReply.Builder> rotTxn = new HashMap<>();
 
     // intervals
     int heartbeatInterval;
@@ -106,6 +118,8 @@ public class CausalSpartanServer extends DKVFServer {
             handleGetMessage(cma);
         } else if (cma.getClientMessage().hasPutMessage()) {
             handlePutMessage(cma);
+        } else {
+            handleRotMessage(cma);
         }
 
     }
@@ -150,6 +164,24 @@ public class CausalSpartanServer extends DKVFServer {
 
     };
 
+    // For ROT
+    static Predicate<Record> isVisibleSnapshot (int dcId, List<Long> sv) {
+        return new Predicate<Record>() {
+            @Override
+            public boolean test(Record r) {
+                if (dcId == r.getSr())
+                    return true;
+
+                for (int i = 0; i < r.getDsItemCount(); i++) {
+                    DcTimeItem dti = r.getDsItem(i);
+                    if (sv.get(dti.getDcId()) < dti.getTime())
+                        return false;
+                }
+                return true;
+            }
+        };
+    }
+
     private void handlePutMessage(ClientMessageAgent cma) {
         PutMessage pm = cma.getClientMessage().getPutMessage();
         long dt = Utils.maxDsTime(pm.getDsItemList());
@@ -171,6 +203,99 @@ public class CausalSpartanServer extends DKVFServer {
             cr = ClientReply.newBuilder().setStatus(false).build();
         }
         cma.sendReply(cr);
+    }
+
+    private void handleRotMessage(ClientMessageAgent cma) {
+        System.out.println("ROT Message received");
+        RotMessage rm = cma.getClientMessage().getRotMessage();
+        // Snapshot vector for ROT
+        List<Long> sv;
+
+        // Update DSV
+        updateDsv(rm.getDsvItemList());
+        synchronized (dsv) {
+            for (Map.Entry<Integer, Long> dsEntry : rm.getDsItemsMap().entrySet()) {
+                dsv.set(dsEntry.getKey(), Math.max(dsv.get(dsEntry.getKey()), dsEntry.getValue()));
+            }
+            sv = new ArrayList<>(dsv);
+        }
+
+        final RotReply.Builder rotBuilder = RotReply.newBuilder().setCount(rm.getKeysCount());
+
+        // Generate ROT ID
+        long rotID;
+        synchronized (rotTxn) {
+            rotID = rotCount++;
+            rotTxn.put(rotID, rotBuilder);
+        }
+
+
+        // send requests for reading keys to servers
+		for (String key : rm.getKeysList()) {
+		    System.out.println("Searching key: " + key);
+			try {
+				int p = findPartition(key);
+				// If key is not present in current partition
+				if (p != pId) {
+				    System.out.println("Sending slice request message");
+                    SliceRequestMessage sreq = Metadata.SliceRequestMessage.newBuilder()
+                            .setPId(pId).setRotID(rotID)
+                            .setKey(key).addAllSv(sv).build();
+                    ServerMessage sm = ServerMessage.newBuilder().setSreqMessage(sreq).build();
+                    sendToServerViaChannel(dcId + "_" + p, sm);
+                }
+				else {
+                    System.out.println("Key available locally");
+                    List<Record> result = new ArrayList<>();
+                    StorageStatus ss = read(key, isVisibleSnapshot(dcId, sv), result);
+                    if (ss == StorageStatus.SUCCESS) {
+                        Record rec = result.get(0);
+                        System.out.println("Found key " + rec.getValue().toStringUtf8());
+                        List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
+                        System.out.println("Acquiring rotBuilder lock " + Thread.currentThread().getName());
+                        System.out.println("Lock status " + Thread.holdsLock(rotBuilder));
+                        // Take max DS
+                        synchronized (rotBuilder) {
+                            System.out.println("Lock status " + Thread.holdsLock(rotBuilder));
+                            Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
+                            System.out.println("got ds items");
+                            rotBuilder.putAllDsItems(updateDS(ds, newDs));
+                            System.out.println("updateDS");
+                            rotBuilder.putAllDsItems(ds);
+                            System.out.println("putAllDS");
+                            rotBuilder.putKeyValue(key, rec.getValue());
+                            System.out.println("put keyvalue");
+                        }
+                        System.out.println("Released rotBuilder lock");
+                        System.out.println("Lock status " + Thread.holdsLock(rotBuilder));
+                    }
+                }
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		System.out.println("Waiting for values to arrive");
+        // Wait for all the values to arrive
+        synchronized (rotBuilder) {
+            try {
+                while (rotBuilder.getKeyValueCount() != rotBuilder.getCount())
+                    rotBuilder.wait();
+            } catch (InterruptedException e) {
+                    e.printStackTrace();
+            }
+        }
+
+        System.out.println("All values have arrived");
+        for (Map.Entry<String, ByteString> entry : rotBuilder.getKeyValueMap().entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue().toStringUtf8());
+        }
+
+		// Send the reply to the client
+		ClientReply cr = ClientReply.newBuilder().setStatus(true)
+                            .setRotReply(rotBuilder.addAllDsvItem(dsv)).build();
+		cma.sendReply(cr);
     }
 
     private void sendReplicateMessages(String key, Record recordToReplicate) {
@@ -222,6 +347,11 @@ public class CausalSpartanServer extends DKVFServer {
         vv.get(dcId).set(newL + newC);
     }
 
+    private int findPartition(String key) throws NoSuchAlgorithmException {
+        long hash = edu.msu.cse.dkvf.Utils.getMd5HashLong(key);
+        return (int) (hash % numOfPartitions);
+    }
+
     public void handleServerMessage(ServerMessage sm) {
         if (sm.hasReplicateMessage()) {
             handleReplicateMessage(sm);
@@ -231,6 +361,10 @@ public class CausalSpartanServer extends DKVFServer {
             handleVvMessage(sm);
         } else if (sm.hasDsvMessage()) {
             handleDsvMessage(sm);
+        } else if (sm.hasSreqMessage()) {
+            handleSreqMessage(sm);
+        } else if (sm.hasSrepMessage()) {
+            handleSrepMessage(sm);
         }
     }
 
@@ -261,6 +395,40 @@ public class CausalSpartanServer extends DKVFServer {
         sendToAllChildren(sm);
     }
 
+    void handleSreqMessage(ServerMessage sm) {
+        SliceRequestMessage sreq = sm.getSreqMessage();
+        List<Record> result = new ArrayList<>();
+        StorageStatus ss = read(sreq.getKey(), isVisibleSnapshot(dcId, sreq.getSvList()), result);
+        if (ss == StorageStatus.SUCCESS) {
+            Record rec = result.get(0);
+            List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
+            SliceReplyMessage srep = SliceReplyMessage.newBuilder()
+                                    .setRotID(sreq.getRotID())
+                                    .setKey(sreq.getKey())
+                                    .setValue(rec.getValue())
+                                    .addAllDs(newDs)
+                                    .build();
+            ServerMessage reply = ServerMessage.newBuilder().setSrepMessage(srep).build();
+            sendToServerViaChannel(dcId + "_" + sreq.getPId(), reply);
+        }
+    }
+
+    void handleSrepMessage(ServerMessage sm) {
+        SliceReplyMessage srep = sm.getSrepMessage();
+        RotReply.Builder rotBuilder = rotTxn.get(srep.getRotID());
+        // Take max DS
+        synchronized (rotBuilder) {
+            Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
+            updateDS(ds, srep.getDsList());
+            rotBuilder.putAllDsItems(ds);
+            rotBuilder.putKeyValue(srep.getKey(), srep.getValue());
+            // If the current key is the last key, notify the waiting threads
+            if (rotBuilder.getKeyValueCount() == rotBuilder.getCount()) {
+                rotBuilder.notifyAll();
+            }
+        }
+    }
+
     void sendToAllChildren(ServerMessage sm) {
         for (Map.Entry<Integer, List<Long>> child : childrenVvs.entrySet()) {
             int childId = child.getKey();
@@ -286,6 +454,23 @@ public class CausalSpartanServer extends DKVFServer {
                 result.add(DcTimeItem.newBuilder().setDcId(dc).setTime(Math.max(time, oldTime)).build());
             }
         }
+        return result;
+    }
+
+    // Updates DS by taking max of two DS
+    private Map<Integer, Long> updateDS(Map<Integer, Long> ds1, List<DcTimeItem> ds2) {
+        System.out.println(ds2.size());
+        Map<Integer, Long> result = new HashMap<>(ds1);
+        for (DcTimeItem ds_item : ds2) {
+            System.out.println(ds_item.getDcId() + " " + ds_item.getTime());
+            if (!ds1.containsKey(ds_item.getDcId())
+                    || ds1.get(ds_item.getDcId()) < ds_item.getTime()) {
+                System.out.println("Adding " + ds_item.getDcId());
+                result.put(ds_item.getDcId(), ds_item.getTime());
+                System.out.println("Added " + ds_item.getDcId());
+            }
+        }
+        System.out.println("Returning update DS");
         return result;
     }
 }
