@@ -5,7 +5,7 @@ import edu.msu.cse.dkvf.config.ConfigReader;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
@@ -15,20 +15,25 @@ public class Main {
         CausalSpartanClient client = new CausalSpartanClient(cnfReader);
         System.out.println(client.runAll());
         System.out.println("Client started...");
-        client.put("k1", "value1".getBytes());
-        client.put("k2", "value2".getBytes());
+        int numKeys = 100;
+        Map<String, String> inputKeyValue = new HashMap<>(numKeys);
+        for (int i = 0; i < numKeys; i++) {
+            inputKeyValue.put("k" + i, "value" + i );
+            client.put("k" + i, ("value" + i ).getBytes());
+        }
         try {
-            System.out.println(new String(client.get("k1"), "UTF-8"));
-            System.out.println(new String(client.get("k2"), "UTF-8"));
-            List<String> keys = new ArrayList<>();
-            keys.add("k1");
-            keys.add("k2");
-            Map<String, ByteString> key_values = client.rot(keys);
-            for (Map.Entry<String, ByteString> entry : key_values.entrySet()) {
+            for (int i = 0; i < numKeys; i++)
+                assert(new String(client.get("k" + i), "UTF-8").equals("value" + i));
+
+            Map<String, ByteString> rotKeyValues = client.rot(new ArrayList<>(inputKeyValue.keySet()));
+            for (Map.Entry<String, ByteString> entry : rotKeyValues.entrySet()) {
                 System.out.println(entry.getKey() + "  " + entry.getValue().toStringUtf8());
+                assert(entry.getValue().toStringUtf8().equals(inputKeyValue.get(entry.getKey())));
             }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
+
     }
 }

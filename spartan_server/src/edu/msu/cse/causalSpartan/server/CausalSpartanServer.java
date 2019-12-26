@@ -13,7 +13,6 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Predicate;
 
 import com.google.protobuf.ByteString;
-import com.sun.security.ntlm.Server;
 import edu.msu.cse.dkvf.ClientMessageAgent;
 import edu.msu.cse.dkvf.DKVFServer;
 import edu.msu.cse.dkvf.Storage.StorageStatus;
@@ -33,7 +32,6 @@ import edu.msu.cse.dkvf.metadata.Metadata.SliceRequestMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.SliceReplyMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.ReplicateMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.ServerMessage;
-import org.omg.CORBA.INTERNAL;
 
 public class CausalSpartanServer extends DKVFServer {
 
@@ -165,7 +163,7 @@ public class CausalSpartanServer extends DKVFServer {
     };
 
     // For ROT
-    static Predicate<Record> isVisibleSnapshot (int dcId, List<Long> sv) {
+    static Predicate<Record> isVisibleSnapshot(int dcId, List<Long> sv) {
         return new Predicate<Record>() {
             @Override
             public boolean test(Record r) {
@@ -231,20 +229,19 @@ public class CausalSpartanServer extends DKVFServer {
 
 
         // send requests for reading keys to servers
-		for (String key : rm.getKeysList()) {
-		    System.out.println("Searching key: " + key);
-			try {
-				int p = findPartition(key);
-				// If key is not present in current partition
-				if (p != pId) {
-				    System.out.println("Sending slice request message");
+        for (String key : rm.getKeysList()) {
+            System.out.println("Searching key: " + key);
+            try {
+                int p = findPartition(key);
+                // If key is not present in current partition
+                if (p != pId) {
+                    System.out.println("Sending slice request message");
                     SliceRequestMessage sreq = Metadata.SliceRequestMessage.newBuilder()
                             .setPId(pId).setRotID(rotID)
                             .setKey(key).addAllSv(sv).build();
                     ServerMessage sm = ServerMessage.newBuilder().setSreqMessage(sreq).build();
                     sendToServerViaChannel(dcId + "_" + p, sm);
-                }
-				else {
+                } else {
                     System.out.println("Key available locally");
                     List<Record> result = new ArrayList<>();
                     StorageStatus ss = read(key, isVisibleSnapshot(dcId, sv), result);
@@ -270,20 +267,20 @@ public class CausalSpartanServer extends DKVFServer {
                         System.out.println("Lock status " + Thread.holdsLock(rotBuilder));
                     }
                 }
-			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+            } catch (NoSuchAlgorithmException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
-		System.out.println("Waiting for values to arrive");
+        System.out.println("Waiting for values to arrive");
         // Wait for all the values to arrive
         synchronized (rotBuilder) {
             try {
                 while (rotBuilder.getKeyValueCount() != rotBuilder.getCount())
                     rotBuilder.wait();
             } catch (InterruptedException e) {
-                    e.printStackTrace();
+                e.printStackTrace();
             }
         }
 
@@ -292,10 +289,10 @@ public class CausalSpartanServer extends DKVFServer {
             System.out.println(entry.getKey() + " " + entry.getValue().toStringUtf8());
         }
 
-		// Send the reply to the client
-		ClientReply cr = ClientReply.newBuilder().setStatus(true)
-                            .setRotReply(rotBuilder.addAllDsvItem(dsv)).build();
-		cma.sendReply(cr);
+        // Send the reply to the client
+        ClientReply cr = ClientReply.newBuilder().setStatus(true)
+                .setRotReply(rotBuilder.addAllDsvItem(dsv)).build();
+        cma.sendReply(cr);
     }
 
     private void sendReplicateMessages(String key, Record recordToReplicate) {
@@ -403,11 +400,11 @@ public class CausalSpartanServer extends DKVFServer {
             Record rec = result.get(0);
             List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
             SliceReplyMessage srep = SliceReplyMessage.newBuilder()
-                                    .setRotID(sreq.getRotID())
-                                    .setKey(sreq.getKey())
-                                    .setValue(rec.getValue())
-                                    .addAllDs(newDs)
-                                    .build();
+                    .setRotID(sreq.getRotID())
+                    .setKey(sreq.getKey())
+                    .setValue(rec.getValue())
+                    .addAllDs(newDs)
+                    .build();
             ServerMessage reply = ServerMessage.newBuilder().setSrepMessage(srep).build();
             sendToServerViaChannel(dcId + "_" + sreq.getPId(), reply);
         }
