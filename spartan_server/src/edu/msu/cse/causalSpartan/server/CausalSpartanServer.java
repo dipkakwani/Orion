@@ -204,7 +204,7 @@ public class CausalSpartanServer extends DKVFServer {
     }
 
     private void handleRotMessage(ClientMessageAgent cma) {
-        System.out.println("ROT Message received");
+        protocolLOGGER.finest("ROT Message received");
         RotMessage rm = cma.getClientMessage().getRotMessage();
         // Snapshot vector for ROT
         List<Long> sv;
@@ -227,44 +227,40 @@ public class CausalSpartanServer extends DKVFServer {
             rotTxn.put(rotID, rotBuilder);
         }
 
-
         // send requests for reading keys to servers
         for (String key : rm.getKeysList()) {
-            System.out.println("Searching key: " + key);
+            protocolLOGGER.finest("Searching key: " + key);
             try {
                 int p = findPartition(key);
                 // If key is not present in current partition
                 if (p != pId) {
-                    System.out.println("Sending slice request message");
+                    protocolLOGGER.finest("Sending slice request message");
                     SliceRequestMessage sreq = Metadata.SliceRequestMessage.newBuilder()
                             .setPId(pId).setRotID(rotID)
                             .setKey(key).addAllSv(sv).build();
                     ServerMessage sm = ServerMessage.newBuilder().setSreqMessage(sreq).build();
                     sendToServerViaChannel(dcId + "_" + p, sm);
                 } else {
-                    System.out.println("Key available locally");
+                    protocolLOGGER.finest("Key available locally");
                     List<Record> result = new ArrayList<>();
                     StorageStatus ss = read(key, isVisibleSnapshot(dcId, sv), result);
                     if (ss == StorageStatus.SUCCESS) {
                         Record rec = result.get(0);
-                        System.out.println("Found key " + rec.getValue().toStringUtf8());
+                        protocolLOGGER.finest("Found key " + key + " value: " + rec.getValue().toStringUtf8());
                         List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
-                        System.out.println("Acquiring rotBuilder lock " + Thread.currentThread().getName());
-                        System.out.println("Lock status " + Thread.holdsLock(rotBuilder));
+                        protocolLOGGER.finest("Acquiring rotBuilder lock " + Thread.currentThread().getName());
+                        protocolLOGGER.finest("Lock status " + Thread.holdsLock(rotBuilder));
                         // Take max DS
                         synchronized (rotBuilder) {
-                            System.out.println("Lock status " + Thread.holdsLock(rotBuilder));
                             Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
-                            System.out.println("got ds items");
                             rotBuilder.putAllDsItems(updateDS(ds, newDs));
-                            System.out.println("updateDS");
                             rotBuilder.putAllDsItems(ds);
-                            System.out.println("putAllDS");
                             rotBuilder.putKeyValue(key, rec.getValue());
-                            System.out.println("put keyvalue");
                         }
-                        System.out.println("Released rotBuilder lock");
-                        System.out.println("Lock status " + Thread.holdsLock(rotBuilder));
+                        protocolLOGGER.finest("Released rotBuilder lock" + Thread.currentThread().getName());
+                    }
+                    else {
+                       protocolLOGGER.severe("Could not find the key locally " + key + " for ROT " + rotID);
                     }
                 }
             } catch (NoSuchAlgorithmException e) {
@@ -273,7 +269,7 @@ public class CausalSpartanServer extends DKVFServer {
             }
         }
 
-        System.out.println("Waiting for values to arrive");
+        protocolLOGGER.finest("Waiting for values to arrive ROT ID " + rotID);
         // Wait for all the values to arrive
         synchronized (rotBuilder) {
             try {
@@ -284,9 +280,9 @@ public class CausalSpartanServer extends DKVFServer {
             }
         }
 
-        System.out.println("All values have arrived");
+        protocolLOGGER.finest("ROT FINISHED " + rotID);
         for (Map.Entry<String, ByteString> entry : rotBuilder.getKeyValueMap().entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue().toStringUtf8());
+            protocolLOGGER.finest(entry.getKey() + " " + entry.getValue().toStringUtf8());
         }
 
         // Send the reply to the client
@@ -302,7 +298,7 @@ public class CausalSpartanServer extends DKVFServer {
                 continue;
             String id = i + "_" + pId;
 
-            protocolLOGGER.finer(MessageFormat.format("Sendng replicate message to {0}: {1}", id, sm.toString()));
+            protocolLOGGER.finer(MessageFormat.format("Sending replicate message to {0}: {1}", id, sm.toString()));
             sendToServerViaChannel(id, sm);
         }
         timeOfLastRepOrHeartbeat = Utils.getPhysicalTime(); //we don't need to synchronize for it, because it is not critical
@@ -407,6 +403,9 @@ public class CausalSpartanServer extends DKVFServer {
                     .build();
             ServerMessage reply = ServerMessage.newBuilder().setSrepMessage(srep).build();
             sendToServerViaChannel(dcId + "_" + sreq.getPId(), reply);
+        }
+        else {
+            protocolLOGGER.severe("Could not find the key "+ sreq.getKey() + " for ROT " + sreq.getRotID());
         }
     }
 

@@ -4,7 +4,6 @@ import com.google.protobuf.ByteString;
 import edu.msu.cse.dkvf.config.ConfigReader;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,7 +24,7 @@ public class Main {
             for (int i = 0; i < numKeys; i++)
                 assert(new String(client.get("k" + i), "UTF-8").equals("value" + i));
 
-            Map<String, ByteString> rotKeyValues = client.rot(new ArrayList<>(inputKeyValue.keySet()));
+            Map<String, ByteString> rotKeyValues = client.rot(inputKeyValue.keySet());
             for (Map.Entry<String, ByteString> entry : rotKeyValues.entrySet()) {
                 System.out.println(entry.getKey() + "  " + entry.getValue().toStringUtf8());
                 assert(entry.getValue().toStringUtf8().equals(inputKeyValue.get(entry.getKey())));

@@ -1,10 +1,7 @@
 package edu.msu.cse.causalSpartan.client;
 
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.google.protobuf.ByteString;
 
@@ -53,6 +50,7 @@ public class CausalSpartanClient extends DKVFClient {
                 return false;
             ClientReply cr = readFromServer(serverId);
             if (cr != null && cr.getStatus()) {
+                protocolLOGGER.finest("PUT Key " + key + " value " + new String(value, "UTF-8"));
                 updateDS(dcId, cr.getPutReply().getUt());
                 return true;
             } else {
@@ -79,6 +77,7 @@ public class CausalSpartanClient extends DKVFClient {
                 for (DcTimeItem dti : cr.getGetReply().getDsItemList()) {
                     updateDS(dti.getDcId(), dti.getTime());
                 }
+                protocolLOGGER.finest("READ Key " + key +" value " + cr.getGetReply().getValue().toStringUtf8());
                 return cr.getGetReply().getValue().toByteArray();
             } else {
                 protocolLOGGER.severe("Server could not get the key= " + key);
@@ -90,37 +89,37 @@ public class CausalSpartanClient extends DKVFClient {
         }
     }
 
-    public Map<String, ByteString> rot(List<String> keys) {
+    public Map<String, ByteString> rot(Set<String> keys) {
         try {
-            System.out.println("ROT started");
+            protocolLOGGER.finest("ROT started");
             RotMessage rm = RotMessage.newBuilder().addAllKeys(keys)
                             .addAllDsvItem(dsv).putAllDsItems(ds).build();
             ClientMessage cm = ClientMessage.newBuilder().setRotMessage(rm).build();
 
             // Contact the partition of first key for ROT
-            int partition = findPartition(keys.get(0));
+            int partition = findPartition(keys.iterator().next());
             String serverId = dcId + "_" + partition;
-            System.out.println("Server ID: " + serverId);
+            protocolLOGGER.finest("Server ID: " + serverId);
             if (sendToServer(serverId, cm) == NetworkStatus.FAILURE) {
-                System.out.println("Failed to send to server " + serverId);
+                protocolLOGGER.severe("Failed to send to server " + serverId);
                 return null;
             }
-            System.out.println("Sent to server");
             ClientReply cr = readFromServer(serverId);
             if (cr != null && cr.getStatus()) {
-                System.out.println("ROT received reply");
+                protocolLOGGER.finest("ROT received reply");
                 updateDsv(cr.getRotReply().getDsvItemList());
                 for (Map.Entry<Integer, Long> dsEntry : cr.getRotReply().getDsItemsMap().entrySet()) {
                     updateDS(dsEntry.getKey(), dsEntry.getValue());
                 }
+                for (Map.Entry<String, ByteString> keyValue : cr.getRotReply().getKeyValueMap().entrySet()) {
+                    protocolLOGGER.finest("KEY " + keyValue.getKey() + " value : " + keyValue.getValue().toStringUtf8());
+                }
                 return cr.getRotReply().getKeyValueMap();
             } else {
-                System.out.println("Did not receive reply");
                 protocolLOGGER.severe("Server could not get the keys= " + keys);
                 return null;
             }
         } catch (Exception e) {
-            System.out.println("Exception occured " + e.getStackTrace());
             protocolLOGGER.severe(Utils.exceptionLogMessge("Failed to get due to exception", e));
             return null;
         }

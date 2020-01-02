@@ -2,7 +2,10 @@ package edu.msu.cse.dkvf;
 
 
 import java.text.MessageFormat;
+import java.util.Map;
+import java.util.Set;
 
+import com.google.protobuf.ByteString;
 import edu.msu.cse.dkvf.ServerConnector.NetworkStatus;
 import edu.msu.cse.dkvf.Storage.StorageStatus;
 import edu.msu.cse.dkvf.config.ConfigReader;
@@ -34,6 +37,11 @@ public abstract class DKVFClient extends DKVFBase {
      * <b>null</b> if the key does not exist.
      */
     public abstract byte[] get(String key);
+
+    /**
+     * The abstract method for getting values of the given keys.
+     */
+    public abstract Map<String, ByteString> rot(Set<String> keys);
 
     public DKVFClient(ConfigReader cnfReader) {
         super(cnfReader);

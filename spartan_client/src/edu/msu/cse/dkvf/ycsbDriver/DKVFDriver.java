@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.Vector;
 
+import com.google.protobuf.ByteString;
 import com.yahoo.ycsb.ByteArrayByteIterator;
 import com.yahoo.ycsb.ByteIterator;
 import com.yahoo.ycsb.DB;
@@ -146,8 +147,14 @@ public class DKVFDriver extends DB {
     }
 
     @Override
-    public Status rotx(Set<String> arg0, Map<String, ByteIterator> arg1) {
-        // TODO Auto-generated method stub
-        return null;
+    public Status rotx(Set<String> keys, Map<String, ByteIterator> resultValues) {
+        Map<String, ByteString> result = client.rot(keys);
+        if (result == null)
+            return Status.NOT_FOUND;
+        // NOTE 2 levels of conversion - ByteString -> ByteArray -> ByteArrayByteIterator
+        for (Map.Entry<String, ByteString> entry : result.entrySet()) {
+            resultValues.put(entry.getKey(), new ByteArrayByteIterator(entry.getValue().toByteArray()));
+        }
+        return Status.OK;
     }
 }
