@@ -133,6 +133,7 @@ public class CausalSpartanServer extends DKVFServer {
             List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
             cr = ClientReply.newBuilder().setStatus(true).setGetReply(GetReply.newBuilder().setValue(rec.getValue()).addAllDsItem(newDs).addAllDsvItem(dsv)).build();
         } else {
+            protocolLOGGER.severe("Server could not get key " + gm.getKey());
             cr = ClientReply.newBuilder().setStatus(false).build();
         }
         cma.sendReply(cr);
