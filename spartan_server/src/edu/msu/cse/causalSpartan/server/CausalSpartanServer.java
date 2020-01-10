@@ -255,7 +255,6 @@ public class CausalSpartanServer extends DKVFServer {
                         synchronized (rotBuilder) {
                             Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
                             rotBuilder.putAllDsItems(updateDS(ds, newDs));
-                            rotBuilder.putAllDsItems(ds);
                             rotBuilder.putKeyValue(key, rec.getValue());
                         }
                         protocolLOGGER.finest("Released rotBuilder lock" + Thread.currentThread().getName());
@@ -395,6 +394,7 @@ public class CausalSpartanServer extends DKVFServer {
         StorageStatus ss = read(sreq.getKey(), isVisibleSnapshot(dcId, sreq.getSvList()), result);
         if (ss == StorageStatus.SUCCESS) {
             Record rec = result.get(0);
+            updateDsv(sreq.getSvList());
             List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
             SliceReplyMessage srep = SliceReplyMessage.newBuilder()
                     .setRotID(sreq.getRotID())
@@ -416,8 +416,7 @@ public class CausalSpartanServer extends DKVFServer {
         // Take max DS
         synchronized (rotBuilder) {
             Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
-            updateDS(ds, srep.getDsList());
-            rotBuilder.putAllDsItems(ds);
+            rotBuilder.putAllDsItems(updateDS(ds, srep.getDsList()));
             rotBuilder.putKeyValue(srep.getKey(), srep.getValue());
             // If the current key is the last key, notify the waiting threads
             if (rotBuilder.getKeyValueCount() == rotBuilder.getCount()) {

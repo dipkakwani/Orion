@@ -631,7 +631,6 @@ public class DKVFWorkload extends Workload {
         do {
             status = db.insert(dbkey, value);
             if (null != status && status.isOk()) {
-                System.err.println("Put successful " + dbkey);
                 break;
             }
             // Retry if configured. Without retrying, the load process will fail
@@ -648,8 +647,7 @@ public class DKVFWorkload extends Workload {
                 }
 
             } else {
-                System.err.println("Put unsuccessful " + dbkey);
-                System.err.println("Error inserting, not retrying any more. number of attempts: " + numOfRetries +
+                System.err.println("Error inserting key = " + dbkey + " , not retrying any more. number of attempts: " + numOfRetries +
                         "Insertion Retry Limit: " + insertionRetryLimit);
                 break;
 
