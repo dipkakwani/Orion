@@ -25,7 +25,9 @@ public class Main {
                 assert(new String(client.get("k" + i), "UTF-8").equals("value" + i));
 
             Map<String, ByteString> rotKeyValues = client.rot(inputKeyValue.keySet());
+            System.out.println(rotKeyValues.size());
             for (Map.Entry<String, ByteString> entry : rotKeyValues.entrySet()) {
+                assert(entry.getValue() != null);
                 System.out.println(entry.getKey() + "  " + entry.getValue().toStringUtf8());
                 assert(entry.getValue().toStringUtf8().equals(inputKeyValue.get(entry.getKey())));
             }

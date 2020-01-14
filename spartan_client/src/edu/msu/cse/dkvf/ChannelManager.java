@@ -82,16 +82,20 @@ public class ChannelManager implements Runnable {
                 currentMessage = null;
             } catch (InterruptedException e) {
                 // TODO log here: Interrupted while waiting for queue.
+                logger.severe("Interrupted while waiting for queue");
             } catch (UnknownHostException e) {
                 //just log and exit
+                logger.severe("UnknownHostException while sending message");
                 break;
             } catch (IOException e) {
                 // TODO log here
+                logger.finer("IOException while sending message. Retrying ..");
                 try {
                     Thread.sleep(tryAgainWaitTime);
                     connectionFailure = true;
                 } catch (InterruptedException e1) {
                     // TODO log here: Interrupted while waiting to try again.
+                    logger.severe("Interrupted while waiting to try again");
                 }
             }
         }

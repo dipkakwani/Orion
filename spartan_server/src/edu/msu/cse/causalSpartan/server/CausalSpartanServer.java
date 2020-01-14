@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -230,37 +231,35 @@ public class CausalSpartanServer extends DKVFServer {
 
         // send requests for reading keys to servers
         for (String key : rm.getKeysList()) {
-            protocolLOGGER.finest("Searching key: " + key);
             try {
                 int p = findPartition(key);
                 // If key is not present in current partition
                 if (p != pId) {
-                    protocolLOGGER.finest("Sending slice request message");
+                    protocolLOGGER.finest("Sending slice request message for "
+                            + key + " to " + dcId + "_" + p + " ROT ID " + rotID);
                     SliceRequestMessage sreq = Metadata.SliceRequestMessage.newBuilder()
                             .setPId(pId).setRotID(rotID)
                             .setKey(key).addAllSv(sv).build();
                     ServerMessage sm = ServerMessage.newBuilder().setSreqMessage(sreq).build();
                     sendToServerViaChannel(dcId + "_" + p, sm);
                 } else {
-                    protocolLOGGER.finest("Key available locally");
+                    protocolLOGGER.finest("Key available locally " + key);
                     List<Record> result = new ArrayList<>();
                     StorageStatus ss = read(key, isVisibleSnapshot(dcId, sv), result);
                     if (ss == StorageStatus.SUCCESS) {
                         Record rec = result.get(0);
                         protocolLOGGER.finest("Found key " + key + " value: " + rec.getValue().toStringUtf8());
                         List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
-                        protocolLOGGER.finest("Acquiring rotBuilder lock " + Thread.currentThread().getName());
-                        protocolLOGGER.finest("Lock status " + Thread.holdsLock(rotBuilder));
                         // Take max DS
                         synchronized (rotBuilder) {
                             Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
                             rotBuilder.putAllDsItems(updateDS(ds, newDs));
                             rotBuilder.putKeyValue(key, rec.getValue());
                         }
-                        protocolLOGGER.finest("Released rotBuilder lock" + Thread.currentThread().getName());
                     }
                     else {
-                       protocolLOGGER.severe("Could not find the key locally " + key + " for ROT " + rotID);
+                        protocolLOGGER.severe("Could not find the key locally " + key + " for ROT " + rotID);
+                        rotBuilder.putKeyValue(key, ByteString.EMPTY);
                     }
                 }
             } catch (NoSuchAlgorithmException e) {
@@ -270,11 +269,15 @@ public class CausalSpartanServer extends DKVFServer {
         }
 
         protocolLOGGER.finest("Waiting for values to arrive ROT ID " + rotID);
+
         // Wait for all the values to arrive
         synchronized (rotBuilder) {
             try {
-                while (rotBuilder.getKeyValueCount() != rotBuilder.getCount())
+                while (rotBuilder.getKeyValueCount() != rotBuilder.getCount()) {
+                    protocolLOGGER.finest("WAITING " + rotID + " : "
+                            + rotBuilder.getKeyValueCount() + "/" + rotBuilder.getCount());
                     rotBuilder.wait();
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -392,27 +395,38 @@ public class CausalSpartanServer extends DKVFServer {
         SliceRequestMessage sreq = sm.getSreqMessage();
         List<Record> result = new ArrayList<>();
         StorageStatus ss = read(sreq.getKey(), isVisibleSnapshot(dcId, sreq.getSvList()), result);
+        SliceReplyMessage srep;
+
         if (ss == StorageStatus.SUCCESS) {
             Record rec = result.get(0);
             updateDsv(sreq.getSvList());
             List<DcTimeItem> newDs = updateDS(rec.getSr(), rec.getUt(), rec.getDsItemList());
-            SliceReplyMessage srep = SliceReplyMessage.newBuilder()
+            srep = SliceReplyMessage.newBuilder()
                     .setRotID(sreq.getRotID())
                     .setKey(sreq.getKey())
                     .setValue(rec.getValue())
                     .addAllDs(newDs)
                     .build();
-            ServerMessage reply = ServerMessage.newBuilder().setSrepMessage(srep).build();
-            sendToServerViaChannel(dcId + "_" + sreq.getPId(), reply);
         }
         else {
             protocolLOGGER.severe("Could not find the key "+ sreq.getKey() + " for ROT " + sreq.getRotID());
+            srep = SliceReplyMessage.newBuilder()
+                    .setRotID(sreq.getRotID())
+                    .setKey(sreq.getKey())
+                    .setValue(ByteString.EMPTY)
+                    .build();
         }
+
+        ServerMessage reply = ServerMessage.newBuilder().setSrepMessage(srep).build();
+        sendToServerViaChannel(dcId + "_" + sreq.getPId(), reply);
     }
 
     void handleSrepMessage(ServerMessage sm) {
         SliceReplyMessage srep = sm.getSrepMessage();
-        RotReply.Builder rotBuilder = rotTxn.get(srep.getRotID());
+        RotReply.Builder rotBuilder;
+        // Wait until the write becomes visible
+        while ((rotBuilder = rotTxn.get(srep.getRotID())) == null);
+
         // Take max DS
         synchronized (rotBuilder) {
             Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
@@ -455,18 +469,13 @@ public class CausalSpartanServer extends DKVFServer {
 
     // Updates DS by taking max of two DS
     private Map<Integer, Long> updateDS(Map<Integer, Long> ds1, List<DcTimeItem> ds2) {
-        System.out.println(ds2.size());
         Map<Integer, Long> result = new HashMap<>(ds1);
         for (DcTimeItem ds_item : ds2) {
-            System.out.println(ds_item.getDcId() + " " + ds_item.getTime());
             if (!ds1.containsKey(ds_item.getDcId())
                     || ds1.get(ds_item.getDcId()) < ds_item.getTime()) {
-                System.out.println("Adding " + ds_item.getDcId());
                 result.put(ds_item.getDcId(), ds_item.getTime());
-                System.out.println("Added " + ds_item.getDcId());
             }
         }
-        System.out.println("Returning update DS");
         return result;
     }
 }
