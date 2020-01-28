@@ -466,7 +466,7 @@ public class CausalSpartanServer extends DKVFServer {
         return result;
     }
 
-    // Updates DS by taking max of two DS
+    // Returns the max of two DS
     private Map<Integer, Long> maxDS(Map<Integer, Long> ds1, List<DcTimeItem> ds2) {
         Map<Integer, Long> result = new HashMap<>(ds1);
         for (DcTimeItem ds_item : ds2) {
