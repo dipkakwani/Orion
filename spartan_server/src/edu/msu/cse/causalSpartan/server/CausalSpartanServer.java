@@ -252,7 +252,7 @@ public class CausalSpartanServer extends DKVFServer {
                         // Take max DS
                         synchronized (rotBuilder) {
                             Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
-                            rotBuilder.putAllDsItems(updateDS(ds, newDs));
+                            rotBuilder.putAllDsItems(maxDS(ds, newDs));
                             rotBuilder.putKeyValue(key, rec.getValue());
                         }
                     }
@@ -429,7 +429,7 @@ public class CausalSpartanServer extends DKVFServer {
         // Take max DS
         synchronized (rotBuilder) {
             Map<Integer, Long> ds = rotBuilder.getDsItemsMap();
-            rotBuilder.putAllDsItems(updateDS(ds, srep.getDsList()));
+            rotBuilder.putAllDsItems(maxDS(ds, srep.getDsList()));
             rotBuilder.putKeyValue(srep.getKey(), srep.getValue());
             // If the current key is the last key, notify the waiting threads
             if (rotBuilder.getKeyValueCount() == rotBuilder.getCount()) {
@@ -467,7 +467,7 @@ public class CausalSpartanServer extends DKVFServer {
     }
 
     // Updates DS by taking max of two DS
-    private Map<Integer, Long> updateDS(Map<Integer, Long> ds1, List<DcTimeItem> ds2) {
+    private Map<Integer, Long> maxDS(Map<Integer, Long> ds1, List<DcTimeItem> ds2) {
         Map<Integer, Long> result = new HashMap<>(ds1);
         for (DcTimeItem ds_item : ds2) {
             if (!ds1.containsKey(ds_item.getDcId())
