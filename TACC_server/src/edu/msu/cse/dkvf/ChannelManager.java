@@ -89,7 +89,7 @@ public class ChannelManager implements Runnable {
                 break;
             } catch (IOException e) {
                 // TODO log here
-                logger.finer("IOException while sending message. Retrying ..");
+                logger.finer("IOException while sending message. Retrying .." + e.getMessage());
                 try {
                     Thread.sleep(tryAgainWaitTime);
                     connectionFailure = true;

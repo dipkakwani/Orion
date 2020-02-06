@@ -23,6 +23,9 @@ public class CausalSpartanClient extends DKVFClient {
     int dcId;
     int numOfPartitions;
     int numOfDatacenters;
+    long heartRate = 50;
+    long latency = 15;
+    long lastRotTime = 0;
 
     public CausalSpartanClient(ConfigReader cnfReader) {
         super(cnfReader);
@@ -126,13 +129,30 @@ public class CausalSpartanClient extends DKVFClient {
 //    }
 
     public Map<String, ByteString> rot(Set<String> keys) {
-        // TODO Predict DSV using relative time
         long currentTime = edu.msu.cse.causalSpartan.client.Utils.getPhysicalTime();
-        long shiftedTime = edu.msu.cse.causalSpartan.client.Utils.shiftToHighBits(currentTime);
+        long localOffset, remoteOffset;
+        if (lastRotTime != 0) {
+            localOffset = currentTime - heartRate - latency - lastRotTime;
+            remoteOffset = currentTime - heartRate - 3 * latency - lastRotTime;
+        }
+        else
+            localOffset = remoteOffset = 0;
+
+        if (localOffset < 0)
+            localOffset = 0;
+        if (remoteOffset < 0)
+            remoteOffset = 0;
+
+        long shiftedLocalOffset = edu.msu.cse.causalSpartan.client.Utils.shiftToHighBits(localOffset);
+        long shiftedRemoteOffset = edu.msu.cse.causalSpartan.client.Utils.shiftToHighBits(remoteOffset);
+
         List<Long> predictedDSV = new ArrayList<>(dsv.size());
 
-        for (Long ts : dsv) {
-            predictedDSV.add(shiftedTime - ts);
+        for (int i = 0; i < dsv.size(); i++) {
+            if (i != dcId)
+                predictedDSV.add(dsv.get(i) + shiftedRemoteOffset);
+            else
+                predictedDSV.add(dsv.get(i) + shiftedLocalOffset);
         }
 
         Map<String, ByteString> results = new HashMap<>(keys.size());
@@ -153,6 +173,7 @@ public class CausalSpartanClient extends DKVFClient {
                 }
                 serversContacted.add(serverId);
             }
+            lastRotTime = edu.msu.cse.causalSpartan.client.Utils.getPhysicalTime();
             // Read replies from servers
             for (String serverId : serversContacted) {
                 ClientReply cr = readFromServer(serverId);

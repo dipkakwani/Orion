@@ -50,7 +50,7 @@ public class CausalSpartanServer extends DKVFServer {
     // ROT
     long rotCount;
     final Map<Long, RotReply.Builder> rotTxn = new HashMap<>();
-    final long timeout = 100;
+    final long timeout = 500;
 
     // intervals
     int heartbeatInterval;
@@ -292,16 +292,16 @@ public class CausalSpartanServer extends DKVFServer {
 //    }
 
     private void handleRotMessage(ClientMessageAgent cma) {
-        protocolLOGGER.finest("ROT Message received");
         RotMessage rm = cma.getClientMessage().getRotMessage();
+        protocolLOGGER.finest("ROT Message received key: " + rm.getKey());
         // Check valid SV
         if (!validSV(rm.getDsvItemList())) {
             // Wait for timeout and check again
             try {
-                protocolLOGGER.finest("Waiting for DSV to progress..");
+                protocolLOGGER.finest("Waiting for DSV to progress.. " + rm.getKey());
                 Thread.sleep(timeout);
                 if (!validSV(rm.getDsvItemList())) {
-                    protocolLOGGER.finest("Timed out..");
+                    protocolLOGGER.finest("Timed out.. " + rm.getKey());
                     cma.sendReply(ClientReply.newBuilder().setStatus(false).build());
                     return;
                 }
@@ -310,6 +310,7 @@ public class CausalSpartanServer extends DKVFServer {
             }
         }
 
+        protocolLOGGER.finest("Valid DSV " + rm.getKey());
         List<Record> result = new ArrayList<>();
         StorageStatus ss = read(rm.getKey(), isVisibleSnapshot(dcId, rm.getDsvItemList()), result);
         ClientReply cr = null;

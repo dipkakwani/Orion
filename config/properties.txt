@@ -1,5 +1,5 @@
 fieldlength=16
-operationcount=200
+operationcount=10000
 recordcount=100
 workload=edu.msu.cse.dkvf.ycsbWorkload.DKVFWorkload
 
@@ -9,9 +9,9 @@ readproportion=0
 updateproportion=0
 insertproportion=0.5
 ampinsertproportion=0
-rotxproportion = 0.5
+rotxproportion=0.5
 
-threadcount=30
+threadcount=10
 
 ampfactor=10
 requestdistribution=zipfian
