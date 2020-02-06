@@ -23,8 +23,9 @@ public class CausalSpartanClient extends DKVFClient {
     int dcId;
     int numOfPartitions;
     int numOfDatacenters;
-    long heartRate = 50;
-    long latency = 15;
+    long heartRate;
+    long latency;          // Latency inter DC
+    long dsvComutationInterval;
     long lastRotTime = 0;
 
     public CausalSpartanClient(ConfigReader cnfReader) {
@@ -32,6 +33,9 @@ public class CausalSpartanClient extends DKVFClient {
         HashMap<String, List<String>> protocolProperties = cnfReader.getProtocolProperties();
         numOfDatacenters = new Integer(protocolProperties.get("num_of_datacenters").get(0));
         numOfPartitions = new Integer(protocolProperties.get("num_of_partitions").get(0));
+        heartRate = new Integer(protocolProperties.get("heartbeat_interval").get(0));
+        latency = new Integer(protocolProperties.get("max_latency").get(0));
+        dsvComutationInterval = new Integer(protocolProperties.get("dsv_comutation_interval").get(0));
 
         dcId = new Integer(protocolProperties.get("dc_id").get(0));
 
@@ -132,8 +136,8 @@ public class CausalSpartanClient extends DKVFClient {
         long currentTime = edu.msu.cse.causalSpartan.client.Utils.getPhysicalTime();
         long localOffset, remoteOffset;
         if (lastRotTime != 0) {
-            localOffset = currentTime - heartRate - latency - lastRotTime;
-            remoteOffset = currentTime - heartRate - 3 * latency - lastRotTime;
+            localOffset = currentTime - heartRate - dsvComutationInterval - lastRotTime;
+            remoteOffset = currentTime - heartRate - dsvComutationInterval - latency - lastRotTime;
         }
         else
             localOffset = remoteOffset = 0;

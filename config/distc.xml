@@ -20,9 +20,10 @@
                     <property key="parent_p_id" value="0"/>
                     <property key="num_of_datacenters" value="2"/>
                     <property key="num_of_partitions" value="2"/>
-                    <property key="heartbeat_interval" value="500"/>
-                    <property key="dsv_comutation_interval" value="200"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
                     <property key="children_p_ids" value="1"/>
+                    <property key="timeout" value="200"/>
                 </protocol_properties>
             </config>
         </server>
@@ -43,9 +44,10 @@
                     <property key="parent_p_id" value="0"/>
                     <property key="num_of_datacenters" value="2"/>
                     <property key="num_of_partitions" value="2"/>
-                    <property key="heartbeat_interval" value="500"/>
-                    <property key="dsv_comutation_interval" value="200"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
                     <property key="children_p_ids" value="1"/>
+                    <property key="timeout" value="200"/>
                 </protocol_properties>
             </config>
         </server>
@@ -66,8 +68,9 @@
                     <property key="parent_p_id" value="0"/>
                     <property key="num_of_datacenters" value="2"/>
                     <property key="num_of_partitions" value="2"/>
-                    <property key="heartbeat_interval" value="500"/>
-                    <property key="dsv_comutation_interval" value="200"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
+                    <property key="timeout" value="200"/>
                 </protocol_properties>
             </config>
         </server>
@@ -88,8 +91,9 @@
                     <property key="parent_p_id" value="0"/>
                     <property key="num_of_datacenters" value="2"/>
                     <property key="num_of_partitions" value="2"/>
-                    <property key="heartbeat_interval" value="500"/>
-                    <property key="dsv_comutation_interval" value="200"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
+                    <property key="timeout" value="200"/>
                 </protocol_properties>
             </config>
         </server>

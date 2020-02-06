@@ -8,7 +8,7 @@
                 <os>linux</os>
                 <client_jar_file>/home/diptanshu/causal-key-value/config/spartan_client.jar</client_jar_file>
                 <client_class_name>edu.msu.cse.causalSpartan.client.CausalSpartanClient</client_class_name>
-                <workload>/home/diptanshu/Dropbox/causal-key-value/config/properties.txt</workload>
+                <workload>/home/diptanshu/causal-key-value/config/properties.txt</workload>
                 <username>diptanshu</username>
                 <password>diptanshu</password>
                 <working_directory>/home/diptanshu/causal-key-value/config/work_dir/c1</working_directory>
@@ -18,6 +18,9 @@
                     <property key="num_of_datacenters" value="2"/>
                     <property key="num_of_partitions" value="2"/>
                     <property key="dc_id" value="1"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
+                    <property key="max_latency" value="155"/>
                 </protocol_properties>
             </config>
             <connect_to>
@@ -30,7 +33,7 @@
                 <os>linux</os>
                 <client_jar_file>/home/diptanshu/causal-key-value/config/spartan_client.jar</client_jar_file>
                 <client_class_name>edu.msu.cse.causalSpartan.client.CausalSpartanClient</client_class_name>
-                <workload>/home/diptanshu/Dropbox/causal-key-value/config/properties.txt</workload>
+                <workload>/home/diptanshu/causal-key-value/config/properties.txt</workload>
                 <username>diptanshu</username>
                 <password>diptanshu</password>
                 <working_directory>/home/diptanshu/causal-key-value/config/work_dir/c0</working_directory>
@@ -40,6 +43,9 @@
                     <property key="num_of_datacenters" value="2"/>
                     <property key="num_of_partitions" value="2"/>
                     <property key="dc_id" value="0"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
+                    <property key="max_latency" value="155"/>
                 </protocol_properties>
             </config>
             <connect_to>

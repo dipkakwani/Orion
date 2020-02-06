@@ -48,9 +48,7 @@ public class CausalSpartanServer extends DKVFServer {
     int parentPId;
 
     // ROT
-    long rotCount;
-    final Map<Long, RotReply.Builder> rotTxn = new HashMap<>();
-    final long timeout = 500;
+    int timeout;
 
     // intervals
     int heartbeatInterval;
@@ -83,6 +81,8 @@ public class CausalSpartanServer extends DKVFServer {
 
         heartbeatInterval = new Integer(protocolProperties.get("heartbeat_interval").get(0));
         dsvComutationInterval = new Integer(protocolProperties.get("dsv_comutation_interval").get(0));
+
+        timeout = new Integer(protocolProperties.get("timeout").get(0));
 
         vv = new ArrayList<>();
         ArrayList<Long> allZero = new ArrayList<>();
