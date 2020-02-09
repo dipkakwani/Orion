@@ -118,11 +118,11 @@ public class CausalSpartanServer extends DKVFServer {
 		List<Record> result = new ArrayList<>();
 		StorageStatus ss = read(gm.getKey(), isVisible, result);
 		ClientReply cr = null;
-		int numVersions = 3;
+		int numOfVersions = 3;
         System.out.println("GET MESSAGE " + result.size());
 		if (ss == StorageStatus.SUCCESS) {
-		    List<GetReply> multipleVersions = new ArrayList<>(numVersions);
-		    for (int i = 0; i < numVersions && i < result.size(); i++) {
+		    List<GetReply> multipleVersions = new ArrayList<>(numOfVersions);
+		    for (int i = 0; i < numOfVersions && i < result.size(); i++) {
                 Record rec = result.get(i);
                 try {
                     System.out.println("VALUE " + rec.getValue().toString("UTF-8"));
@@ -151,11 +151,14 @@ public class CausalSpartanServer extends DKVFServer {
 	}
 
 	Predicate<Record> isVisible = (Record r) -> {
+        System.out.println("isVisible");
 		if (dcId == r.getSr())
 			return true;
+        System.out.println("DS");
 
 		for (int i = 0; i < r.getDsItemCount(); i++) {
 			DcTimeItem dti = r.getDsItem(i);
+            System.out.print(dti.getTime() + " ");
 			if (dsv.get(dti.getDcId()) < dti.getTime())
 				return false;
 		}

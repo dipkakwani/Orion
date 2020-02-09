@@ -78,10 +78,16 @@ public class CausalSpartanClient extends DKVFClient {
 			if (sendToServer(serverId, cm) == NetworkStatus.FAILURE)
 				return null;
 			ClientReply cr = readFromServer(serverId);
+			int numOfVersions = 3;
 			if (cr != null && cr.getStatus()) {
-				updateDsv(cr.getMultipleVersions().getGetReply(0).getDsvItemList());
-				for (DcTimeItem dti : cr.getMultipleVersions().getGetReply(0).getDsItemList()) {
-					updateDS(dti.getDcId(), dti.getTime());
+				for (int i = 0; i < numOfVersions && i < cr.getMultipleVersions().getGetReplyCount(); i++) {
+					//updateDsv(cr.getMultipleVersions().getGetReply(i).getDsvItemList());
+					//for (DcTimeItem dti : cr.getMultipleVersions().getGetReply(i).getDsItemList()) {
+					//	updateDS(dti.getDcId(), dti.getTime());
+					//}
+				}
+				for (int i = 0; i < numOfVersions && i < cr.getMultipleVersions().getGetReplyCount(); i++) {
+					System.out.println("value " + i + " = " + new String(cr.getMultipleVersions().getGetReply(0).getValue().toByteArray(), "UTF-8"));
 				}
 				return cr.getMultipleVersions().getGetReply(0).getValue().toByteArray();
 			} else {
@@ -92,6 +98,10 @@ public class CausalSpartanClient extends DKVFClient {
 			protocolLOGGER.severe(Utils.exceptionLogMessge("Failed to get due to exception", e));
 			return null;
 		}
+	}
+
+	public List<byte[]> rot(String[] keys) {
+		return null;
 	}
 
 	private int findPartition(String key) throws NoSuchAlgorithmException {

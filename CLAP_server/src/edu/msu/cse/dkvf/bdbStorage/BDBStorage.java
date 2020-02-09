@@ -171,16 +171,23 @@ public class BDBStorage extends Storage {
 			// Position the cursor
 			OperationStatus retVal = cursor.getSearchKey(myKey, myData, LockMode.DEFAULT);
 
-			while (retVal == OperationStatus.SUCCESS) {
+			int numOfVersions = 3, i = 0;
+			boolean storageSuccess = false;
+
+			while (retVal == OperationStatus.SUCCESS && i++ < numOfVersions) {
 				Record rec = Record.parseFrom(myData.getData());
 				if (p.test(rec)) {
 					result.add(rec);
-					return StorageStatus.SUCCESS;
-				} else {
+					storageSuccess = true;
+					//return StorageStatus.SUCCESS;
+				//} else {
 					retVal = cursor.getNextDup(myKey, myData, LockMode.DEFAULT);
 				}
 			}
 			cursor.close();
+
+            if (storageSuccess)
+                return StorageStatus.SUCCESS;
 			return StorageStatus.FAILURE;
 		} catch (Exception e) {
 			logger.severe("Problem in reading key= " + key + " : " + e.toString());
