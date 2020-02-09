@@ -96,42 +96,6 @@ public class CausalSpartanClient extends DKVFClient {
         }
     }
 
-//    public Map<String, ByteString> rotOld(Set<String> keys) {
-//        try {
-//            protocolLOGGER.finest("ROT started");
-//            RotMessage rm = RotMessage.newBuilder().addAllKeys(keys)
-//                            .addAllDsvItem(dsv).putAllDsItems(ds).build();
-//            ClientMessage cm = ClientMessage.newBuilder().setRotMessage(rm).build();
-//
-//            // Contact the partition of first key for ROT
-//            int partition = findPartition(keys.iterator().next());
-//            String serverId = dcId + "_" + partition;
-//            protocolLOGGER.finest("Server ID: " + serverId);
-//            if (sendToServer(serverId, cm) == NetworkStatus.FAILURE) {
-//                protocolLOGGER.severe("Failed to send to server " + serverId);
-//                return null;
-//            }
-//            ClientReply cr = readFromServer(serverId);
-//            if (cr != null && cr.getStatus()) {
-//                protocolLOGGER.finest("ROT received reply");
-//                updateDsv(cr.getRotReply().getDsvItemList());
-//                for (Map.Entry<Integer, Long> dsEntry : cr.getRotReply().getDsItemsMap().entrySet()) {
-//                    updateDS(dsEntry.getKey(), dsEntry.getValue());
-//                }
-//                for (Map.Entry<String, ByteString> keyValue : cr.getRotReply().getKeyValueMap().entrySet()) {
-//                    protocolLOGGER.finest("KEY " + keyValue.getKey() + " value : " + keyValue.getValue().toStringUtf8());
-//                }
-//                return cr.getRotReply().getKeyValueMap();
-//            } else {
-//                protocolLOGGER.severe("Server could not get the keys= " + keys);
-//                return null;
-//            }
-//        } catch (Exception e) {
-//            protocolLOGGER.severe(Utils.exceptionLogMessge("Failed to get due to exception", e));
-//            return null;
-//        }
-//    }
-
     public Map<String, ByteString> rot(Set<String> keys) {
         long currentTime = edu.msu.cse.causalSpartan.client.Utils.getPhysicalTime();
         long localOffset, remoteOffset;
@@ -184,7 +148,7 @@ public class CausalSpartanClient extends DKVFClient {
                 if (cr != null && cr.getStatus()) {
                     protocolLOGGER.finest("ROT received reply");
                     updateDsv(cr.getRotReply().getDsvItemList());
-                    for (DcTimeItem dti : cr.getGetReply().getDsItemList()) {
+                    for (DcTimeItem dti : cr.getRotReply().getDsItemsList()) {
                         updateDS(dti.getDcId(), dti.getTime());
                     }
                     results.put(cr.getRotReply().getKey(), cr.getRotReply().getValue());
@@ -199,7 +163,6 @@ public class CausalSpartanClient extends DKVFClient {
         }
         return results;
     }
-
 
     private int findPartition(String key) throws NoSuchAlgorithmException {
         long hash = Utils.getMd5HashLong(key);
