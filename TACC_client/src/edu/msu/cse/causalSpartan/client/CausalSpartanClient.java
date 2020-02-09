@@ -2,6 +2,7 @@ package edu.msu.cse.causalSpartan.client;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.util.concurrent.LinkedBlockingDeque;
 
 import com.google.protobuf.ByteString;
 
@@ -11,6 +12,7 @@ import edu.msu.cse.dkvf.Utils;
 import edu.msu.cse.dkvf.config.ConfigReader;
 import edu.msu.cse.dkvf.metadata.Metadata.ClientMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.ClientReply;
+import edu.msu.cse.dkvf.metadata.Metadata.RotReply;
 import edu.msu.cse.dkvf.metadata.Metadata.DcTimeItem;
 import edu.msu.cse.dkvf.metadata.Metadata.GetMessage;
 import edu.msu.cse.dkvf.metadata.Metadata.PutMessage;
@@ -27,6 +29,10 @@ public class CausalSpartanClient extends DKVFClient {
     long latency;          // Latency inter DC
     long dsvComutationInterval;
     long lastRotTime = 0;
+    LinkedBlockingDeque<RotMessage> rotMessages = new LinkedBlockingDeque<>();
+    LinkedBlockingDeque<RotReply> rotReplies = new LinkedBlockingDeque<>();
+    int numOfMaxKeys = 3;
+    int numRot = 0;
 
     public CausalSpartanClient(ConfigReader cnfReader) {
         super(cnfReader);
@@ -45,6 +51,11 @@ public class CausalSpartanClient extends DKVFClient {
         }
 
         ds = new HashMap<>();
+        for (int i = 0; i < numOfMaxKeys; i++) {
+            RotClient rotClient = new RotClient(cnfReader, rotMessages, rotReplies);
+            Thread t = new Thread(rotClient);
+            t.start();
+        }
     }
 
     public boolean put(String key, byte[] value) {
@@ -97,6 +108,8 @@ public class CausalSpartanClient extends DKVFClient {
     }
 
     public Map<String, ByteString> rot(Set<String> keys) {
+        numRot++;
+        protocolLOGGER.finest("Number of ROT " + numRot);
         long currentTime = edu.msu.cse.causalSpartan.client.Utils.getPhysicalTime();
         long localOffset, remoteOffset;
         if (lastRotTime != 0) {
@@ -124,37 +137,32 @@ public class CausalSpartanClient extends DKVFClient {
         }
 
         Map<String, ByteString> results = new HashMap<>(keys.size());
-        List<String> serversContacted = new ArrayList<>(keys.size());
         try {
-            protocolLOGGER.finest("ROT started");
+            protocolLOGGER.finest("ROT started " + keys.size());
+            // Make sure no back log messages present in the queue
+            rotMessages.clear();
+            rotReplies.clear();
             for (String key : keys) {
-                RotMessage rm = RotMessage.newBuilder().addAllDsvItem(predictedDSV).setKey(key).build();
-                ClientMessage cm = ClientMessage.newBuilder().setRotMessage(rm).build();
-
-                // Contact the partition of the key for ROT
-                int partition = findPartition(key);
-                String serverId = dcId + "_" + partition;
-                protocolLOGGER.finest("Server ID: " + serverId);
-                if (sendToServer(serverId, cm) == NetworkStatus.FAILURE) {
-                    protocolLOGGER.severe("Failed to send to server " + serverId);
-                    return null;
-                }
-                serversContacted.add(serverId);
+                rotMessages.add(RotMessage.newBuilder().addAllDsvItem(predictedDSV).setKey(key).build());
             }
+            protocolLOGGER.finest("Async sent to all servers");
             lastRotTime = edu.msu.cse.causalSpartan.client.Utils.getPhysicalTime();
             // Read replies from servers
-            for (String serverId : serversContacted) {
-                ClientReply cr = readFromServer(serverId);
-                if (cr != null && cr.getStatus()) {
-                    protocolLOGGER.finest("ROT received reply");
-                    updateDsv(cr.getRotReply().getDsvItemList());
-                    for (DcTimeItem dti : cr.getRotReply().getDsItemsList()) {
-                        updateDS(dti.getDcId(), dti.getTime());
+            RotReply reply = null;
+            while (results.size() != keys.size()) {
+                while ((reply = rotReplies.poll()) != null) {
+                    if (reply.getValue() != ByteString.EMPTY) {
+                        updateDsv(reply.getDsvItemList());
+                        for (DcTimeItem dti : reply.getDsItemsList()) {
+                            updateDS(dti.getDcId(), dti.getTime());
+                        }
+                        results.put(reply.getKey(), reply.getValue());
+                    } else {
+                        results.put(reply.getKey(), reply.getValue());
+                        // Remove the accumulated messages
+//                        rotMessages.clear();
+//                        return null;
                     }
-                    results.put(cr.getRotReply().getKey(), cr.getRotReply().getValue());
-                } else {
-                    protocolLOGGER.severe("Server could not get the keys= " + keys);
-                    return null;
                 }
             }
         } catch (Exception e) {
