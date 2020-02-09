@@ -152,12 +152,14 @@ public class CausalSpartanClient extends DKVFClient {
             while (results.size() != keys.size()) {
                 while ((reply = rotReplies.poll()) != null) {
                     if (reply.getValue() != ByteString.EMPTY) {
+                        protocolLOGGER.finest("Got ROT reply " + reply.getKey());
                         updateDsv(reply.getDsvItemList());
                         for (DcTimeItem dti : reply.getDsItemsList()) {
                             updateDS(dti.getDcId(), dti.getTime());
                         }
                         results.put(reply.getKey(), reply.getValue());
                     } else {
+                        protocolLOGGER.severe("Server could not get the ROT key = " + reply.getKey());
                         results.put(reply.getKey(), reply.getValue());
                         // Remove the accumulated messages
 //                        rotMessages.clear();
