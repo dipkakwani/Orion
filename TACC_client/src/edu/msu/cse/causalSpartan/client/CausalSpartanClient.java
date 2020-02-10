@@ -124,34 +124,34 @@ public class CausalSpartanClient extends DKVFClient {
         }
 
         Map<String, ByteString> results = new HashMap<>(keys.size());
-        List<String> serversContacted = new ArrayList<>(keys.size());
+        Map<String, List<String>> serverKeyMap = new HashMap<>();
         try {
             protocolLOGGER.finest("ROT started");
             for (String key : keys) {
-                RotMessage rm = RotMessage.newBuilder().addAllDsvItem(predictedDSV).setKey(key).build();
-                ClientMessage cm = ClientMessage.newBuilder().setRotMessage(rm).build();
-
-                // Contact the partition of the key for ROT
                 int partition = findPartition(key);
                 String serverId = dcId + "_" + partition;
-                protocolLOGGER.finest("Server ID: " + serverId);
-                if (sendToServer(serverId, cm) == NetworkStatus.FAILURE) {
-                    protocolLOGGER.severe("Failed to send to server " + serverId);
+                serverKeyMap.computeIfAbsent(serverId, k -> new ArrayList<>()).add(key);
+            }
+            for (Map.Entry<String, List<String>> e : serverKeyMap.entrySet()) {
+                RotMessage rm = RotMessage.newBuilder().addAllDsvItem(predictedDSV).addAllKey(e.getValue()).build();
+                ClientMessage cm = ClientMessage.newBuilder().setRotMessage(rm).build();
+                protocolLOGGER.finest("Server ID: " + e.getKey());
+                if (sendToServer(e.getKey(), cm) == NetworkStatus.FAILURE) {
+                    protocolLOGGER.severe("Failed to send to server " + e.getKey());
                     return null;
                 }
-                serversContacted.add(serverId);
             }
             lastRotTime = edu.msu.cse.causalSpartan.client.Utils.getPhysicalTime();
             // Read replies from servers
-            for (String serverId : serversContacted) {
-                ClientReply cr = readFromServer(serverId);
+            for (Map.Entry<String, List<String>> e : serverKeyMap.entrySet()) {
+                ClientReply cr = readFromServer(e.getKey());
                 if (cr != null && cr.getStatus()) {
                     protocolLOGGER.finest("ROT received reply");
                     updateDsv(cr.getRotReply().getDsvItemList());
-                    for (DcTimeItem dti : cr.getRotReply().getDsItemsList()) {
-                        updateDS(dti.getDcId(), dti.getTime());
+                    for (Map.Entry<Integer, Long> dti : cr.getRotReply().getDsItemsMap().entrySet()) {
+                        updateDS(dti.getKey(), dti.getValue());
                     }
-                    results.put(cr.getRotReply().getKey(), cr.getRotReply().getValue());
+                    results.putAll(cr.getRotReply().getKeyValueMap());
                 } else {
                     protocolLOGGER.severe("Server could not get the keys= " + keys);
                     return null;

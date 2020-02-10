@@ -30,7 +30,7 @@ message PutMessage {
 }
 
 message RotMessage {
-    string key = 1;
+    repeated string key = 1;
     repeated int64 dsv_item = 2;
 }
 
@@ -56,10 +56,9 @@ message PutReply {
 }
 
 message RotReply {
-    string key = 1;
-    bytes value = 2;
-    repeated DcTimeItem ds_items = 3;
-    repeated int64 dsv_item = 4;
+    map<string, bytes> key_value = 1;
+    map<int32, int64> ds_items = 2;
+    repeated int64 dsv_item = 3;
 }
 
 message ClientReply {
