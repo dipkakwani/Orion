@@ -3,7 +3,7 @@
     <name>spartan_cluster</name>
     <defaults/>
     <servers>
-        <server id="0_0" ip="10.22.53.156">
+        <server id="0_0" ip="35.224.118.135">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/spartan_server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -27,7 +27,7 @@
                 </protocol_properties>
             </config>
         </server>
-        <server id="1_0" ip="10.21.229.79">
+        <server id="1_0" ip="35.236.136.183">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/spartan_server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -51,7 +51,7 @@
                 </protocol_properties>
             </config>
         </server>
-        <server id="0_1" ip="10.22.53.156">
+        <server id="0_1" ip="35.226.14.78">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/spartan_server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -74,7 +74,7 @@
                 </protocol_properties>
             </config>
         </server>
-        <server id="1_1" ip="10.21.229.79">
+        <server id="1_1" ip="35.229.171.86">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/spartan_server.jar</server_jar_file>
                 <username>diptanshu</username>

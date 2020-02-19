@@ -54,6 +54,10 @@ public class Utils {
         return time << 16;
     }
 
+    public static long shiftToLowBits(long time) {
+        return time >> 16;
+    }
+
     public static long maxDsTime(List<DcTimeItem> dsItemList) {
         long result = dsItemList.get(0).getTime();
         for (int i = 1; i < dsItemList.size(); i++)

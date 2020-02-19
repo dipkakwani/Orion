@@ -13,6 +13,6 @@ rotxproportion=0.5
 
 threadcount=10
 
-ampfactor=10
+ampfactor=1
 requestdistribution=zipfian
 core_workload_insertion_retry_limit=2

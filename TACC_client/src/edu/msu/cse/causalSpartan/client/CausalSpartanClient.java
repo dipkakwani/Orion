@@ -2,6 +2,7 @@ package edu.msu.cse.causalSpartan.client;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.util.logging.Level;
 
 import com.google.protobuf.ByteString;
 
@@ -127,11 +128,13 @@ public class CausalSpartanClient extends DKVFClient {
         Map<String, List<String>> serverKeyMap = new HashMap<>();
         try {
             protocolLOGGER.finest("ROT started");
+            // Group keys with server
             for (String key : keys) {
                 int partition = findPartition(key);
                 String serverId = dcId + "_" + partition;
                 serverKeyMap.computeIfAbsent(serverId, k -> new ArrayList<>()).add(key);
             }
+            // Send ROT messages to servers
             for (Map.Entry<String, List<String>> e : serverKeyMap.entrySet()) {
                 RotMessage rm = RotMessage.newBuilder().addAllDsvItem(predictedDSV).addAllKey(e.getValue()).build();
                 ClientMessage cm = ClientMessage.newBuilder().setRotMessage(rm).build();
@@ -147,6 +150,8 @@ public class CausalSpartanClient extends DKVFClient {
                 ClientReply cr = readFromServer(e.getKey());
                 if (cr != null && cr.getStatus()) {
                     protocolLOGGER.finest("ROT received reply");
+                    if (protocolLOGGER.isLoggable(Level.FINEST))
+                        logDifference(cr.getRotReply().getDsvItemList(), predictedDSV);
                     updateDsv(cr.getRotReply().getDsvItemList());
                     for (Map.Entry<Integer, Long> dti : cr.getRotReply().getDsItemsMap().entrySet()) {
                         updateDS(dti.getKey(), dti.getValue());
@@ -192,5 +197,15 @@ public class CausalSpartanClient extends DKVFClient {
         for (int i = 0; i < dsv.size(); i++) {
             dsv.set(i, Math.max(dsv.get(i), dsvItemList.get(i)));
         }
+    }
+
+    private void logDifference(List<Long> actual, List<Long> prediction) {
+        long result = 0;
+
+        for (int i = 0; i < actual.size(); i++)
+            result += edu.msu.cse.causalSpartan.client.Utils.shiftToLowBits(Math.abs(actual.get(i) - prediction.get(i)));
+
+        protocolLOGGER.finest("DIFFERENCE " + result / actual.size());
+
     }
 }
