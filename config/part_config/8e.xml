@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<experiment>
+    <name>spartan_exp</name>
+    <defaults/>
+    <clients>
+        <client id="Client_0" ip="35.184.232.76">
+            <config>
+                <os>linux</os>
+                <client_jar_file>/home/diptanshu/causal-key-value/config/client.jar</client_jar_file>
+                <client_class_name>edu.msu.cse.causalSpartan.client.CausalSpartanClient</client_class_name>
+                <workload>/home/diptanshu/causal-key-value/config/properties.txt</workload>
+                <username>diptanshu</username>
+                <password>diptanshu</password>
+                <working_directory>/home/diptanshu/causal-key-value/config/work_dir/c0</working_directory>
+                <protocol_log_level>off</protocol_log_level>
+                <framework_log_level>off</framework_log_level>
+                <protocol_properties>
+                    <property key="num_of_datacenters" value="3"/>
+                    <property key="num_of_partitions" value="8"/>
+                    <property key="dc_id" value="0"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
+                    <property key="max_latency" value="160"/>
+                </protocol_properties>
+            </config>
+            <connect_to>
+                <server id="0_0" ip="35.184.232.76" port="2000"/>
+                <server id="0_4" ip="35.184.232.76" port="3000"/>
+                <server id="0_1" ip="35.232.238.164" port="4000"/>
+                <server id="0_5" ip="35.232.238.164" port="3000"/>
+                <server id="0_2" ip="104.197.3.68" port="4000"/>
+                <server id="0_6" ip="104.197.3.68" port="3000"/>
+                <server id="0_3" ip="35.223.166.17" port="4000"/>
+                <server id="0_7" ip="35.223.166.17" port="3000"/>
+            </connect_to>
+        </client>
+
+        <client id="Client_1" ip="35.201.207.250">
+            <config>
+                <os>linux</os>
+                <client_jar_file>/home/diptanshu/causal-key-value/config/client.jar</client_jar_file>
+                <client_class_name>edu.msu.cse.causalSpartan.client.CausalSpartanClient</client_class_name>
+                <workload>/home/diptanshu/causal-key-value/config/properties.txt</workload>
+                <username>diptanshu</username>
+                <password>diptanshu</password>
+                <working_directory>/home/diptanshu/causal-key-value/config/work_dir/c1</working_directory>
+                <protocol_log_level>off</protocol_log_level>
+                <framework_log_level>off</framework_log_level>
+                <protocol_properties>
+                    <property key="num_of_datacenters" value="3"/>
+                    <property key="num_of_partitions" value="8"/>
+                    <property key="dc_id" value="1"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
+                    <property key="max_latency" value="160"/>
+                </protocol_properties>
+            </config>
+            <connect_to>
+                <server id="1_0" ip="35.201.207.250" port="2000"/>
+                <server id="1_4" ip="35.201.207.250" port="3000"/>
+                <server id="1_1" ip="35.236.141.4" port="4000"/>
+                <server id="1_5" ip="35.236.141.4" port="3000"/>
+                <server id="1_2" ip="34.80.235.137" port="4000"/>
+                <server id="1_6" ip="34.80.235.137" port="3000"/>
+                <server id="1_3" ip="35.185.160.250" port="4000"/>
+                <server id="1_7" ip="35.185.160.250" port="3000"/>
+            </connect_to>
+        </client>
+
+        <client id="Client_2" ip="35.228.223.46">
+            <config>
+                <os>linux</os>
+                <client_jar_file>/home/diptanshu/causal-key-value/config/client.jar</client_jar_file>
+                <client_class_name>edu.msu.cse.causalSpartan.client.CausalSpartanClient</client_class_name>
+                <workload>/home/diptanshu/causal-key-value/config/properties.txt</workload>
+                <username>diptanshu</username>
+                <password>diptanshu</password>
+                <working_directory>/home/diptanshu/causal-key-value/config/work_dir/c2</working_directory>
+                <protocol_log_level>off</protocol_log_level>
+                <framework_log_level>off</framework_log_level>
+                <protocol_properties>
+                    <property key="num_of_datacenters" value="3"/>
+                    <property key="num_of_partitions" value="8"/>
+                    <property key="dc_id" value="2"/>
+                    <property key="heartbeat_interval" value="200"/>
+                    <property key="dsv_comutation_interval" value="50"/>
+                    <property key="max_latency" value="160"/>
+                </protocol_properties>
+            </config>
+            <connect_to>
+                <server id="2_0" ip="35.228.223.46" port="2000"/>
+                <server id="2_4" ip="35.228.223.46" port="3000"/>
+                <server id="2_1" ip="35.228.156.107" port="4000"/>
+                <server id="2_5" ip="35.228.156.107" port="3000"/>
+                <server id="2_2" ip="35.228.167.76" port="4000"/>
+                <server id="2_6" ip="35.228.167.76" port="3000"/>
+                <server id="2_3" ip="35.228.136.54" port="4000"/>
+                <server id="2_7" ip="35.228.136.54" port="3000"/>
+            </connect_to>
+        </client>
+    </clients>
+    <workload_variations/>
+</experiment>

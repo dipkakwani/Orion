@@ -3,7 +3,7 @@
     <name>spartan_cluster</name>
     <defaults/>
     <servers>
-        <server id="0_0" ip="35.224.118.135">
+        <server id="0_0" ip="35.184.232.76">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -28,7 +28,7 @@
             </config>
         </server>
 
-        <server id="0_1" ip="35.226.14.78">
+        <server id="0_1" ip="35.232.238.164">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -52,7 +52,7 @@
             </config>
         </server>
 
-        <server id="0_2" ip="35.226.14.78">
+        <server id="0_2" ip="104.197.3.68">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -77,7 +77,7 @@
             </config>
         </server>
 
-        <server id="0_3" ip="35.226.14.78">
+        <server id="0_3" ip="35.223.166.17">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -101,7 +101,7 @@
             </config>
         </server>
 
-        <server id="1_0" ip="35.224.118.135">
+        <server id="1_0" ip="35.201.207.250">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -126,7 +126,7 @@
             </config>
         </server>
 
-        <server id="1_1" ip="35.226.14.78">
+        <server id="1_1" ip="35.236.141.4">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -150,7 +150,7 @@
             </config>
         </server>
 
-        <server id="1_2" ip="35.226.14.78">
+        <server id="1_2" ip="34.80.235.137">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -175,7 +175,7 @@
             </config>
         </server>
 
-        <server id="1_3" ip="35.226.14.78">
+        <server id="1_3" ip="35.185.160.250">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -199,7 +199,7 @@
             </config>
         </server>
 
-        <server id="2_0" ip="35.224.118.135">
+        <server id="2_0" ip="35.228.223.46">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -224,7 +224,7 @@
             </config>
         </server>
 
-        <server id="2_1" ip="35.226.14.78">
+        <server id="2_1" ip="35.228.156.107">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -248,7 +248,7 @@
             </config>
         </server>
 
-        <server id="2_2" ip="35.226.14.78">
+        <server id="2_2" ip="35.228.167.76">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -273,7 +273,7 @@
             </config>
         </server>
 
-        <server id="2_3" ip="35.226.14.78">
+        <server id="2_3" ip="35.228.136.54">
             <config>
                 <server_jar_file>/home/diptanshu/causal-key-value/config/server.jar</server_jar_file>
                 <username>diptanshu</username>
@@ -311,6 +311,18 @@
             <id>0_2</id>
             <id>0_3</id>
         </connect>
+        <connect>
+            <id>0_1</id>
+            <id>0_2</id>
+        </connect>
+        <connect>
+            <id>0_1</id>
+            <id>0_3</id>
+    	</connect>
+        <connect>
+            <id>0_0</id>
+            <id>0_3</id>
+        </connect>
 
         <connect>
             <id>1_0</id>
@@ -324,6 +336,18 @@
             <id>1_2</id>
             <id>1_3</id>
         </connect>
+        <connect>
+            <id>1_1</id>
+            <id>1_2</id>
+        </connect>
+        <connect>
+            <id>1_1</id>
+            <id>1_3</id>
+    	</connect>
+        <connect>
+            <id>1_0</id>
+            <id>1_3</id>
+        </connect>
 
         <connect>
             <id>2_0</id>
@@ -335,6 +359,18 @@
         </connect>
         <connect>
             <id>2_2</id>
+            <id>2_3</id>
+        </connect>
+        <connect>
+            <id>2_1</id>
+            <id>2_2</id>
+        </connect>
+        <connect>
+            <id>2_1</id>
+            <id>2_3</id>
+    	</connect>
+        <connect>
+            <id>2_0</id>
             <id>2_3</id>
         </connect>
 

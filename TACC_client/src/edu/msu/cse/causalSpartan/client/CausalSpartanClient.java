@@ -150,7 +150,7 @@ public class CausalSpartanClient extends DKVFClient {
                 ClientReply cr = readFromServer(e.getKey());
                 if (cr != null && cr.getStatus()) {
                     protocolLOGGER.finest("ROT received reply");
-                    if (protocolLOGGER.isLoggable(Level.FINEST))
+                    if (protocolLOGGER.isLoggable(Level.SEVERE))
                         logDifference(cr.getRotReply().getDsvItemList(), predictedDSV);
                     updateDsv(cr.getRotReply().getDsvItemList());
                     for (Map.Entry<Integer, Long> dti : cr.getRotReply().getDsItemsMap().entrySet()) {
@@ -205,7 +205,7 @@ public class CausalSpartanClient extends DKVFClient {
         for (int i = 0; i < actual.size(); i++)
             result += edu.msu.cse.causalSpartan.client.Utils.shiftToLowBits(Math.abs(actual.get(i) - prediction.get(i)));
 
-        protocolLOGGER.finest("DIFFERENCE " + result / actual.size());
+        protocolLOGGER.severe("DIFFERENCE " + (result + 0.0) / actual.size());
 
     }
 }
