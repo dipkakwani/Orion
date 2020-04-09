@@ -5,6 +5,7 @@ Built on top of DKVF (https://github.com/roohitavaf/DKVF)
 To appear in [PaPoC 2020](https://papoc-workshop.github.io/2020/)
 
 > Orion: Time Estimated Causally Consistent Key-Value Store
+>
 > *Diptanshu Kakwani, Rupesh Nasre*
 
 Link to paper to be updated soon.
