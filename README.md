@@ -8,7 +8,9 @@ To appear in [PaPoC 2020](https://papoc-workshop.github.io/2020/)
 >
 > *Diptanshu Kakwani, Rupesh Nasre*
 
-Link to paper to be updated soon.
+Paper: https://dipkakwani.netlify.com/Orion_PaPoC.pdf
+
+Talk: https://www.youtube.com/watch?v=xux0U1_1cmI&list=PLHHiNr_VnyWKj64PWjd9iM2OY19s9QGCY&index=6&t=0s
 
 ### Instructions
 
